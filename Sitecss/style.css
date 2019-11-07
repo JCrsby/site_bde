@@ -38,9 +38,26 @@ a:hover{
 a{
     color: darkgrey!important;
 }
-.navbar-collapse {
-        display: -ms-flexbox!important;
-        display: block!important;
-        -ms-flex-preferred-size: auto;
 
-    }}
+.event{
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    color : brown;
+    margin-top: 66px;
+}
+
+.page-footer{
+    background-color: black;
+    margin-top: -16px;
+}
+
+.footer-copyright{
+    color: white;
+}
+h5{
+    color : #ADADAD;
+}
+ul li a .list-unstyled{
+    color : #000000;
+}
