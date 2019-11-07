@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "id11496021_bde",
+    "password": "bde1234",
+    "database": "id11496021_site_bde",
+    "host": "http://databases.000webhost.com",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
