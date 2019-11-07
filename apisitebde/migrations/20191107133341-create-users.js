@@ -29,6 +29,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       idRole: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

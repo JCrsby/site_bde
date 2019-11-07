@@ -9,15 +9,19 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
+        allowNull: false,
         type: Sequelize.STRING
       },
-      bio: {
+      bio:{
+      allowNull: false,
         type: Sequelize.STRING
       },
       date: {
+        allowNull: false,
         type: Sequelize.DATE
       },
       price: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
@@ -33,9 +37,11 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       repetition: {
+        allowNull: false,
         type: Sequelize.STRING
       },
       idUser: {
+        allowNull: false,
         type: Sequelize.INTEGER
       }
     });

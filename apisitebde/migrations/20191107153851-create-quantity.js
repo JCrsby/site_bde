@@ -9,12 +9,15 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       idProduct: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       idCommand: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       quantity: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {
