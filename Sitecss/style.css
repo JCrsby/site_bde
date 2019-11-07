@@ -38,8 +38,7 @@ a:hover{
 a{
     color: darkgrey!important;
 }
-@media (min-width: 992px){
-    .navbar-expand-lg .navbar-collapse {
+.navbar-collapse {
         display: -ms-flexbox!important;
         display: block!important;
         -ms-flex-preferred-size: auto;
