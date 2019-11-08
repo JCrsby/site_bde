@@ -110,3 +110,10 @@ footer>.container{
 form{
     background-color: #FCFCFC;
 }
+
+form>.col-4{
+    
+}
+.to_register{
+    font-size: 10px;
+}
