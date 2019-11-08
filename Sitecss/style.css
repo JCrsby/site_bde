@@ -3,11 +3,14 @@ a#yellow:hover{
 
 
 }
-.border-bottom-1:hover{
+nav{
+    position: absolute;
+}
+header .border-bottom-1:hover{
     border-bottom: 1px solid!important;
     border-bottom-color: #F4AB25!important;
 }
-.border-bottom-1{
+header .border-bottom-1{
     border-bottom: 1px solid!important;
     border-bottom-color: #000000!important;
 }
@@ -40,16 +43,12 @@ a{
 }
 
 .event{
-    position: relative;
-    display: block;
-    background-color: #FFFFFF;
-    color : brown;
-    margin-top: 66px;
+
 }
 
 .page-footer{
     background-color: black;
-    margin-top: -16px;
+
 }
 
 .footer-copyright{
@@ -58,6 +57,53 @@ a{
 h5{
     color : #ADADAD;
 }
-ul li a .list-unstyled{
+ul>li>a>.list-unstyled{
     color : #000000;
+}
+
+.container{
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    color : brown;
+}
+footer>.container{
+    background-color: #000000;
+}
+
+.card:hover {
+    box-shadow: 3px 3px 3px 3px #E5E5E5;
+    transition-duration: .5s !important;
+}
+
+.card >img  {
+    border-bottom: 1px solid!important;
+    border-bottom-color: lightgrey!important;
+}
+
+.card-body{
+    background-color: #FCFCFC;
+}
+
+.card-body:hover{
+    box-shadow: 0px 3px 0px 0px #F2F2F2;
+
+
+}
+
+.btn-outline-primary{
+    border-color: #F4AB25!important;
+    color: #F4AB25!important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #000000!important;
+}
+
+.btn {
+    transition-duration: 1s !important;
+}
+
+.card-body>.card-text{
+    color: #000000;
 }
