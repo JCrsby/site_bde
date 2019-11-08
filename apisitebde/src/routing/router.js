@@ -11,13 +11,17 @@ router.route('/test').get((req, res) => {res.send('hello')});
 
 
 //------------------------------- USER REQUESTS
-router.route('/user/register')
+/*router.route('/user/register')
     .post((req, res) => {
         userController.register(req, res)
     })
     .get((req, res)=>{
         userController.register(req, res)
-    });
+    });*/
+
+router.post('/user/findOne', (req, res) => {
+    userController.findOne(req, res)});
+
 
 router.route('/user/login')
     .post((req, res)=>{
