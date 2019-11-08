@@ -107,3 +107,6 @@ footer>.container{
 .card-body>.card-text{
     color: #000000;
 }
+form{
+    background-color: #FCFCFC;
+}
