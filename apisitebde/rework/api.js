@@ -2,10 +2,10 @@
 const express = require('express');
 const db = require('./models/index');
 const router = require('./routing/router');
+const bodyParser = require('body-parser');
 
 // GENERATE SERVER API
 const api = express();
-
 
 // BDD CONNEXION CHECK
 db.sequelize.authenticate()
@@ -15,6 +15,14 @@ db.sequelize.authenticate()
     .catch(err => {
         console.error('Unable to connect to the database:', err);
     });
+
+//add body parse extensions
+// parse application/x-www-form-urlencoded
+api.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+api.use(bodyParser.json());
+
 
 //CALL ROUTER FOR EVERY /API/ ROADS
 api.use('/api/', router);
