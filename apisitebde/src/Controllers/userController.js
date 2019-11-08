@@ -29,8 +29,8 @@ module.exports = {
             modelPersonne.findOne({
                 attributes: ['mail'],
                 where: {mail: mail}
-            }).then(function (userFound) {
-                return res.status(200).json({'it': 'work'});
+            }).then( (userFound) => {
+                return res.json(userFound);
             }).catch(function (err) {
 
                 return res.status(500).json({'err': 'unable to verify'});
