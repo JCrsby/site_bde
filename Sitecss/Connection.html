@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Connection</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="#" >Accueil</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Pricing</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Disabled</a>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<body>
+
+<section>
+    <div id="corps">
+    <div id="container" >
+        <a class="hiddenanchor" id="tologin"></a>
+        <div id="wrapper">
+            <div id="login" class="animate form">
+                <form method="POST" action="" autocomplete="on">
+                    <h1>Connexion</h1>
+                    <p>
+                        <label for="email" class="uname" data-icon="u" > Adresse mail : </label>
+                        <input id="email" name="email" required="required" type="text" placeholder="cesiLyon@viacesi.fr"/>
+                    </p>
+                    <p>
+                        <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
+                        <input id="password" name="motDePasse" required="required" type="password" placeholder="CesiMDP123" />
+                    </p>
+
+                    <p class="login button">
+                        <input type="submit" value="Connexion" />
+                    </p>
+                    <p class="change_link">
+                        <a href="#toregister" class="to_register"> Mot de passe oublié ?</a>
+                    </p>
+                    <p class="change_link">
+                        <a href="#toregister" class="to_register">Pas encore inscrit ?</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+</section>
+</body>
+</html>
