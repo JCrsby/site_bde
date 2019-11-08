@@ -1,5 +1,6 @@
 const db = require('../models/index').sequelize;
 const models = require('../models');
+const sequelize = require('../models/index').Sequelize;
 
 //ALL METHODS
 module.exports = {
@@ -42,9 +43,11 @@ module.exports = {
         if (email === null || username === null || firstName === null || password === null || campus === null || role === null){
           res.send.status(400).json({'error': 'wrong parameter'});
         }else{
-            models.personne.findOrCreate({
+            db.models.personne.findOrCreate({
                 where: {Adresse_Mail: email},
-                defaults: {Nom: username, Prenom: firstName, Mot_De_Passe: password, Campus: campus, id_Role: role}
+                defaults: {
+                    // Nom: username, Prenom: firstName, Mot_De_Passe: password, Campus: campus, id_Role: role
+                }
             }).then(res.send(`user ${username} has been created`))
                 .catch(res.send(`avorted`))
         }

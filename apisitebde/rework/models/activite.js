@@ -1,10 +1,10 @@
 /* jshint indent: 1 */
-const DataTypes = require('./index').Sequelize.DataTypes;
-const sequelize = require('./index').sequelize;
+// const Sequelize = require('./index').Sequelize;
+// const sequelize = require('./index').sequelize;
+// const DataTypes = Sequelize.DataTypes;
 
-module.exports = //function(sequelize, DataTypes) {
-//	return
-    sequelize.define('activite', {
+module.exports = function(sequelize, DataTypes) {
+return sequelize.define('activite', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -42,4 +42,4 @@ module.exports = //function(sequelize, DataTypes) {
     }, {
         tableName: 'activite'
     });
-//};
+};

@@ -1,10 +1,9 @@
 /* jshint indent: 1 */
-const DataTypes = require('./index').Sequelize.DataTypes;
-const sequelize = require('./index').sequelize;
+// const DataTypes = require('./index').Sequelize.DataTypes;
+// const sequelize = require('./index').sequelize;
 
-module.exports = //function(sequelize, DataTypes) {
-//	return
-    sequelize.define('commentaire', {
+module.exports = function(sequelize, DataTypes) {
+	return sequelize.define('commentaire', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -34,4 +33,4 @@ module.exports = //function(sequelize, DataTypes) {
     }, {
         tableName: 'commentaire'
     });
-//};
+};
