@@ -1,6 +1,5 @@
 const express = require('express');
-const sequelize = require('sequelize');
-const model = require('../model/personne');
+const sequelize = require('../database/database');
 
 
 
@@ -25,7 +24,7 @@ module.exports = {
             res.status(400).json({'err': 'empty param'});
         }
         else {
-            model.findOne({
+            sequelize.modelPersonne.findOne({
                 attributes: ['mail'],
                 where: {mail: mail}
             }).then(function (userFound) {
