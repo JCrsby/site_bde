@@ -1,7 +1,8 @@
 'use strict';
-module.exports = (sequelize, DataTypes) => {
+const db = require('../database/database');
+const DataTypes = require('sequelize').DataTypes;
 
-    return sequelize.define("personne", {
+    module.exports = db.define("personne", {
         prenom: {
             type: DataTypes.STRING,
             allowNull: false
@@ -31,4 +32,3 @@ module.exports = (sequelize, DataTypes) => {
 
         }
     });
-};
