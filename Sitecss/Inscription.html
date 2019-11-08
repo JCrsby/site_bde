@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Inscription</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            position: relative;
+        }
+    </style>
+</head>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="#" >Accueil</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Pricing</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Disabled</a>
+            </div>
+
+        </div>
+    </nav>
+</header>
+
+<body>
+
+    <div id="register" class="animate form">
+        <form  method="POST" action="" autocomplete="on">
+            <h1> Espace utilisateur</h1>
+            <h4>Veuillez remplir ce formulaire pour votre inscription</h4>
+            <p>
+                <label>Nom : </label>
+                <input name="username" required="required" type="text" placeholder=""/>
+            </p>
+
+            <p>
+                <label>Prenom : </label>
+                <input name="username" required="required" type="text"/>
+            </p>
+
+            <p>
+                <label>Campus : </label>
+                <input name="username" required="required" type="text"/>
+            </p>
+
+            <p>
+                <label>Adresse Mail : </label>
+                <input name="email" required="required" type="email"/>
+            </p>
+
+            <p>
+                <label>Mot de passe : </label>
+                <input name="password2" required="required" type="password" placeholder="mot de passe"/>
+            </p>
+
+            <p>
+                <label>Confirmation Mot de passe : </label>
+                <input name="password2" required="required" type="password" placeholder="mot de passe"/>
+            </p>
+
+            <p class="signin button">
+                <input type="submit" value="S'inscrire"/>
+            </p>
+            <p class="change_link">
+                Déjà inscrit ?
+                <a href="#tologin" class="to_register"> Connexion </a>
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
