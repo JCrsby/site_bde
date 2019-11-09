@@ -1,5 +1,5 @@
 const db = require('../models/index').sequelize;
-const models = require('../models');
+const personne = require('../models').Personne;
 const sequelize = require('../models/index').Sequelize;
 
 //ALL METHODS
@@ -12,13 +12,29 @@ module.exports = {
         let bio = req.body.bio;
 
         res.send(`hello ${username} this is your emil : ${email} and this is your bio ${bio} `)
-
-
     },
 
     //USER LOGIN METHOD
-    login: (req, res)=> {
-        res.send('login method -TODO : implement this method')
+    login: (req, res) => {
+        var mail = req.body.email;
+        var username = req.body.username;
+        var password = req.body.password;
+
+        if (mail === null || username === null || password === null) {
+            res.status(400).json({'err': 'empty param'});
+        }
+        else {
+            personne.findOne({
+                //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
+                where: {Adresse_Mail: mail,
+                Mot_De_Passe: password
+                }
+            }).then( (userFound) => {
+                return res.json(userFound);
+            }).catch(function (err) {
+                return res.send(err);
+            })
+        }
     },
 
     //DELETE USER METHOD

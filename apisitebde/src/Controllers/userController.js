@@ -21,14 +21,17 @@ module.exports = {
     findOne: (req, res) => {
         var mail = req.body.email;
         var username = req.body.username;
+        var password = req.body.password;
 
-        if (mail === null || username === null) {
+        if (mail === null || username === null || password === null) {
             res.status(400).json({'err': 'empty param'});
         }
         else {
             modelPersonne.findOne({
                 attributes: ['mail'],
-                where: {mail: mail}
+                where: {mail: mail,
+                        Mot_De_Passe: password
+                }
             }).then( (userFound) => {
                 return res.json(userFound);
             }).catch(function (err) {
