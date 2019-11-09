@@ -1,8 +1,9 @@
+---
 **MINI API** 
 ===
 version : ```1.0.0``` ```under development```
 
-last patch ```09/11/2019 01:57```
+last patch ```09/11/2019 02:05```
 
 created by ```bolex222```
 
@@ -20,6 +21,7 @@ this is a little testing api for basile's group member which permit to test :
 - ```token``` authentication (for the login http request )
 
 - some other functionality will probably arrived
+---
 
 How to use ?
 ---
@@ -34,11 +36,11 @@ How to use ?
 
 
 
+---
 
 
 
-
-actual fonctionnality : 
+current functionality : 
 ---
 
 HTTP REQUEST : 
