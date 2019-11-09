@@ -136,7 +136,8 @@ form{
     color: #F4AB25;
 }
 
-.image_boutique{
+
+.image_etudiant{
     max-width: 100%;
     height: auto;
 }
@@ -151,3 +152,12 @@ form{
     background-color: #F4AB25!important;
     box-shadow: 0px 0px 0px 0px #F4AB25!important;
 }
+
+.video-responsive { 
+    overflow:hidden; padding-bottom:50%; position:relative; height:0;
+}
+
+.video-responsive iframe { 
+    left:0; top:0; height:90%; width:100%; position:absolute;
+}
+
