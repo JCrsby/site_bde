@@ -21,8 +21,8 @@ this is a little testing api for basile's group member which permit to test :
 
 - some other functionality will probably arrived
 
-#How to use ?
-
+How to use ?
+---
 1. download folder miniApi https://github.com/JCrsby/site_bde/tree/miniApi/miniApi 
 2. install node https://nodejs.org
 3. open terminal in the folder miniApi
@@ -31,7 +31,13 @@ this is a little testing api for basile's group member which permit to test :
 
 **/!\ free to edit MINI API  BUT please don't commit or push it in the github /!\ .** 
 
----
+
+
+
+
+
+
+
 actual fonctionnality : 
 ---
 
