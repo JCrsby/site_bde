@@ -37,13 +37,14 @@
 <body>
 
     <div id="register" class="animate form">
-        <form  method="POST" action="" autocomplete="on">
+        <form  method="POST" action="" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
             <h1> Espace utilisateur</h1>
             <h4>Veuillez remplir ce formulaire pour votre inscription</h4>
-            <p>
+
+            <div class="form-group">
                 <label>Nom : </label>
-                <input name="name" required="required" type="text" placeholder=""/>
-            </p>
+                <input name="name" required="required" type="text" placeholder="" class="form-control"/>
+        </div>
 
             <p>
                 <label>Prenom : </label>
@@ -70,8 +71,8 @@
                 <input name="password2" required="required" type="password" placeholder="mot de passe"/>
             </p>
 
-            <p class="signin button">
-                <input type="submit" value="S'inscrire"/>
+            <p class="signin button text-center">
+                <button type="submit" class="btn btn-outline-primary mt-2 text">Submit</button>
             </p>
             <p class="change_link">
                 Déjà inscrit ?
