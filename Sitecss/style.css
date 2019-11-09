@@ -135,3 +135,19 @@ form{
 .couleur_text{
     color: #F4AB25;
 }
+
+.image_boutique{
+    max-width: 100%;
+    height: auto;
+}
+
+.inline{
+    display: flex;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #F4AB25!important;
+    background-color: #F4AB25!important;
+    box-shadow: 0px 0px 0px 0px #F4AB25!important;
+}

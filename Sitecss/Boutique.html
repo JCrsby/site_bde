@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<title>Boutique BDE</title>
-</head>
 
-<body>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -13,7 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/e86bc93f0a.js" crossorigin="anonymous"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     
 </head>
@@ -21,11 +19,11 @@
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#" ><img src="img/logobde.png" alt="LogoBDE"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="collapse navbar-collapse navbarNavAltMarkup">
         <div class="navbar-nav">
             <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Index.html" >Accueil</a>
             <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="Boutique.html">Boutique</a>
@@ -34,13 +32,13 @@
         </div>
 
     </div>
-    <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
+    <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse navbarNavAltMarkup" href="#">Connexion</a>
 </nav>
 </header>
 
-<center><img class="image_boutique" src="img/boutique.png" width="1920" height="1080" alt="Boutique CESI"></center>  
+<img class="image_boutique" src="img/boutique.png" width="1919" height="797" alt="Boutique CESI">
 
-<left><h4 class="categorie p-5">Nos meilleurs Ventes</h4></left>
+<h4 class="categorie p-5">Nos meilleurs Ventes</h4>
 
 <div class="container">
     <div class="row justify-content">
@@ -85,22 +83,23 @@
         </div>
 
         <div class="col-md-3 col-9 chercher">
-           <div class="d-inline"><small class="text-muted"><button type="button" class="btn btn-outline-primary">Catégorie</button></small>
-                <form class="search_bar p-2">
+           <div class="inline">
+               <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Catégories</button></small>
+                <form class="search_bar">
                 <input type="search" id="search" name="search" placeholder="Recherche">
                 </form>
             </div>
-                <div class="form-check">
-                    <input type="checkbox" name="CheckVetement" id="CheckVetement">
-                    <label class="form-check-label couleur_text" for="CheckVetement">Vêtements</label><br>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="CheckVetement" id="CheckVetement" class="custom-control-input">
+                    <label class="custom-control-label couleur_text " for="CheckVetement">Vêtements</label><br>
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" name="CheckGoodies" id="CheckGoodies">
-                    <label class="form-check-label couleur_text" for="CheckGoodies">Goodies</label><br>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="CheckGoodies" id="CheckGoodies" class="custom-control-input">
+                    <label class="custom-control-label couleur_text" for="CheckGoodies">Goodies</label><br>
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" name="CheckAutres" id="CheckAutres">
-                    <label class="form-check-label couleur_text" for="CheckAutres">Autres</label>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" name="CheckAutres" id="CheckAutres" class="custom-control-input">
+                    <label class="custom-control-label couleur_text" for="CheckAutres">Autres</label>
                 </div>
         </div>
     </div>
@@ -108,7 +107,7 @@
 
 <hr align="center" width="50%" color="#707070" size="3" class="mt-5">
 
-<left><h4 class="categorie p-5">Vêtement BDE</h4></left>
+<h4 class="categorie p-5">Vêtement BDE</h4>
 
 <div class="container">
 	<div class="row justify-content-center">
@@ -174,7 +173,7 @@
 
 <hr align="center" width="50%" color="#707070" size="3" class="mt-5">
 
-<left><h4 class="categorie mt-5">Goodies BDE</h4></left>
+<h4 class="categorie mt-5 ml-5">Goodies BDE</h4>
 
 <div class="container">
 	<div class="row justify-content-center">
@@ -191,7 +190,7 @@
                     <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>
             </div>
         </div>
@@ -208,7 +207,7 @@
                     <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>
             </div>
         </div>
@@ -225,7 +224,7 @@
                     <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>
             </div>
         </div>
@@ -242,7 +241,7 @@
                     <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>
             </div>
         </div>
@@ -266,13 +265,13 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!"><i class="fab fa-facebook-square"> BDE CESI LYON</i></a>
+                        <a href="#"><i class="fab fa-facebook-square"> BDE CESI LYON</i></a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fab fa-instagram"> BDE CESI LYON</i></a>
+                        <a href="#"><i class="fab fa-instagram"> BDE CESI LYON</i></a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fab fa-twitter-square"> BDE CESI LYON</i></a>
+                        <a href="#"><i class="fab fa-twitter-square"> BDE CESI LYON</i></a>
                     </li>
 
                 </ul>
@@ -288,10 +287,10 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!"><i class="fas fa-envelope"> bdelyon@viacesi.fr</i></a>
+                        <a href="#"><i class="fas fa-envelope"> bdelyon@viacesi.fr</i></a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fas fa-phone-square-alt"> +33 6 89 60 08 65</i></a>
+                        <a href="#"><i class="fas fa-phone-square-alt"> +33 6 89 60 08 65</i></a>
                     </li>
                 </ul>
 
@@ -300,7 +299,7 @@
             <div class="col-md-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4"><a href="#!"> Mentions légales</a></h5>
+                <h5 class="font-weight-bold text-uppercase mt-3 mb-4"><a href="#"> Mentions légales</a></h5>
 
 
 
