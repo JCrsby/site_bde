@@ -128,3 +128,20 @@ footer>.container{
 .couleur_text{
     color: #F4AB25;
 }
+
+.googlemap{
+    padding: 5px;
+}
+
+.image_etudiant{
+    max-width: 100%;
+    height: auto;
+}
+
+.video-responsive { 
+    overflow:hidden; padding-bottom:50%; position:relative; height:0;
+}
+
+.video-responsive iframe { 
+    left:0; top:0; height:90%; width:100%; position:absolute;
+}
