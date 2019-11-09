@@ -1,0 +1,10 @@
+{
+  "status": "validate",
+  "token": "LESUPERTOKENTRALALA",
+  "user": {
+            "nom": "nom",
+            "prenom": "prenom",
+            "email": "example@email.com",
+            "campus": "lyon"
+  }
+}

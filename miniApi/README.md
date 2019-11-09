@@ -1,5 +1,5 @@
-**MINI API** 
-===
+<h1><b>MINI API</b></h1>
+
 version : ```1.0.0``` ```under development```
 
 last patch ```09/11/2019 02:05```
