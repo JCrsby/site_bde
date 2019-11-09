@@ -108,6 +108,23 @@ footer>.container{
     color: #000000;
 }
 
-.image_de_base{
-    
+.image_boutique{
+  max-width: 100%;
+  height: auto;
+}
+
+#search{
+    padding: 5px;
+    border: 2px solid orange;
+    border-radius: 30px;
+    outline: none;
+    padding-left: 30px
+}
+
+.chercher{
+    display: inline-block;
+}
+
+.couleur_text{
+    color: #F4AB25;
 }
