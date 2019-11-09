@@ -10,10 +10,12 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="https://kit.fontawesome.com/e86bc93f0a.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    
 </head>
 
 <body>
@@ -25,10 +27,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="Index.html" >Accueil</a>
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Index.html" >Accueil</a>
             <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="Boutique.html">Boutique</a>
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">A propos</a>
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Contact</a>
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Info.html">A propos</a>
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Contact.html">Contact</a>
         </div>
 
     </div>
@@ -36,17 +38,157 @@
 </nav>
 </header>
 
-<center><h4 class="categorie">Vêtement BDE</h4></center>
+<center><img class="image_boutique" src="img/boutique.png" width="1920" height="1080" alt="Boutique CESI"></center>  
+
+<left><h4 class="categorie p-5">Nos meilleurs Ventes</h4></left>
+
+<div class="container">
+    <div class="row justify-content">
+
+     <div class="col-md-3 col-9">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Casquette Noire BDE</h5>
+                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-9">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/sweat.webp" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Sweat Gris BDE</h5>
+                    <p class="card-text">Sweat coloris gris, brodé du logo officiel du BDE, Matière principale : 100% coton.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-9">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Casquette Noire BDE</h5>
+                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-9 chercher">
+           <div class="d-inline"><small class="text-muted"><button type="button" class="btn btn-outline-primary">Catégorie</button></small>
+                <form class="search_bar p-2">
+                <input type="search" id="search" name="search" placeholder="Recherche">
+                </form>
+            </div>
+                <div class="form-check">
+                    <input type="checkbox" name="CheckVetement" id="CheckVetement">
+                    <label class="form-check-label couleur_text" for="CheckVetement">Vêtements</label><br>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="CheckGoodies" id="CheckGoodies">
+                    <label class="form-check-label couleur_text" for="CheckGoodies">Goodies</label><br>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" name="CheckAutres" id="CheckAutres">
+                    <label class="form-check-label couleur_text" for="CheckAutres">Autres</label>
+                </div>
+        </div>
+    </div>
+</div>
+
+<hr align="center" width="50%" color="#707070" size="3" class="mt-5">
+
+<left><h4 class="categorie p-5">Vêtement BDE</h4></left>
 
 <div class="container">
 	<div class="row justify-content-center">
 
-	 <div class="col-md-4 col-12">
+	 <div class="col-md-3 col-12">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Casquette Noire BDE</h5>
+                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton.</p>
+                    <h5 class="card-title">19 €</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+		<div class="col-md-3 col-12">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/sweat_gris.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Sweat Gris BDE</h5>
+                    <p class="card-text">Sweat coloris gris, brodé du logo officiel du BDE, Matière principale : 100% coton.</p>
+                    <h5 class="card-title">35 €</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+		<div class="col-md-3 col-12">
             <div class="card">
                 <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Casquette Noire BDE</h5>
                     <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton</p>
+                    <h5 class="card-title">19 €</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Casquette Noire BDE</h5>
+                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton</p>
+                    <h5 class="card-title">19 €</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
+                </div>
+            </div>
+        </div>
+		
+	</div>
+</div>
+
+<hr align="center" width="50%" color="#707070" size="3" class="mt-5">
+
+<left><h4 class="categorie mt-5">Goodies BDE</h4></left>
+
+<div class="container">
+	<div class="row justify-content-center">
+
+	 <div class="col-md-3 col-12">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Porte-Clés BDE</h5>
+                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
+						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
+						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
+					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
+                    <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
@@ -54,12 +196,16 @@
             </div>
         </div>
 
-		<div class="col-md-4 col-12">
+		<div class="col-md-3 col-12">
             <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Casquette Noire BDE</h5>
-                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton</p>
+                    <h5 class="card-title">Porte-Clés BDE</h5>
+                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
+						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
+						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
+					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
+                    <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
@@ -67,12 +213,33 @@
             </div>
         </div>
 
-		<div class="col-md-4 col-12">
+		<div class="col-md-3 col-12">
             <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Casquette Noire BDE</h5>
-                    <p class="card-text">Casquette de style Baseball, modèle noire cendre, Sergé de coton, Calotte à empiècements et œillets, Détail "X" signature, Pictogramme brodé, Visière incurvée, Fermeture permettant de régler la taille de la casquette, Clip en inox gravé "M.X" et passant pour insérer la bande, Matière principale : 100% coton</p>
+                    <h5 class="card-title">Porte-Clés BDE</h5>
+                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
+						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
+						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
+					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
+                    <h5 class="card-title">3 €</h5>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-12">
+            <div class="card">
+                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Porte-Clés BDE</h5>
+                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
+                        Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
+                        Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
+                    Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
+                    <h5 class="card-title">3 €</h5>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
@@ -83,63 +250,7 @@
 	</div>
 </div>
 
-<center><h4 class="categorie">Goodies BDE</h4></center>
-
-<div class="container">
-	<div class="row justify-content-center">
-
-	 <div class="col-md-4 col-12">
-            <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Porte-Clés BDE</h5>
-                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
-						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
-						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
-					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
-                </div>
-            </div>
-        </div>
-
-		<div class="col-md-4 col-12">
-            <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Porte-Clés BDE</h5>
-                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
-						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
-						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
-					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
-                </div>
-            </div>
-        </div>
-
-		<div class="col-md-4 col-12">
-            <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/porteclef.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Porte-Clés BDE</h5>
-                    <p class="card-text">Ce porte-clés à personnaliser rond en métal est intemporel. Sa finition est polie pour un rendu plus brillant. Présenté dans un coffret cadeau noir il deviendra le goodies incontournable pour vos opérations marketing.
-						Il est constitué d’un anneau métallique et d’un corps en métal rond. Sa zone de marquage est disposée sur le devant au centre.
-						Ce modèle de porte-clés mesure 4,5 cm de largeur et 3,5 cm de diamètre avec 0,4cm d’épaisseur pour un poids de 22 grammes.
-					Pour un cadeau élégant et pratique, ce porte-clés rond sera parfait.</p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-muted"><button type="button" class="btn btn-outline-primary">Plus d'infos</button></small>
-                </div>
-            </div>
-        </div>
-		
-	</div>
-</div>
-
-<footer class="page-footer font-small indigo ">
+<footer class="page-footer font-small indigo mt-5">
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
