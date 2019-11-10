@@ -28,6 +28,7 @@ module.exports = {
                 Campus: campus,
                 Mot_De_Passe: password,
                 id_ROLE: defaultIdRole
+                //TODO use substring and make it a real response
             }}).then((sqlresponse)=>{res.json(sqlresponse)})
              .catch((err)=>{res.json({"name": "error", "value": err})});
 
