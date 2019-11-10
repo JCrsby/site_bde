@@ -3,11 +3,14 @@ a#yellow:hover{
 
 
 }
-.border-bottom-1:hover{
+nav{
+    position: absolute;
+}
+header .border-bottom-1:hover{
     border-bottom: 1px solid!important;
     border-bottom-color: #F4AB25!important;
 }
-.border-bottom-1{
+header .border-bottom-1{
     border-bottom: 1px solid!important;
     border-bottom-color: #000000!important;
 }
@@ -38,9 +41,161 @@ a:hover{
 a{
     color: darkgrey!important;
 }
-.navbar-collapse {
-        display: -ms-flexbox!important;
-        display: block!important;
-        -ms-flex-preferred-size: auto;
 
-    }}
+.evenements {
+    color : #000000;
+}
+
+
+
+.page-footer{
+    background-color: black;
+
+}
+
+.footer-copyright{
+    color: white;
+}
+h5{
+    color : #ADADAD;
+}
+ul>li>a>.list-unstyled{
+    color : #000000;
+}
+
+.container{
+    position: relative;
+    display: block;
+    background-color: #FFFFFF;
+    color : brown;
+}
+footer>.container{
+    background-color: #000000;
+}
+
+.card:hover {
+    box-shadow: 3px 3px 3px 3px #E5E5E5;
+    transition-duration: .5s !important;
+}
+
+.card >img  {
+    border-bottom: 1px solid!important;
+    border-bottom-color: lightgrey!important;
+}
+
+.card-body{
+    background-color: #FCFCFC;
+}
+
+.card-body:hover{
+    box-shadow: 0px 3px 0px 0px #F2F2F2;
+
+
+}
+
+.btn-outline-primary{
+    border-color: #F4AB25!important;
+    color: #F4AB25!important;
+}
+
+.btn-outline-primary:hover{
+    background-color: #000000!important;
+}
+
+.btn {
+    transition-duration: 1s !important;
+}
+
+.card-body>.card-text{
+    color: #000000;
+    
+}
+
+
+form{
+    background-color: #FCFCFC;
+}
+
+.to_register{
+    font-size: 15px;
+}
+
+.image_boutique{
+  max-width: 100%;
+  height: auto;
+}
+
+
+#search{
+    padding: 5px;
+    border: 1.5px solid orange;
+    outline: none;
+    padding-left: 20px;
+    margin-left: 20px;
+    border-radius: 4px
+}
+
+.chercher{
+    display: inline-block;
+}
+
+.couleur_text{
+    color: #F4AB25;
+}
+
+
+.image_etudiant{
+    max-width: 100%;
+    height: auto;
+}
+
+.inline{
+    display: flex;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    border-color: #F4AB25!important;
+    background-color: #F4AB25!important;
+    box-shadow: 0px 0px 0px 0px #F4AB25!important;
+}
+
+.video-responsive { 
+    overflow:hidden; padding-bottom:50%; position:relative; height:0;
+}
+
+.video-responsive iframe { 
+    left:0; top:0; height:90%; width:100%; position:absolute;
+}
+
+.image_contact{
+    max-width: 100%;
+    height: auto;
+}
+
+.contact_color{
+    color: #F4AB25;
+}
+
+.contact_tittle{
+    color: #000000;
+}
+
+#connection{
+     color: #000000;
+}
+
+#footer_color_title_mentions{
+    color:white;
+}
+#footer_color_title_contact{
+    color:white;
+}
+#footer_color_title_reseaux{
+    color:white;
+}
+
+
+
+
+
