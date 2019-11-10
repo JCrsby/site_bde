@@ -42,9 +42,13 @@ a{
     color: darkgrey!important;
 }
 
-.event{
 
+.evenements {
+    color : #000000;
 }
+
+
+
 
 .page-footer{
     background-color: black;
@@ -106,7 +110,12 @@ footer>.container{
 
 .card-body>.card-text{
     color: #000000;
+
+    
 }
+
+
+
 form{
     background-color: #FCFCFC;
 }
@@ -120,12 +129,15 @@ form{
   height: auto;
 }
 
+
+
 #search{
     padding: 5px;
-    border: 2px solid orange;
-    border-radius: 30px;
+    border: 1.5px solid orange;
     outline: none;
-    padding-left: 30px
+    padding-left: 20px;
+    margin-left: 20px;
+    border-radius: 4px
 }
 
 .chercher{
@@ -172,4 +184,24 @@ form{
 
 .contact_tittle{
     color: #000000;
+
 }
+
+#connection{
+     color: #000000;
+}
+
+#footer_color_title_mentions{
+    color:white;
+}
+#footer_color_title_contact{
+    color:white;
+}
+#footer_color_title_reseaux{
+    color:white;
+}
+
+
+
+
+
