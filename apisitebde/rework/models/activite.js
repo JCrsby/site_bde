@@ -40,6 +40,9 @@ return sequelize.define('activite', {
             }
         }
     }, {
-        tableName: 'activite'
+        tableName: 'activite',
+        timestamps: false,
+        freezeTableName: true
+
     });
 };

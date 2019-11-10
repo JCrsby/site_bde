@@ -31,6 +31,8 @@ module.exports = function(sequelize, DataTypes) {
 			}
 		}
 	}, {
-		tableName: 'commande'
+		tableName: 'commande',
+		timestamps: false,
+		freezeTableName: true
 	});
 };

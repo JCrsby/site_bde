@@ -35,6 +35,8 @@ module.exports = function(sequelize, DataTypes) {
         }
     }
 }, {
-    tableName: 'produit'
+    tableName: 'produit',
+        timestamps: false,
+        freezeTableName: true
 });
 };

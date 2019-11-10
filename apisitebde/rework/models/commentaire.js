@@ -31,6 +31,8 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     }, {
-        tableName: 'commentaire'
+        tableName: 'commentaire',
+        timestamps: false,
+        freezeTableName: true
     });
 };

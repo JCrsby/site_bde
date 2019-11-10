@@ -27,6 +27,8 @@ return sequelize.define('nombre', {
 			allowNull: false
 		}
 	}, {
-		tableName: 'nombre'
+		tableName: 'nombre',
+	timestamps: false,
+	freezeTableName: true
 	});
 };

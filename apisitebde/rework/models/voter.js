@@ -23,6 +23,8 @@ module.exports = function(sequelize, DataTypes) {
             }
         }
     }, {
-        tableName: 'voter'
+        tableName: 'voter',
+        timestamps: false,
+        freezeTableName: true
     });
 };

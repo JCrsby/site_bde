@@ -15,6 +15,8 @@ module.exports = function(sequelize, DataTypes) {
 			allowNull: false
 		}
 	}, {
-		tableName: 'role'
+		tableName: 'role',
+		timestamps: false,
+		freezeTableName: true
 	});
 };

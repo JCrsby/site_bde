@@ -15,6 +15,8 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: false
         }
     }, {
-        tableName: 'categorie'
+        tableName: 'categorie',
+        timestamps: false,
+        freezeTableName: true
     });
 };
