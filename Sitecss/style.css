@@ -161,3 +161,15 @@ form{
     left:0; top:0; height:90%; width:100%; position:absolute;
 }
 
+.image_contact{
+    max-width: 100%;
+    height: auto;
+}
+
+.contact_color{
+    color: #F4AB25;
+}
+
+.contact_tittle{
+    color: #000000;
+}
