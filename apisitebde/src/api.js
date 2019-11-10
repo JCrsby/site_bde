@@ -1,7 +1,7 @@
 // IMPORTS
 const express = require('express');
 const db = require('./models/index');
-const router = require('./routing/router');
+const router = require('./routes/router');
 const bodyParser = require('body-parser');
 
 // GENERATE SERVER API

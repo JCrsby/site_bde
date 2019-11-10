@@ -1,4 +1,6 @@
+const defaultIdRole = 1;
 const personne = require('../models').Personne;
+
 
 //ALL METHODS
 module.exports = {
@@ -16,9 +18,18 @@ module.exports = {
             campus == null ||
             email == null ||
             password == null){
-            return res.send.json({"name": "error","value": "empty param"})}
+            return res.json({"name": "error","value": "empty param"})}
 
-        personne.findOrCreate()
+        personne.findOrCreate({
+            where: {Adresse_Mail: email},
+            defaults: {
+                Nom: lastName,
+                Prenom: firstName,
+                Campus: campus,
+                Mot_De_Passe: password,
+                id_ROLE: defaultIdRole
+            }}).then((sqlresponse)=>{res.json(sqlresponse)})
+             .catch((err)=>{res.json({"name": "error", "value": err})});
 
 
 
@@ -41,7 +52,7 @@ module.exports = {
                 Mot_De_Passe: password
                 }
             }).then( (userFound) => {
-                return res.json(userFound);
+                return res.send(userFound);
             }).catch(function (err) {
                 return res.send(err);
             })
