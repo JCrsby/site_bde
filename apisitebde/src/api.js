@@ -1,17 +1,14 @@
-//Import
+// IMPORTS
 const express = require('express');
+const db = require('./models/index');
+const router = require('./routing/router');
 const bodyParser = require('body-parser');
-const sequelize = require('sequelize');
-//const router = require('./routing/router');
-const database = require('./database/database');
 
-/// server declaration///
-const app = express();
+// GENERATE SERVER API
+const api = express();
 
-
-//testing db connexion
-database
-    .authenticate()
+// BDD CONNEXION CHECK
+db.sequelize.authenticate()
     .then(() => {
         console.log('Connection has been established successfully.');
     })
@@ -19,15 +16,18 @@ database
         console.error('Unable to connect to the database:', err);
     });
 
+//add body parse extensions
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }));
+api.use(bodyParser.urlencoded({ extended: false }));
 
 // parse application/json
-app.use(bodyParser.json());
+api.use(bodyParser.json());
 
 
-// call router
-//app.use('/api/', router);
-app.use('/api/', require('./routing/router'));
+//CALL ROUTER FOR EVERY /API/ ROADS
+api.use('/api/', router);
 
-app.listen(8080, ()=> {console.log('listning on port 8080')});
+// LISTENING ON PORT 3000
+api.listen(3000, () => {
+    console.log('Example app listening on port 3000! this is the src')
+});
