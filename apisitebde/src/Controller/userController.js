@@ -6,7 +6,7 @@ const personne = require('../models').Personne;
 module.exports = {
 
     //USER REGISTER METHOD
-    register: (req, res)=> {
+    register: (req, res) => {
         let firstName = req.body.firstName;
         let lastName = req.body.lastName;
         let campus = req.body.campus;
@@ -17,8 +17,9 @@ module.exports = {
             lastName == null ||
             campus == null ||
             email == null ||
-            password == null){
-            return res.json({"name": "error","value": "empty param"})}
+            password == null) {
+            return res.json({"name": "error", "value": "empty param"})
+        }
 
         personne.findOrCreate({
             where: {Adresse_Mail: email},
@@ -28,10 +29,21 @@ module.exports = {
                 Campus: campus,
                 Mot_De_Passe: password,
                 id_ROLE: defaultIdRole
-                //TODO use substring and make it a real response
-            }}).then((sqlresponse)=>{res.json(sqlresponse)})
-             .catch((err)=>{res.json({"name": "error", "value": err})});
+            }
+        }).then((sqlresponse) => {
+            let string = sqlresponse.toString();
+            if (string.includes('true')){
+                res.json({name: "valid", value: "user created"});
+            } else {
+                res.json({name: "error", value: "already exist"});
+            }
 
+            }
+        )
+            .catch((err) => {
+                let jsonErr = JSON.stringify(err);
+                res.json({name: 'error', value: jsonErr});
+            });
 
 
     },
@@ -45,14 +57,14 @@ module.exports = {
 
         if (mail === null || username === null || password === null) {
             res.status(400).json({'err': 'empty param'});
-        }
-        else {
+        } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
-                where: {Adresse_Mail: mail,
-                Mot_De_Passe: password
+                where: {
+                    Adresse_Mail: mail,
+                    Mot_De_Passe: password
                 }
-            }).then( (userFound) => {
+            }).then((userFound) => {
                 return res.send(userFound);
             }).catch(function (err) {
                 return res.send(err);
@@ -61,12 +73,12 @@ module.exports = {
     },
 
     //DELETE USER METHOD
-    deleteUser: (req, res)=>{
+    deleteUser: (req, res) => {
         res.send('delete user method -TODO : implement this method')
     },
 
     //ADD A ROLE TO AN USER
-    addRole: (req, res)=>{
+    addRole: (req, res) => {
         res.send('add role to an user method -TODO : implement this method')
     },
 
