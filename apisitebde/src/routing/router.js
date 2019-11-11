@@ -1,41 +1,21 @@
-// Import
+// INCLUDE
 const express = require('express');
-const userController = require('../Controllers/userController');
+const userController = require('../Controller/userController');
 
-// router declaration
+//ROUTER
 const router = express.Router();
 
+//USERS ROUTES
+router.post('/user/register', (req, res)=> {userController.register(req, res)});
+router.post('/user/login', (req, res)=>{userController.login(req,res)});
+router.post('/user/delete', (req, res)=>{userController.deleteUser(req, res)});
+router.post('/user/addRole', (req,res)=>{userController.addRole(req, res)});
 
-// ROUTES url : localhost:8080/api/#
-router.route('/test').get((req, res) => {res.send('hello')});
 
-
-//------------------------------- USER REQUESTS
-router.route('/user/register')
-    .post((req, res) => {
-        userController.register(req, res)
-    })
-    .get((req, res)=>{
-        userController.register(req, res)
-    });
-
-router.route('/user/login')
-    .post((req, res)=>{
-        userController.login(req, res)
-    })
-    .get((req, res)=>{
-        userController.login(req, res)
-    });
-
-router.route('/user/delete')
-    .post((req, res)=>{
-        userController.deleteUser(req, res)
-    })
-    .get((req, res)=>{
-        userController.deleteUser(req, res)
-    });
-//-------------------------------END USER REQUESTS
+//EXPERIMENTAL ROUTES
+router.post('/user/add', (req, res)=>{userController.addUser(req, res)});
 
 
 
+//EXPORT ROUTER
 module.exports = router;
