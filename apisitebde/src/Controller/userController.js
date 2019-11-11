@@ -18,7 +18,7 @@ module.exports = {
             campus == null ||
             email == null ||
             password == null) {
-            return res.json({"name": "error", "value": "empty param"})
+            return res.json({name: "error", value: "empty param"})
         }
 
         personne.findOrCreate({
@@ -52,7 +52,7 @@ module.exports = {
     //TODO : add token
     login: (req, res) => {
         let mail = req.body.email;
-        let username = req.body.username;
+        let username = req.body.firstName;
         let password = req.body.password;
 
         if (mail === null || username === null || password === null) {
@@ -66,8 +66,8 @@ module.exports = {
                 }
             }).then((userFound) => {
                 return res.send(userFound);
-            }).catch(function (err) {
-                return res.send(err);
+            }).catch(function () {
+                return res.json({name: "error", value: "user do not exist"});
             })
         }
     },
