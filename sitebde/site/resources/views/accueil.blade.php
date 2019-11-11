@@ -1,43 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BDE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css"> 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
-</head>
-<body>
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="#" >Accueil</a>
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
-        </div>
+<!DOCTYPE HTML>
+<html lang="fr">
 
-    </div>
-    <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
-</nav>
-</header>
+    <head>
 
-<div class="box"></div>
+        <title>Ajax Request</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="Sitecss/css/bootstrap.min.css">
+        <meta name="csrf-token" content="{{csrf_token()}}">
 
+    </head>
 
-<footer>
+    <body>
+            <div class="container">
+                <h1>Ajax Request</h1>
+                <form>
+                    <div class="form-group">
+                        <label>Name:</label>
+                        <input type="text" name="name" class="form-control" placeholder="Name" required="">
+                    </div>
 
-</footer>
-</body>
+                    <div class="form-group">
+                        <strong>Password:</strong>
+                        <input type="password" name="password" class="form-control" placeholder="Password" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <strong>Email:</strong>
+                        <input type="email" name="email" class="form-control" placeholder="Email" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-success btn-submit">
+                            Submit
+                        </button>
+                    </div>
+                </form>
+            </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="text/javascript">
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token]').attr('content')
+                }
+            });
+
+        $(".btn-submit").click(function(e) {
+            e.preventDefault();
+
+            var name = $("input[name=name]").val();
+            var password = $("input[name=password]").val();
+            var email = $("input[name=email]").val();
+
+            /* Requete ajax en methodes POST */
+            $.ajax({
+                type: 'POST',
+                url: '/',
+                data: {name:name, password:password, email:email},
+                success: function (data) {
+                }
+            });
+        });
+
+    </script>
 </html>
