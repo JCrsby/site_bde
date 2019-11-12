@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function ajaxRequest()
     {
-       return view('boutique');
+       return view('Index');
     }
 
     /**
