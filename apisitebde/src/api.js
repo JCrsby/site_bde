@@ -1,7 +1,7 @@
 // IMPORTS
 const express = require('express');
 const db = require('./models/index');
-const router = require('./routing/router');
+const router = require('./routes/router');
 const bodyParser = require('body-parser');
 
 // GENERATE SERVER API
@@ -29,5 +29,5 @@ api.use('/api/', router);
 
 // LISTENING ON PORT 3000
 api.listen(3000, () => {
-    console.log('Example app listening on port 3000! this is the src')
+    console.log('app listening on port 3000!')
 });
