@@ -33,7 +33,7 @@ color : #F4AB25!important;
 .border {
     border: 1px solid #000000!important;
 }
-a:hover{
+footer a:hover{
     color: white!important;
     text-decoration: none!important;
 }
