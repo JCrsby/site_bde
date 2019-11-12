@@ -15,6 +15,8 @@ Route::get('/index', 'PagesController@index');
 
 Route::get('/boutique', 'PagesController@boutique');
 
+Route::get('/evenements', 'PagesController@evenements');
+
 Route::get('/info', 'PagesController@info');
 
 Route::get('/connexion', 'PagesController@connexion');

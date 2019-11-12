@@ -58,7 +58,7 @@
 
         <div class="col-md-3 col-9">
             <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/sweat.webp" alt="Card image cap">
+                <img class="card-img-top border-bottom-1" src="img/sweat_gris.png" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title">Sweat Gris BDE</h5>
                     <p class="card-text">Sweat coloris gris, brodé du logo officiel du BDE, Matière principale : 100% coton.</p>
