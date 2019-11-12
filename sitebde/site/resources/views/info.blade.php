@@ -31,7 +31,7 @@
             </div>
 
         </div>
-        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
+        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
     </nav>
 </header>
 

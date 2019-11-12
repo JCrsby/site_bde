@@ -18,7 +18,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
-        <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
+        <a class="navbar-brand" href="/index" ><img src="{{asset('img/logobde.png')}}"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -31,7 +31,7 @@
             </div>
 
         </div>
-        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
+        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
     </nav>
 </header>
 

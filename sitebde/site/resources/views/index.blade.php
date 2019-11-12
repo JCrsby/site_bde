@@ -35,7 +35,7 @@
     </nav>
 </header>
 
-<img src="img/accueil.png" class="img-fluid" alt="Responsive image">
+<img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Responsive image">
 <div class="container">
 
     <br>
