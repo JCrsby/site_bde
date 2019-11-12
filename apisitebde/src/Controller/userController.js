@@ -1,6 +1,6 @@
 const defaultIdRole = 1;
 const personne = require('../models').Personne;
-
+const jwt = require('../token/jwt.utils');
 
 //ALL METHODS
 module.exports = {
@@ -65,8 +65,14 @@ module.exports = {
                     Mot_De_Passe: password
                 }
             }).then((userFound) => {
-                return res.send(userFound);
-            }).catch(function () {
+                 res.json({
+                    name: "valid",
+                    values: {
+                        userId: userFound.id,
+                        token: jwt.createUserToken(userFound)
+                    }
+                });
+            }).catch(() => {
                 return res.json({name: "error", value: "user do not exist"});
             })
         }
