@@ -37,5 +37,10 @@ class PagesController extends Controller
         return view('inscription');
     }
 
+    public function evenements()
+    {
+        return view('evenements');
+    }
+
 
 }
