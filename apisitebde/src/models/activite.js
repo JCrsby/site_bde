@@ -4,7 +4,7 @@
 // const DataTypes = Sequelize.DataTypes;
 
 module.exports = function(sequelize, DataTypes) {
-return sequelize.define('activite', {
+const activite = sequelize.define('activite', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -45,4 +45,10 @@ return sequelize.define('activite', {
         freezeTableName: true
 
     });
+activite.assciate((models)=>{
+   activite.belongsTo(models.personne, {foreignKey: 'id'})
+});
+
+
+return activite;
 };

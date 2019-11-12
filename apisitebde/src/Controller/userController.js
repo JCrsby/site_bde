@@ -1,4 +1,4 @@
-const defaultIdRole = 1;
+const DEFAULT_ID = 1;
 const personne = require('../models').Personne;
 const jwt = require('../token/jwt.utils');
 
@@ -28,7 +28,7 @@ module.exports = {
                 Prenom: firstName,
                 Campus: campus,
                 Mot_De_Passe: password,
-                id_ROLE: defaultIdRole
+                id_ROLE: DEFAULT_ID
             }
         }).then((sqlresponse) => {
             let string = sqlresponse.toString();

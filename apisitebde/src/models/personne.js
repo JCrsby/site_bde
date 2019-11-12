@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = (sequelize, DataTypes)=>{
-    return sequelize.define('Personne', {
+    const Personne = sequelize.define('Personne', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -32,15 +32,23 @@ module.exports = (sequelize, DataTypes)=>{
         },
         id_ROLE: {
             type: DataTypes.INTEGER(11),
-            allowNull: false,
-            references: {
-                model: 'role',
-                key: 'id'
-            }
+            allowNull: false
+            // ,
+            // references: {
+            //     model: 'role',
+            //     key: 'id'
+            // }
         }
     }, {
         tableName: 'personne',
         timestamps: false,
         freezeTableName: true
     });
+
+    Personne.assciate = (models) => {
+        Personne.hasMany(models.activite, {foreignKey: 'id'})
+    };
+
+
+    return Personne;
 };
