@@ -25,6 +25,8 @@ Route::post('/','HomeController@ajaxRequestPost');
 
 Route::get('/','HomeController@ajaxRequest');
 
+Route::get('/inscription','PagesController@inscription');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

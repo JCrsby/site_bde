@@ -18,15 +18,15 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
-        <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
+        <a class="navbar-brand" href="/info" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="/index" >Accueil</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/index" >Accueil</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="/info">A propos</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
             </div>
 

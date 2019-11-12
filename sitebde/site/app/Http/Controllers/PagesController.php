@@ -32,12 +32,10 @@ class PagesController extends Controller
     	return view('contact');
     }
 
-    
-
-
-
-
-
+    public function inscription()
+    {
+        return view('inscription');
+    }
 
 
 }
