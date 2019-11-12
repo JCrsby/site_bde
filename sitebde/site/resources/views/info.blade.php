@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Contact BDE</title>
+    <title>Accueil BDE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -15,100 +17,47 @@
 
 <body>
 <header>
-
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
         <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Index.html" >Accueil</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Boutique.html">Boutique</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Info.html">A propos</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="Contact.html">Contact</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="/index" >Accueil</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
             </div>
 
         </div>
-        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="Connection.html">Connexion</a>
+        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
     </nav>
 </header>
 
-<img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Contact CESI">
-<br>
-<br>
-<br>
-<br>
+<img class="image_etudiant" src="img/etudiant.png" width="1919" height="697" alt="Etudiant Cesi">
 
-<div class="container" align="center">
+<div class="container">
     <div class="row justify-content">
-
-        <div class="col-md-6 col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="contact_tittle">Par téléphone</h2>
-                    <p class="card-text">Appelez le centre d'appels<br>
-                    <p class="card-text">Service disponible de 9h à 12h et de 14h à 17h du lundi au vendredi.</p>
-                </div>
-                <div class="contact_color"><strong>
-                        <p>04 78 25 96 14</p></strong>
-                </div>
+        <div class="col-md-12 col-12">
+            <div class="card-body">
+                <h5 class="card-title text-center">Bonjour à Vous !</h5>
+                <h6 class="card-subtitle mb-2 text-muted text-center">Si vous êtes ici, c'est que vous voulez en savoir plus sur le BDE/CESI !</h6>
+                <p class="card-text text-center">Il faut savoir que nous sommes une association étudiante, élue par des adhérents, nous nous occupons d'organiser les activités extra-scolaires telles que des soirée étudiantes ou les activités le jeudi après-midi.<br>Grace au BDE vous avez assez à une tonne d'évênement !</p><br>
             </div>
         </div>
-
-        <div class="col-md-6 col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="contact_tittle">Écrivez-nous !</h2>
-                    <p class="card-text">Une question précise ? Écrivez à CESI, à une école ou à un campus…</p>
-                    <p class="card-text">Envoyer vos questions à l'adresse suivante :</p>
-                </div>
-                <div class="contact_color"><strong>
-                        <p>bde.cesi.lyon@viacesi.fr</p></strong>
-                </div>
-            </div>
-        </div>
-
     </div>
 </div>
 
-<br>
-<br>
-<br>
-<br>
+<p class="text-center">Voici une petite vidéo de présentation du Cesi Lyon, pour l'occasion</p>
 
-<!--
-<div align="center">
-
-    <div>
-        <div class="copy">
-            <h1 class="_near">Par téléphone</h1>
-            <p><strong>
-            Appelez le centre d'appels<br></strong>
-            Service disponible de 9h à 12h et de 14h à 17h du lundi au vendredi.
-            </p>
-            <div class="deck"><strong>
-                <p>04 78 25 96 14</p></strong>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="copy">
-            <h1 class="_near">Écrivez-nous !</h1>
-            <p>Une question précise ? Écrivez à CESI, à une école ou à un campus…</p>
-            <p>Envoyer vos questions à l'adresse suivante : bde.cesi.lyon@gmail.com</p>
-        </div>
-    </div>
-
+<div class="video-responsive">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D3-tfUDRa1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
--->
+
 <!-- Start Footer -->
 <footer class="page-footer font-small">
-
     <br>
-
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">

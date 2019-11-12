@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Contact BDE</title>
+    <title>Produits BDE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -15,9 +16,7 @@
 
 <body>
 <header>
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-
         <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,80 +34,100 @@
     </nav>
 </header>
 
-<img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Contact CESI">
 <br>
 <br>
 <br>
 <br>
 
 <div class="container" align="center">
-    <div class="row justify-content">
 
-        <div class="col-md-6 col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="contact_tittle">Par téléphone</h2>
-                    <p class="card-text">Appelez le centre d'appels<br>
-                    <p class="card-text">Service disponible de 9h à 12h et de 14h à 17h du lundi au vendredi.</p>
-                </div>
-                <div class="contact_color"><strong>
-                        <p>04 78 25 96 14</p></strong>
-                </div>
-            </div>
+    <h4 class="text-uppercase" ><p>Administration</p></h4>
+
+
+    <div class="card text-center">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                    <a class="nav-link" href="Administration.html"><p class="text-dark">Utilisateur</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Evenements.html"><p class="text-dark">Evenements</p></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Produits.html"><p class="text-dark">Produits</p></a>
+                </li>
+            </ul>
         </div>
+        <div class="card-body">
 
-        <div class="col-md-6 col-12">
-            <div class="card">
-                <div class="card-body">
-                    <h2 class="contact_tittle">Écrivez-nous !</h2>
-                    <p class="card-text">Une question précise ? Écrivez à CESI, à une école ou à un campus…</p>
-                    <p class="card-text">Envoyer vos questions à l'adresse suivante :</p>
-                </div>
-                <div class="contact_color"><strong>
-                        <p>bde.cesi.lyon@viacesi.fr</p></strong>
-                </div>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Bio</th>
+                        <th>Prix</th>
+                        <th>URL</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td><div class="btn-group">
+                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Changer ID </a></li>
+                                    <li><a href="#">Changer le nom </a></li>
+                                    <li><a href="#">Changer le bio</a></li>
+                                    <li><a href="#">Supprimer</a></li>
+                                </ul>
+                            </div></td>
+                        <td>P1</td>
+                        <td>Casquette</td>
+                        <td>Content</td>
+                        <td>Prix</td>
+                        <td>URL</td>
+                        <!--<td><div class="input-group">
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
+                              <span class="glyphicon glyphicon-minus"></span>
+                            </button>
+                            </span>
+                            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                            <span class="input-group-btn">
+                          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
+                              <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                            </span>
+                        </div></td> -->
+                    </tr>
             </div>
-        </div>
+            </tbody>
 
+            </table>
+
+        </div>
     </div>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-
-<!--
-<div align="center">
-
-    <div>
-        <div class="copy">
-            <h1 class="_near">Par téléphone</h1>
-            <p><strong>
-            Appelez le centre d'appels<br></strong>
-            Service disponible de 9h à 12h et de 14h à 17h du lundi au vendredi.
-            </p>
-            <div class="deck"><strong>
-                <p>04 78 25 96 14</p></strong>
-            </div>
-        </div>
-    </div>
-
-    <div>
-        <div class="copy">
-            <h1 class="_near">Écrivez-nous !</h1>
-            <p>Une question précise ? Écrivez à CESI, à une école ou à un campus…</p>
-            <p>Envoyer vos questions à l'adresse suivante : bde.cesi.lyon@gmail.com</p>
-        </div>
-    </div>
-
 </div>
--->
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 <!-- Start Footer -->
 <footer class="page-footer font-small">
-
     <br>
-
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">

@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 class PagesController extends Controller
 {
     
-    public function accueil(){
+    public function index(){
 
-    	return view('accueil');
+    	return view('index');
     }
 
      public function boutique(){
@@ -17,9 +17,9 @@ class PagesController extends Controller
     	return view('boutique');
     }
 
-     public function a_propos(){
+     public function info(){
 
-    	return view('a_propos');
+    	return view('info');
     }
 
       public function connexion(){

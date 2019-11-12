@@ -11,11 +11,11 @@
 
 */
 
-Route::get('/', 'PagesController@accueil');
+Route::get('/index', 'PagesController@index');
 
 Route::get('/boutique', 'PagesController@boutique');
 
-Route::get('/a_propos', 'PagesController@a_propos');
+Route::get('/info', 'PagesController@info');
 
 Route::get('/connexion', 'PagesController@connexion');
 
