@@ -1,73 +1,92 @@
-const db = require('../models/index').sequelize;
+const defaultIdRole = 1;
 const personne = require('../models').Personne;
-const sequelize = require('../models/index').Sequelize;
+const jwt = require('../token/jwt.utils');
 
 //ALL METHODS
 module.exports = {
 
     //USER REGISTER METHOD
-    register: (req, res)=> {
+    register: (req, res) => {
+        let firstName = req.body.firstName;
+        let lastName = req.body.lastName;
+        let campus = req.body.campus;
         let email = req.body.email;
-        let username = req.body.username;
-        let bio = req.body.bio;
+        let password = req.body.password;
 
-        res.send(`hello ${username} this is your emil : ${email} and this is your bio ${bio} `)
+        if (firstName == null ||
+            lastName == null ||
+            campus == null ||
+            email == null ||
+            password == null) {
+            return res.json({name: "error", value: "empty param"})
+        }
+
+        personne.findOrCreate({
+            where: {Adresse_Mail: email},
+            defaults: {
+                Nom: lastName,
+                Prenom: firstName,
+                Campus: campus,
+                Mot_De_Passe: password,
+                id_ROLE: defaultIdRole
+            }
+        }).then((sqlresponse) => {
+            let string = sqlresponse.toString();
+            if (string.includes('true')){
+                res.json({name: "valid", value: "user created"});
+            } else {
+                res.json({name: "error", value: "already exist"});
+            }
+
+            }
+        )
+            .catch((err) => {
+                let jsonErr = JSON.stringify(err);
+                res.json({name: 'error', value: jsonErr});
+            });
+
+
     },
 
     //USER LOGIN METHOD
+    //TODO : add token
     login: (req, res) => {
-        var mail = req.body.email;
-        var username = req.body.username;
-        var password = req.body.password;
+        let mail = req.body.email;
+        let username = req.body.firstName;
+        let password = req.body.password;
 
         if (mail === null || username === null || password === null) {
             res.status(400).json({'err': 'empty param'});
-        }
-        else {
+        } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
-                where: {Adresse_Mail: mail,
-                Mot_De_Passe: password
+                where: {
+                    Adresse_Mail: mail,
+                    Mot_De_Passe: password
                 }
-            }).then( (userFound) => {
-                return res.json(userFound);
-            }).catch(function (err) {
-                return res.send(err);
+            }).then((userFound) => {
+                 res.json({
+                    name: "valid",
+                    values: {
+                        userId: userFound.id,
+                        token: jwt.createUserToken(userFound)
+                    }
+                });
+            }).catch(() => {
+                return res.json({name: "error", value: "user do not exist"});
             })
         }
     },
 
     //DELETE USER METHOD
-    deleteUser: (req, res)=>{
+    deleteUser: (req, res) => {
         res.send('delete user method -TODO : implement this method')
     },
 
     //ADD A ROLE TO AN USER
-    addRole: (req, res)=>{
+    addRole: (req, res) => {
         res.send('add role to an user method -TODO : implement this method')
     },
-
-    //TESTING METHODS
-    addUser: (req, res)=>{
-        let email = req.body.email;
-        let username = req.body.username;
-        let firstName = req.body.firstname;
-        let password = req.body.password;
-        let campus = req.body.campus;
-        let role = req.body.role;
-
-        if (email === null || username === null || firstName === null || password === null || campus === null || role === null){
-          res.send.status(400).json({'error': 'wrong parameter'});
-        }else{
-            db.models.personne.findOrCreate({
-                where: {Adresse_Mail: email},
-                defaults: {
-                    // Nom: username, Prenom: firstName, Mot_De_Passe: password, Campus: campus, id_Role: role
-                }
-            }).then(res.send(`user ${username} has been created`))
-                .catch(res.send(`avorted`))
-        }
-    }
 
 
 };

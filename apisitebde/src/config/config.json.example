@@ -2,9 +2,9 @@
   "development": {
     "username": "root",
     "password": null,
-    "database": "bde_site_project",
+    "database": "database",
     "host": "127.0.0.1",
-    "dialect": "mysql",
+    "dialect": "one of 'mysql' | 'mariadb' | 'postgres' | 'mssql'",
     "operatorsAliases": false
   }
 }
