@@ -86,7 +86,7 @@
 
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group" action="/inscription" method="post">
             <label>Adresse Mail : </label>
             <input name="email" required="required" type="email" class="form-control"/>
         </div>
@@ -99,13 +99,14 @@
             <input name="password2" required="required" type="password" placeholder="mot de passe" class="form-control"/>
         </div>
 
-        <p class="signin button text-center">
-            <button type="submit" class="btn btn-outline-primary mt-2 text">Submit</button>
-        </p>
-        <p class="change_link text-center">
-            Déjà inscrit ?
-            <a href="/connexion" class="to_register"> Connexion </a>
-        </p>
+        <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+                <label class="custom-control-label" for="defaultChecked2">J'ai lu et j'accepte <a href="/politique">la politique de confidentialité</a></label>
+              </div>
+
+            <p class="signin button text-center">
+                <button type="submit" class="btn btn-outline-primary mt-2 text">Envoyer</button>
+            </p>
     </form>
 </div>
 <footer class="page-footer font-small">
@@ -158,9 +159,17 @@
             <!-- Grid column -->
             <div class="col-md-3 mx-auto">
 
-                <!-- Links -->
-                <h6 class="font-weight-bold mt-3 mb-4"><a href="#!"> Mentions légales</a></h6>
-                <a href="#"><i class="fas fa-mentions"></i> Voir les mentions legales</a>
+                 <!-- Links -->
+                 <h6 id="footer_color_title_mentions" class="font-weight-bold mt-3 mb-4"> Mentions légales</h6>
+                
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/conditions"><i class="fas fa-conditions"></i>Conditions générales de vente</a>
+                    </li>
+                    <li>
+                        <a href="/politique"><i class="fas fa-politique"></i>Données personnelles et politique de confidentialité</a>
+                    </li>
+                </ul>
 
 
 

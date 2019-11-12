@@ -42,5 +42,15 @@ class PagesController extends Controller
         return view('evenements');
     }
 
+    public function conditions()
+    {
+        return view('politique');
+    }
+
+    public function politique()
+    {
+        return view('politique');
+    }
+
 
 }

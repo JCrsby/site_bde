@@ -111,6 +111,7 @@
     </div>
 </div>
 <footer class="page-footer font-small">
+    <br>
 
     <!-- Footer Links -->
     <div class="container text-center text-md-left">
@@ -122,17 +123,17 @@
             <div class="col-md-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Réseaux Sociaux</h5>
+                <h6 id="footer_color_title_reseaux" class="font-weight-bold mt-3 mb-4">Réseaux sociaux</h6>
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!"><i class="fab fa-facebook-square"> BDE CESI LYON</i></a>
+                        <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-square"></i> BDE CESI LYON</a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fab fa-instagram"> BDE CESI LYON</i></a>
+                        <a href="https://www.instagram.com/bde_cesi_lyon/"><i class="fab fa-instagram"></i> BDE CESI LYON</a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fab fa-twitter-square"> BDE CESI LYON</i></a>
+                        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter-square"></i> BDE CESI LYON</a>
                     </li>
 
                 </ul>
@@ -144,14 +145,14 @@
             <div class="col-md-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Nous contacter</h5>
+                <h6 id="footer_color_title_contact" class="font-weight-bold mt-3 mb-4">Nous contacter</h6>
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!"><i class="fas fa-envelope"> bdelyon@viacesi.fr</i></a>
+                        <a href="#!"><i class="fas fa-envelope"></i> bdelyon@viacesi.fr</a>
                     </li>
                     <li>
-                        <a href="#!"><i class="fas fa-phone-square-alt"> +33 6 89 60 08 65</i></a>
+                        <a href="#!"><i class="fas fa-phone-square-alt"></i> +33 6 89 60 08 65</a>
                     </li>
                 </ul>
 
@@ -160,12 +161,17 @@
             <div class="col-md-3 mx-auto">
 
                 <!-- Links -->
-                <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Mentions légales</h5>
+                <h6 id="footer_color_title_mentions" class="font-weight-bold mt-3 mb-4"> Mentions légales</h6>
+                
                 <ul class="list-unstyled">
                     <li>
-                        <a href="#!">Voir les mentions legales</a>
+                        <a href="/conditions"><i class="fas fa-conditions"></i>Conditions générales de vente</a>
+                    </li>
+                    <li>
+                        <a href="/politique"><i class="fas fa-politique"></i>Données personnelles et politique de confidentialité</a>
                     </li>
                 </ul>
+
 
 
             </div>

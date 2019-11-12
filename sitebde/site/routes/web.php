@@ -29,6 +29,10 @@ Route::get('/','HomeController@ajaxRequest');
 
 Route::get('/inscription','PagesController@inscription');
 
+Route::get('/conditions','PagesController@conditions');
+
+Route::get('/politique','PagesController@politique');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
