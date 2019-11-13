@@ -17,6 +17,7 @@ router.post('/user/userInfo', (req,res) => {userController.getUserProfile(req, r
 
 //EVENTS ROUTES
 router.post('/event/all', (req, res)=>{eventController.allEvent(req, res)});
+router.post('/event/add', (req,res)=>{eventController.addEvent(req,res)});
 
 //PRODUCTS ROUTES
 router.post('/product/all', (req, res)=>{productController.allProduct(req,res)});

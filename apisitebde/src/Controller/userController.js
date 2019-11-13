@@ -83,10 +83,8 @@ module.exports = {
 
     //GET USER INFORMATION METHOD
     getUserProfile: (req, res) => {
-        console.log(req.header);
-        console.log(req.header('authorization'));
         let headerAuth = req.header('Authorization');
-        let userId = jwt.getUserId(headerAuth);
+        let userId = jwt.constrolTokenIdRole(headerAuth).userId;
 
         if (userId < 0) {
             res.status(400).json(JSON.stringify({"name": "error", "value": "invalid Token"}));

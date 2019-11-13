@@ -26,20 +26,24 @@ module.exports = {
     },
 
     //METHODS WHICH CHECK TOKEN VALIDITY
-    getUserId: authorisation => {
+    constrolTokenIdRole: authorisation => {
         let userId = -1;
+        let idRole = -1;
         let token = module.exports.parseAuthorisation(authorisation);
         if (token != null) {
             try {
                 let jwtToken = jwt.verify(token, JSON_PRIVATE_KEY);
                 if (jwtToken != null) {
+
                     userId = jwtToken.userId;
+                    idRole = jwtToken.id_ROLE;
                 }
             } catch (e) {
 
             }
         }
-        return userId
-    }
+        return {userId, idRole};
+    },
+
 
 };
