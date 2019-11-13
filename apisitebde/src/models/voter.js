@@ -1,9 +1,7 @@
-/* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
-
+//MODEL VOTE
 module.exports = function(sequelize, DataTypes) {
     const voter =sequelize.define('voter', {
+        //ALL TABLE'S COLUMN
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -28,6 +26,7 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true
     });
 
+    //ASSOCIATIONS
     voter.associate = models => {
         models.voter.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'})
     };

@@ -1,9 +1,9 @@
 /* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
+//MODEL CATEGORIES
+module.exports = function (sequelize, DataTypes) {
+    const categorie = sequelize.define('categorie', {
 
-module.exports = function(sequelize, DataTypes) {
-	const categorie = sequelize.define('categorie', {
+        //ALL TABLE'S COLUMN
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -19,9 +19,11 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+
+    //ASSOCIATION TO OTHER MODELS
     categorie.associate = (models) => {
         models.categorie.hasMany(models.produit, {foreignKey: 'id_CATEGORIE'})
     };
 
-	return categorie;
+    return categorie;
 };

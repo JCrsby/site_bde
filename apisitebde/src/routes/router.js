@@ -28,6 +28,5 @@ router.post('/product/DescPrice', (req, res)=>{productController.HigerToLower(re
 router.post('/user/add', (req, res)=>{userController.addUser(req, res)});
 
 
-
 //EXPORT ROUTER
 module.exports = router;

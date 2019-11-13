@@ -1,9 +1,10 @@
 /* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
+//MODEL COMMENT
+module.exports = function (sequelize, DataTypes) {
+    const commentaire = sequelize.define('commentaire', {
 
-module.exports = function(sequelize, DataTypes) {
-	const commentaire = sequelize.define('commentaire', {
+
+        //ALL TABLE'S COLUMN
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -36,8 +37,10 @@ module.exports = function(sequelize, DataTypes) {
         freezeTableName: true
     });
 
-	commentaire.associate = (models)=>{
-	  models.commentaire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+
+    //ASSOCIATIONS
+    commentaire.associate = (models) => {
+        models.commentaire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
         models.commentaire.belongsTo(models.photo, {foreignKey: 'id_PHOTO'});
 
     };
