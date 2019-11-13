@@ -18,7 +18,7 @@
 <body>
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
-        <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
+        <a class="navbar-brand" href="/index" ><img src="img/logobde.png" alt="Logo BDE"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,18 +35,20 @@
     </nav>
 </header>
 
-<img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Responsive image">
+<img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Accueil BDE">
+
 <div class="container">
 
     <br>
     <h4 class="evenements" align="center">Les événements</h4>
 
     <div class="card-deck mt-5 mb-5">
+
         <div class="card">
             <img class="card-img-top border-bottom-1" src="img/volleyball.png" alt="Volley ball">
             <div class="card-body">
-                <h5 class="card-title">Volley Ball 23/12/2019 </h5>
-                <p class="card-text">Un Match de Volley entre les écoles CESI et Centrale !</p>
+                <h5 class="card-title">Volley Ball 23/12/2019</h5>
+                <p class="card-text">Un Match de Volley entre les écoles CESI et Centrale</p>
             </div>
             <div class="card-footer">
 
@@ -59,6 +61,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/basketball.png" alt="Basket-ball">
             <div class="card-body">
@@ -76,6 +79,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/cinema.png" alt="Cinema">
             <div class="card-body">
@@ -93,6 +97,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/petanque.png" alt="Pétanque">
             <div class="card-body">
@@ -108,8 +113,10 @@
                 </small>
             </div>
         </div>
+
     </div>
 </div>
+
 <footer class="page-footer font-small">
 
     <!-- Footer Links -->
