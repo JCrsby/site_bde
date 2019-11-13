@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('voter', {
+    const voter =sequelize.define('voter', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -27,4 +27,10 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+
+    voter.associate = models => {
+        models.voter.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'})
+    };
+
+return voter;
 };

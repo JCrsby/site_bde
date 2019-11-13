@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('commentaire', {
+	const commentaire = sequelize.define('commentaire', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -35,4 +35,14 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+
+	commentaire.associate = (models)=>{
+	  models.commentaire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'})
+    };
+
+	commentaire.associate = (models)=>{
+	    models.commentaire.belongsTo(models.photo, {foreignKey: 'id_PHOTO'})
+    };
+
+    return commentaire;
 };

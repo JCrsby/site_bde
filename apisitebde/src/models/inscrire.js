@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('inscrire', {
+    const inscrire = sequelize.define('inscrire', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -27,4 +27,10 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+
+    inscrire.associate = (models)=>{
+        models.inscrire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+    };
+
+    return inscrire
 };

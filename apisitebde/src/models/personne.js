@@ -46,7 +46,23 @@ module.exports = (sequelize, DataTypes)=>{
     });
 
     Personne.associate = (models)=>{
+        models.Personne.belongsTo(models.role, {foreignKey: 'id_ROLE'})
+    };
+
+    Personne.associate = (models)=>{
         models.Personne.hasMany(models.activite, {foreignKey: 'id_PERSONNE'})
+    };
+
+    Personne.associate = (models)=> {
+        models.Personne.hasMany(models.commande, {foreignKey: 'id_PERSONNE'})
+    };
+
+    Personne.associate = (models)=> {
+        models.Personne.hasMany(models.commentaire, {foreignKey: 'id_PERSONNE'})
+    };
+
+    Personne.associate = (models)=> {
+        models.Personne.hasMany(models.inscrire, {foreignKey: 'id_PERSONNE'})
     };
 
     return Personne;

@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('categorie', {
+	const categorie = sequelize.define('categorie', {
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -19,4 +19,9 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+    categorie.associate = (models) => {
+        models.categorie.hasMany(models.produit, {foreignKey: 'id_CATEGORIE'})
+    };
+
+	return categorie;
 };

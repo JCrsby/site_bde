@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('produit', {
+    const produit = sequelize.define('produit', {
     id: {
         type: DataTypes.INTEGER(11),
         allowNull: false,
@@ -39,4 +39,9 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
 });
+    produit.associate = (models) => {
+        models.produit.belongsTo(models.categorie, {foreignKey: 'id_CATEGORIE'})
+    };
+
+return produit;
 };

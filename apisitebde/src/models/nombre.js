@@ -3,7 +3,7 @@
 // const sequelize = require('./index').sequelize;
 
 module.exports = function(sequelize, DataTypes) {
-return sequelize.define('nombre', {
+const nombre = sequelize.define('nombre', {
 		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -31,4 +31,10 @@ return sequelize.define('nombre', {
 	timestamps: false,
 	freezeTableName: true
 	});
+
+	nombre.associate = (models) => {
+		models.nombre.belongsTo(models.commande, {foreignKey: 'id_COMMANDE'})
+	};
+
+return nombre;
 };
