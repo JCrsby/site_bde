@@ -62,20 +62,13 @@
                 type: 'POST',
                 url: 'http://localhost:3000/api/user/login',
                 data: {/*name:name,*/ password:password, email:email},
-                success:  (data)=>{
-                    var json = '{"result":true, "count":42}';
-                    obj = JSON.parse(json);
-
-                    console.log(obj.count);
-// expected output: 42
-
-                    console.log(obj.result);
-// expected output: true
+                success: function(data){
                     console.log(data);
-
-                    jsonn = JSON.parse(data);
-                    console.log(jsonn);
-        }
+                },
+                error: function(error){
+                    console.log("Error:");
+                    console.log(error);
+                }
             });
         });
 
