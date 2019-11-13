@@ -100,7 +100,7 @@
         </div>
 
         <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+                <input type="checkbox" required class="custom-control-input" id="defaultChecked2" checked>
                 <label class="custom-control-label" for="defaultChecked2">J'ai lu et j'accepte <a href="/politique">la politique de confidentialité</a></label>
               </div>
 

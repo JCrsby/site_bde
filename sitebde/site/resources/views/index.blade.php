@@ -17,6 +17,19 @@
 
 <body>
 <header>
+<!-- FENETRE POUR LES COOKIES(MARCHE PAS SANS ROUTE DE COKKIES)
+@if (Session::get('cookieConsent',0) != 1)
+<div id="cookieConsent">
+<div id="closeCookieConsent"></div>
+En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation.
+<a href={{route('mentions_legales')}} target="_blank">&nbsp Plus d'informations</a>
+<form action={{route('cookieConsent')}} method="post"> {{csrf_field()}} 
+<input class="cookieConsentOK" type="submit" class="submitcookie" value="Très Bien"/></form>
+<a class="cookieConsentOK" href="https://www.google.fr">Non Merci (retour a Google)</a>
+</div>
+@endif
+-->
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
         <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
