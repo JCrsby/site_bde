@@ -60,6 +60,9 @@ class PagesController extends Controller
         return view('accueil');
     }
 
-
+    public function cart()
+    {
+        return view('cart');
+    }
 
 }

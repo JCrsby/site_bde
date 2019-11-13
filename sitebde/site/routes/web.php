@@ -34,6 +34,7 @@ Route::get('/politique','PagesController@politique');
 
 Route::get('/accueil','PagesController@accueil');
 
+Route::get('/cart', 'PagesController@car');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

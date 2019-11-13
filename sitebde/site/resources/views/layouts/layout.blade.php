@@ -30,9 +30,11 @@
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/cart">Panier</a>
             </div>
 
         </div>
+
         <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
     </nav>
 </header>
@@ -99,7 +101,7 @@
 
                  <!-- Links -->
                  <h6 id="footer_color_title_mentions" class="font-weight-bold mt-3 mb-4"> Mentions légales</h6>
-                
+
                 <ul class="list-unstyled">
                     <li>
                     <a href="/conditions"><i class="fas fa-conditions"></i>Conditions générales de vente</a>
@@ -141,4 +143,4 @@
 </footer>
 
 </body>
-</html>   
+</html>
