@@ -11,7 +11,10 @@ module.exports = {
     },
 
     parseAuthorisation: authorisation => {
-        return (authorisation != null) ? authorisation.replace('Bearer ', '') : null;
+        console.log(authorisation);
+        const hiest = (authorisation != null) ? authorisation.replace('Bearer ', '') : null;
+        console.log(hiest);
+        return hiest;
     },
     getUserId: authorisation => {
         let userId = -1;

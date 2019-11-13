@@ -80,7 +80,9 @@ module.exports = {
 
     //GET USER INFORMATION METHOD
     getUserProfile: (req, res) => {
-        let headerAuth = req.header['authorisation'];
+        console.log(req.header);
+        console.log(req.header('authorization'));
+        let headerAuth = req.header('Authorization');
         let userId = jwt.getUserId(headerAuth);
 
         if (userId < 0) {
@@ -88,13 +90,17 @@ module.exports = {
         } else {
             personne.findOne({
                     where: {id: userId},
-                    attributes: ['id', 'Adress_Mail', 'Campus', 'Nom', 'Prenom']
+                    attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
                 }
             ).then(response => {
                 res.json(JSON.stringify({"name": "valid", "value": response}))
+                //res.json({"name": "valid", "value": response});
+
             })
                 .catch(err => {
                     res.json(JSON.stringify({"name":"error", "value": err}))
+                    //res.json({"name":"error", "value": err});
+
                 })
         }
     },

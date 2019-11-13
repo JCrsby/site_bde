@@ -12,7 +12,7 @@ router.post('/user/register', (req, res)=> {userController.register(req, res)});
 router.post('/user/login', (req, res)=>{userController.login(req,res)});
 router.post('/user/delete', (req, res)=>{userController.deleteUser(req, res)});
 router.post('/user/addRole', (req,res)=>{userController.addRole(req, res)});
-router.post('/user/userinfo', (req,res) => {userController.getUserProfile(req, res)});
+router.post('/user/userInfo', (req,res) => {userController.getUserProfile(req, res)});
 
 //EVENTS ROUTES
 router.post('/event/all', (req, res)=>{eventController.allEvent(req, res)});
