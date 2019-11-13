@@ -49,15 +49,17 @@ const activite = sequelize.define('activite', {
 
     activite.associate = (models)=>{
         models.activite.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
-    };
-
-    activite.associate = (models)=>{
         models.activite.hasMany(models.photo, {foreignKey: 'id_ACTIVITE'});
-    };
+        models.activite.hasMany(models.voter, {foreignKey: 'id_ACTIVITE'})
 
-    activite.associte = models => {
-       models.activite.hasMany(models.voter, {foreignKey: 'id_ACTIVITE'})
-    };
+
+    // };
+    //
+    // activite.associate = (models)=>{
+    // };
+    //
+    // activite.associte = models => {
+     };
 
 return activite;
 };

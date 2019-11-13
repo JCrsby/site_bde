@@ -38,9 +38,6 @@ module.exports = function(sequelize, DataTypes) {
 
 	commande.associate = (models) => {
 		models.commande.belongsTo(models.Personne, {foreignKey: 'id_Personne'})
-	};
-
-	commande.associate = (models) => {
 		models.commande.hasMany(models.nombre, {foreignKey: 'id_COMMANDE'})
 	};
 	return commande;

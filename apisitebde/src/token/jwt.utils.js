@@ -3,11 +3,30 @@ const JSON_PRIVATE_KEY = 'vGj*&qt2kJ457_tz3D6)M3:n7&k6t{#s69GL%n66=9APT_)yh5!u5*
 
 module.exports = {
 
-  createUserToken: userData => {
-      return jwt.sign({
-          userId: userData.id,
-          userRole: userData.id_ROLE
-          }, JSON_PRIVATE_KEY)
-  }
+    createUserToken: userData => {
+        return jwt.sign({
+            userId: userData.id,
+            userRole: userData.id_ROLE
+        }, JSON_PRIVATE_KEY)
+    },
+
+    parseAuthorisation: authorisation => {
+        return (authorisation != null) ? authorisation.replace('Bearer ', '') : null;
+    },
+    getUserId: authorisation => {
+        let userId = -1;
+        let token = module.exports.parseAuthorisation(authorisation);
+        if (token != null) {
+            try {
+                let jwtToken = jwt.verify(token, JSON_PRIVATE_KEY);
+                if (jwtToken != null) {
+                    userId = jwtToken.userId;
+                }
+            } catch (e) {
+
+            }
+        }
+        return userId
+    }
 
 };

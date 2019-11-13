@@ -37,11 +37,9 @@ module.exports = function(sequelize, DataTypes) {
     });
 
 	commentaire.associate = (models)=>{
-	  models.commentaire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'})
-    };
+	  models.commentaire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+        models.commentaire.belongsTo(models.photo, {foreignKey: 'id_PHOTO'});
 
-	commentaire.associate = (models)=>{
-	    models.commentaire.belongsTo(models.photo, {foreignKey: 'id_PHOTO'})
     };
 
     return commentaire;
