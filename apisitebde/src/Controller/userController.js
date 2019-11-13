@@ -1,7 +1,10 @@
-const DEFAULT_ID = 1;
+//IMPORTS
 const personne = require('../models').Personne;
 const role = require('../models').role;
 const jwt = require('../token/jwt.utils');
+
+
+const DEFAULT_ID = 1;
 
 //ALL METHODS
 module.exports = {
