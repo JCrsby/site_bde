@@ -23,11 +23,11 @@ Route::get('/connexion', 'PagesController@connexion');
 
 Route::get('/contact', 'PagesController@contact');
 //Route Requete ajax
-Route::post('/','HomeController@ajaxRequestPost');
 
-Route::get('/','HomeController@ajaxRequest');
 
 Route::get('/inscription','PagesController@inscription');
+
+Route::get('/accueil','PagesController@accueil');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

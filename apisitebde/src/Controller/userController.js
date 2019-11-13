@@ -18,7 +18,7 @@ module.exports = {
             campus == null ||
             email == null ||
             password == null) {
-            return res.json({name: "error", value: "empty param"})
+            return res.json({"name": "error", "value": "empty param"})
         }
 
         personne.findOrCreate({
@@ -33,16 +33,16 @@ module.exports = {
         }).then((sqlresponse) => {
             let string = sqlresponse.toString();
             if (string.includes('true')){
-                res.json({name: "valid", value: "user created"});
+                res.json({"name": "valid", "value": "user created"});
             } else {
-                res.json({name: "error", value: "already exist"});
+                res.json({"name": "error", "value": "already exist"});
             }
 
             }
         )
             .catch((err) => {
                 let jsonErr = JSON.stringify(err);
-                res.json({name: 'error', value: jsonErr});
+                res.json({"name": 'error', "value": jsonErr});
             });
 
 
@@ -73,7 +73,7 @@ module.exports = {
                     }
                 });
             }).catch(() => {
-                return res.json({name: "error", value: "user do not exist"});
+                return res.json({"name": "error", "value": "user do not exist"});
             })
         }
     },
