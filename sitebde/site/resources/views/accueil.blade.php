@@ -37,6 +37,9 @@
                     </div>
                 </form>
             </div>
+            <div id="placeholder">
+
+            </div>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script type="text/javascript">
@@ -49,19 +52,33 @@
         $(".btn-submit").click(function(e) {
             e.preventDefault();
 
-            var name = $("input[name=name]").val();
-            var password = $("input[name=password]").val();
+            //var name = $("input[name=name]").val();
+            var box = $('#result');
             var email = $("input[name=email]").val();
+            var password = $("input[name=password]").val();
 
             /* Requete ajax en methodes POST */
             $.ajax({
                 type: 'POST',
-                url: '/',
-                data: {name:name, password:password, email:email},
-                success: function (data) {
-                }
+                url: 'http://localhost:3000/api/user/login',
+                data: {/*name:name,*/ password:password, email:email},
+                success:  (data)=>{
+                    var json = '{"result":true, "count":42}';
+                    obj = JSON.parse(json);
+
+                    console.log(obj.count);
+// expected output: 42
+
+                    console.log(obj.result);
+// expected output: true
+                    console.log(data);
+
+                    jsonn = JSON.parse(data);
+                    console.log(jsonn);
+        }
             });
         });
 
     </script>
+
 </html>

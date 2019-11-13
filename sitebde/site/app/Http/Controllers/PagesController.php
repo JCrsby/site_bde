@@ -55,6 +55,7 @@ class PagesController extends Controller
         return view('evenements');
     }
 
+
     public function conditions()
     {
         return view('politique');
@@ -64,6 +65,12 @@ class PagesController extends Controller
     {
         return view('politique');
     }
+
+    public function accueil()
+    {
+        return view('accueil');
+    }
+
 
 
 }
