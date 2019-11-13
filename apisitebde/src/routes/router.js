@@ -2,6 +2,7 @@
 const express = require('express');
 const userController = require('../Controller/userController');
 const eventController = require('../Controller/eventController');
+const productController = require('../Controller/productController');
 
 
 //ROUTER
@@ -16,6 +17,11 @@ router.post('/user/userInfo', (req,res) => {userController.getUserProfile(req, r
 
 //EVENTS ROUTES
 router.post('/event/all', (req, res)=>{eventController.allEvent(req, res)});
+
+//PRODUCTS ROUTES
+router.post('/product/all', (req, res)=>{productController.allProduct(req,res)});
+router.post('/product/AscPrice', (req, res)=>{productController.LowenToHigher(req, res)});
+router.post('/product/DescPrice', (req, res)=>{productController.HigerToLower(req, res)});
 
 
 //EXPERIMENTAL ROUTES

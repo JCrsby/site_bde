@@ -105,12 +105,12 @@ module.exports = {
         }
     },
 
-    //DELETE USER METHOD
+    //DELETE USER METHOD //TODO implement method
     deleteUser: (req, res) => {
         res.send('delete user method -TODO : implement this method')
     },
 
-    //ADD A ROLE TO AN USER
+    //ADD A ROLE TO AN USER //TODO implement method
     addRole: (req, res) => {
         res.send('add role to an user method -TODO : implement this method')
     },
