@@ -49,7 +49,6 @@ module.exports = {
     },
 
     //USER LOGIN METHOD
-    //TODO : add token
     login: (req, res) => {
         let mail = req.body.email;
         let username = req.body.firstName;

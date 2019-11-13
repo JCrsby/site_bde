@@ -42,13 +42,12 @@ module.exports = (sequelize, DataTypes)=>{
     }, {
         tableName: 'personne',
         timestamps: false,
-        freezeTableName: true
+        freezeTableName: true,
     });
 
-    Personne.assciate = (models) => {
-        Personne.hasMany(models.activite, {foreignKey: 'id'})
+    Personne.associate = (models)=>{
+        models.Personne.hasMany(models.activite, {foreignKey: 'id_PERSONNE'})
     };
-
 
     return Personne;
 };

@@ -2,6 +2,7 @@
 // const Sequelize = require('./index').Sequelize;
 // const sequelize = require('./index').sequelize;
 // const DataTypes = Sequelize.DataTypes;
+const Personne = require('./personne');
 
 module.exports = function(sequelize, DataTypes) {
 const activite = sequelize.define('activite', {
@@ -33,7 +34,8 @@ const activite = sequelize.define('activite', {
         },
         id_PERSONNE: {
             type: DataTypes.INTEGER(11),
-            allowNull: false,
+            allowNull: false
+            ,
             references: {
                 model: 'personne',
                 key: 'id'
@@ -42,13 +44,12 @@ const activite = sequelize.define('activite', {
     }, {
         tableName: 'activite',
         timestamps: false,
-        freezeTableName: true
-
+        freezeTableName: true,
     });
-activite.assciate((models)=>{
-   activite.belongsTo(models.personne, {foreignKey: 'id'})
-});
 
+    activite.associate = (models)=>{
+        activite.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+    };
 
 return activite;
 };

@@ -1,9 +1,16 @@
 const event = require('../models').activite;
-const Personne = require('../models').Personne;
+const personne = require('../models').Personne;
 
 module.exports = {
     allEvent: (req, res)=> {
-        event.findAll({include: [Personne]}).then((response)=>{res.json(response)}).catch(err=>{res.send({"error": "don't work"})})
+        event.findAll({
+            include: [{
+            model: personne,
+            attributes: ['Nom', 'Prenom']
+            }]
+        })
+            .then((response)=>{res.json(response);})
+            .catch(err=>{res.send({"error": err});});
     }
 
 
