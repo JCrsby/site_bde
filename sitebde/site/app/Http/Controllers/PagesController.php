@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    
+
     public function index(){
 
     	return view('index');
@@ -36,7 +36,7 @@ class PagesController extends Controller
     {
         return view('inscription');
     }
-    
+
     public function evenements()
     {
         return view('evenements');
@@ -58,6 +58,9 @@ class PagesController extends Controller
         return view('accueil');
     }
 
-
+    public function car()
+    {
+        return view('cart');
+    }
 
 }
