@@ -1,20 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BDE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
-</head>
+
+@extends ('layouts.layout')
+
+@section('contenu')
+
 <body>
 <header>
 <nav class="navbar navbar-expand-lg navbar-dark">
@@ -28,16 +16,18 @@
             <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
         </div>
 
-    </div>
-    <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
-</nav>
-</header>
+        <div class="text-center">
+            <button type="submit" class="btn btn-outline-primary mt-2 text">Submit</button>
+        </div>
+        <p class="change_link text-center mb-0 mt-3">
+            <a href="#toregister" class="to_register mr-2"> Mot de passe oublié ?</a><a href="/inscription" class="to_register ml-2">Pas encore inscrit ?</a>
+        </p>
 
-<div class="box"></div>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>
 
-
-<footer>
-
-</footer>
-</body>
-</html>
+@endsection

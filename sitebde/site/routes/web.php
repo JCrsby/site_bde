@@ -11,29 +11,30 @@
 
 */
 
-Route::get('/', 'PagesController@accueil');
+Route::get('/index', 'PagesController@index');
 
 Route::get('/boutique', 'PagesController@boutique');
 
-Route::get('/a_propos', 'PagesController@a_propos');
+Route::get('/evenements', 'PagesController@evenements');
+
+Route::get('/info', 'PagesController@info');
 
 Route::get('/connexion', 'PagesController@connexion');
 
 Route::get('/contact', 'PagesController@contact');
+//Route Requete ajax
 
-Route::get('/home', 'PagesController@home')->name('home');
 
-Route::get('/getRequest', function(){
-    if(\Illuminate\Http\Request::ajax()){
-        return 'getRequest has loaded completely.';
-    }
-});
+Route::get('/inscription','PagesController@inscription');
 
-Route::post('/register', function (){
-    if(Request::ajax()){
-        return Response::json(Request::all());
-    }
-});
 
+Route::get('/conditions','PagesController@conditions');
+
+Route::get('/politique','PagesController@politique');
+
+Route::get('/accueil','PagesController@accueil');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

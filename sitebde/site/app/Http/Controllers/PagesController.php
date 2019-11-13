@@ -9,7 +9,9 @@ class PagesController extends Controller
 
     public function accueil(){
 
-    	return view('accueil');
+    public function index(){
+
+    	return view('index');
     }
 
      public function boutique(){
@@ -17,9 +19,9 @@ class PagesController extends Controller
     	return view('boutique');
     }
 
-     public function a_propos(){
+     public function info(){
 
-    	return view('a_propos');
+    	return view('info');
     }
 
       public function connexion(){
@@ -32,9 +34,30 @@ class PagesController extends Controller
     	return view('contact');
     }
 
-    public function home(){
+    public function inscription()
+    {
+        return view('inscription');
+    }
 
-        return view('home');
+    public function evenements()
+    {
+        return view('evenements');
+    }
+
+
+    public function conditions()
+    {
+        return view('politique');
+    }
+
+    public function politique()
+    {
+        return view('politique');
+    }
+
+    public function accueil()
+    {
+        return view('accueil');
     }
 
 

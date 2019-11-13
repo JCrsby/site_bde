@@ -1,43 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>BDE</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
-</head>
-<body>
-<header>
-<nav class="navbar navbar-expand-lg navbar-dark">
-    <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="#" >Accueil</a>
-            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
+
+@extends ('layouts.layout')
+
+@section('contenu')
+
+<img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Contact CESI">
+<br>
+<br>
+<br>
+<br>
+
+<div class="container" align="center">
+    <div class="row justify-content">
+
+        <div class="col-md-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="contact_tittle">Par téléphone</h2>
+                    <p class="card-text">Appelez le centre d'appels<br>
+                    <p class="card-text">Service disponible de 9h à 12h et de 14h à 17h du lundi au vendredi.</p>
+                </div>
+                <div class="contact_color"><strong>
+                        <p>04 78 25 96 14</p></strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="contact_tittle">Écrivez-nous !</h2>
+                    <p class="card-text">Une question précise ? Écrivez à CESI, à une école ou à un campus…</p>
+                    <p class="card-text">Envoyer vos questions à l'adresse suivante :</p>
+                </div>
+                <div class="contact_color"><strong>
+                        <p>bde.cesi.lyon@viacesi.fr</p></strong>
+                </div>
+            </div>
         </div>
 
     </div>
-    <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="#">Connexion</a>
-</nav>
-</header>
+</div>
 
-<div class="box"></div>
+<br>
+<br>
+<br>
+<br>
 
-
-<footer>
-
-</footer>
-</body>
-</html>
+@endsection

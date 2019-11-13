@@ -1,70 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Connection</title>
+    <title>Accueil BDE</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <style>
-        body {
-            position: relative;
-        }
-    </style>
+    <script src="https://kit.fontawesome.com/e86bc93f0a.js" crossorigin="anonymous"></script>
 </head>
+
+<body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed">
+        <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="Index.html" >Accueil</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Boutique.html">Boutique</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Info.html">A propos</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="Contact.html">Contact</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="/index" >Accueil</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
             </div>
 
         </div>
+        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
     </nav>
 </header>
 
-<body>
-    <div id="container" >
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h5 id="connection" align="center">Connection</h5>
-        <form method="POST" action="" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
-            <div class="form-group mt-3">
-                <label for="email" class="uname" data-icon="u" > Adresse mail : </label>
-                <input id="email" name="email" class="form-control" required="required" type="text" placeholder="cesiLyon@viacesi.fr"/>
-            </div>
-            <div class="form-group">
-                <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
-                <input id="password" name="motDePasse" class="form-control" required="required" type="password" placeholder="CesiMDP123" />
-            </div>
 
-            <div class="text-center">
-            <button type="submit" class="btn btn-outline-primary mt-2 text">Submit</button>
-            </div>
-            <p class="change_link text-center mb-0 mt-3">
-                <a href="#toregister" class="to_register mr-2"> Mot de passe oublié ?</a><a href="Inscription.html" class="to_register ml-2">Pas encore inscrit ?</a>
-            </p>
 
-        </form>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
+   @yield ('contenu')
+
+
+
 
    <footer class="page-footer font-small">
     <br>
@@ -83,13 +61,16 @@
 
                 <ul class="list-unstyled">
                     <li>
-                        <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-square"></i> BDE CESI LYON</a>
+                        <a href="https://www.facebook.com/BDECesiLyon/"><i class="fab fa-facebook-square"></i> BDE CESI
+                            LYON</a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/bde_cesi_lyon/"><i class="fab fa-instagram"></i> BDE CESI LYON</a>
+                        <a href="https://www.instagram.com/bde_cesi_lyon/"><i class="fab fa-instagram"></i> BDE CESI
+                            LYON</a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter-square"></i> BDE CESI LYON</a>
+                        <a href="https://twitter.com/Bdecesilyon"><i class="fab fa-twitter-square"></i> BDE CESI
+                            LYON</a>
                     </li>
 
                 </ul>
@@ -119,14 +100,15 @@
                  <!-- Links -->
                  <h6 id="footer_color_title_mentions" class="font-weight-bold mt-3 mb-4"> Mentions légales</h6>
                 
-                 <ul class="list-unstyled">
-                     <li>
-                         <a href="Conditions.html"><i class="fas fa-conditions"></i>Conditions générales de vente</a>
-                     </li>
-                     <li>
-                         <a href="Politique.html"><i class="fas fa-politique"></i>Données personnelles et politique de confidentialité</a>
-                     </li>
-                 </ul>
+                <ul class="list-unstyled">
+                    <li>
+                    <a href="/conditions"><i class="fas fa-conditions"></i>Conditions générales de vente</a>
+                    </li>
+                    <li>
+                    <a href="/politique"><i class="fas fa-politique"></i>Données personnelles et politique de confidentialité</a>
+                    </li>
+                </ul>
+
 
 
             </div>
@@ -159,4 +141,4 @@
 </footer>
 
 </body>
-</html>
+</html>   
