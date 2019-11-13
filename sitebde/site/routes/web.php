@@ -20,11 +20,20 @@ Route::get('/a_propos', 'PagesController@a_propos');
 Route::get('/connexion', 'PagesController@connexion');
 
 Route::get('/contact', 'PagesController@contact');
-//Route Requete ajax
-Route::post('/','HomeController@ajaxRequestPost');
 
-Route::get('/','HomeController@ajaxRequest');
+Route::get('/home', 'PagesController@home')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/getRequest', function(){
+    if(\Illuminate\Http\Request::ajax()){
+        return 'getRequest has loaded completely.';
+    }
+});
+
+Route::post('/register', function (){
+    if(Request::ajax()){
+        return Response::json(Request::all());
+    }
+});
+
 
 Auth::routes();

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    
+
     public function accueil(){
 
     	return view('accueil');
@@ -32,11 +32,10 @@ class PagesController extends Controller
     	return view('contact');
     }
 
-    
+    public function home(){
 
-
-
-
+        return view('home');
+    }
 
 
 
