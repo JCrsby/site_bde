@@ -75,7 +75,6 @@
     </div>
 </div>
 
-
 <h4 class="categorie p-5" align="center">Vêtements BDE:</h4>
 
 <div class="container">
