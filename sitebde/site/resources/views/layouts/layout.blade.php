@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil BDE</title>
+    <title>BDE CESI Lyon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -29,7 +29,7 @@
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/cart">Panier</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/panier">Panier</a>
             </div>
 
         </div>
@@ -49,8 +49,8 @@
 
                         En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation.
                       <button class="btn btn-primary"> <a href="/politique" target="_blank">&nbsp Plus d'informations</a> </button>
-                      <form action={{route('cookiesPopup')}} method="post">  
-                         {{csrf_field()}}        
+                      <form action={{route('cookiesPopup')}} method="post">
+                         {{csrf_field()}}
                       <button> <input class="cookiesPopupOK" type="submit" class="submitcookie" value="Très Bien"/></form></button>
                         <a class="cookiesPopupOK" href="https://www.google.fr">Non Merci (retour a Google)</a>
                 </div>

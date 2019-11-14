@@ -14,7 +14,6 @@ class PagesController extends Controller
     	return view('index');
     }
 
-
     public function cookiesPopup(){
         Session::put('cookiesPopup',1);
         return redirect('/');
@@ -64,11 +63,6 @@ class PagesController extends Controller
     public function accueil()
     {
         return view('accueil');
-    }
-
-    public function cart()
-    {
-        return view('cart');
     }
 
 }
