@@ -3,7 +3,7 @@
 
 @section('contenu')
 
-<img class="image_boutique" src="img/boutique.png" width="1919" height="797" alt="Boutique CESI">
+{{--<img class="image_boutique" src="img/boutique.png" width="1919" height="797" alt="Boutique CESI">--}}
 
 <h4 class="categorie p-5" align="center">Produits :</h4>
 
@@ -15,11 +15,11 @@
                 <div class="inline">
                     <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Catégories</button></small>
                     <form class="search_bar">
-                        <input type="search" id="search" name="search" placeholder="Recherche">
+                        <input type="search" class="form-control" id="search" name="search" placeholder="Recherche">
                     </form>
                 </div>
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" name="CheckVetement" id="CheckVetement" class="custom-control-input">
+                    <input type="checkbox" name="CheckVetement" id="CheckVetement" class="form-control custom-control-input">
                     <label class="custom-control-label couleur_text " for="CheckVetement">Vêtements</label><br>
                 </div>
                 <div class="custom-control custom-checkbox">
@@ -32,19 +32,22 @@
                 </div>
             </div>
 
+
+        @foreach($products as $product)
         <div class="col-md-3 col-9">
             <div class="card">
-                <img class="card-img-top border-bottom-1" src="img/casquette.png" alt="Card image cap">
+                <img class="card-img-top border-bottom-1" src="{{$product->Image}}" alt="Card image cap">
                 <div class="card-body">
-                    <h5 class="card-title">Casquette Noire BDE</h5>
-                    <p class="card-text">Casquette de style Baseball, modèle noire cendre,calotte à empiècements et œillets, Matière principale : 100% coton</p>
-                    <h5 class="card-title">15 €</h5>
+                    <h5 class="card-title">{{$product->Nom }}</h5>
+                    <p class="card-text">{{$product->Description}}</p>
+                    <h5 class="card-title">{{$product->Prix}} €</h5>
                 </div>
                 <div class="card-footer">
                     <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>
             </div>
         </div>
+            @endforeach
 
 
 

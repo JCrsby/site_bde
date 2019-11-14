@@ -11,35 +11,36 @@ class PagesController extends Controller
 
 
 
-    public function index(){
-
-    	return view('index');
-    }
 
 
-    public function cookiesPopup(){
-        Session::put('cookiesPopup',1);
+    public function cookiesPopup()
+    {
+        Session::put('cookiesPopup', 1);
         return redirect('/');
     }
 
-     public function boutique(){
+    public function info()
+    {
 
-    	return view('boutique');
+        return view('info');
     }
 
-     public function info(){
+//    public function boutique()
+//    {
+//
+//        return view('boutique');
+//    }
 
-    	return view('info');
+    public function connexion()
+    {
+
+        return view('connexion');
     }
 
-      public function connexion(){
+    public function contact()
+    {
 
-    	return view('connexion');
-    }
-
-     public function contact(){
-
-    	return view('contact');
+        return view('contact');
     }
 
     public function inscription()

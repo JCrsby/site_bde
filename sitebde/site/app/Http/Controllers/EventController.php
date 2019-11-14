@@ -5,15 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
-class boutiqueController extends Controller
+
+class EventController extends Controller
 {
 
 
-    //METHODS CALLED FOR ROAD BOUTIQUE
-    public function boutique()
-    {
-        //GENERATE GUZZLE HHTP REQUEST
 
+    public function index()
+    {
         $client = new Client([
             // Base URI is used with relative requests
             'base_uri' => 'http://localhost:3000/',
@@ -21,14 +20,14 @@ class boutiqueController extends Controller
             'timeout' => 2.0
         ]);
 
-        $response = $client->request('POST', '/api/product/all');
+        $response = $client->request('POST', '/api/event/all');
 
-        $products = json_decode($response->getBody()->getContents())->value;
+        $events = json_decode($response->getBody()->getContents())->value;
 
-        dd($products);
+        //  dd($products);
 
         //echo $productes.name;
         //CALL VIEW BOUTIQUE
-        return view('boutique', compact('products'));
+        return view('index', compact('events'));
     }
 }

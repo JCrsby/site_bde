@@ -17,8 +17,8 @@ module.exports = {
                 attributes: ['Nom']
             }]
         })
-            .then(result => {res.json(JSON.stringify({"name": "valid", "value": result}))})
-            //.then(result => {res.json({"name": "valid", "value": result})})
+            //.then(result => {res.json(JSON.stringify({name: "valid", value: result}))})
+            .then(result => {res.json({"name": "valid", "value": result})})
             .catch(err => {res.json(JSON.stringify({"name": "error", "value": err}))});
 
     },
