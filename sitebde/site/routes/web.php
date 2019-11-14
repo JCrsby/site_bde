@@ -15,7 +15,7 @@ Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup'
 Route::get('/index', 'PagesController@index');
 Route::get('/', 'PagesController@index');
 
-Route::get('/boutique', 'PagesController@boutique');
+Route::get('/boutique', 'BoutiqueController@boutique');
 
 Route::get('/evenements', 'PagesController@evenements');
 
