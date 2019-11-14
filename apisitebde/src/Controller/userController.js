@@ -65,15 +65,15 @@ module.exports = {
                     Mot_De_Passe: password
                 }
             }).then((userFound) => {
-                 res.json({
+                 res.json(JSON.stringify({
                     name: "valid",
                     values: {
                         userId: userFound.id,
                         token: jwt.createUserToken(userFound)
                     }
-                });
+                }));
             }).catch(() => {
-                return res.json({"name": "error", "value": "user do not exist"});
+                return res.json(JSON.stringify({"name": "error", "value": "user do not exist"}));
             })
         }
     },

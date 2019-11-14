@@ -217,4 +217,33 @@ En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation e
 </footer>
 <!-- Footer -->
 </body>
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token]').attr('content')
+        }
+    });
+
+    $(".btn-submit").click(function(e) {
+        e.preventDefault();
+
+        //var name = $("input[name=name]").val();
+        var box = $('');
+        var email = $("input[name=email]").val();
+        var password = $("input[name=password]").val();
+
+        /* Requete ajax en methodes POST */
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/api/user/login',
+            data: {/*name:name,*/ email:email, password:password},
+            success: (data)=>{
+                let parsed = JSON.parse(data);
+                console.log(parsed.name);
+
+                $("#placeholder").html(parsed.values.userId);
+            }
+        });
+    });
+</script>
 </html>
