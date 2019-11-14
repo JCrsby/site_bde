@@ -3,9 +3,14 @@ const express = require('express');
 const db = require('./models/index');
 const router = require('./routes/router');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 // GENERATE SERVER API
 const api = express();
+
+//ACCEPT ALL CORS TODO : specific for a unique cors
+api.use(cors());
+
 
 // BDD CONNEXION CHECK
 db.sequelize.authenticate()

@@ -1,10 +1,8 @@
-/* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
-
+//MODEL PHOTOS
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('photo', {
-        id: {
+	const photo = sequelize.define('photo', {
+        //ALL TABLE'S COLUMN
+	    id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
@@ -43,4 +41,10 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+    //ASSOCIATIONS
+    photo.associate = (models)=> {
+        models.photo.hasMany(models.commande, {foreignKey: 'id_PHOTO'});
+        models.photo.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'})
+    };
+	return photo;
 };

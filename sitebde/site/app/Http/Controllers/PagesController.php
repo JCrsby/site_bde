@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    
+
+
+
     public function index(){
 
     	return view('index');
@@ -36,19 +38,6 @@ class PagesController extends Controller
     {
         return view('inscription');
     }
-/*
-    public function edit($id)
-    {
-        $menus = Menu::find($id);
-        dd($menus);
-        $menu_id = Menu::lists('title', 'id');
-        $selected_type = Menu::lists('title', 'id');
-        if(is_null($menus)){
-            return Redirect::route('admin.menus.edit');
-        }
-
-        return View::make('menus::edit', compact('menus', 'menu_id', 'selected_type'))->with($menu_id, $selected_type);
-    }*/
 
     public function evenements()
     {
@@ -71,6 +60,9 @@ class PagesController extends Controller
         return view('accueil');
     }
 
-
+    public function cart()
+    {
+        return view('cart');
+    }
 
 }
