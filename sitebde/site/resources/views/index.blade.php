@@ -3,7 +3,8 @@
 
 @section('contenu')
 
-<img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Responsive image">
+<img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Accueil BDE">
+
 <div class="container">
 
 
@@ -12,6 +13,7 @@
     <h4 class="evenements" align="center">Les événements</h4>
 
     <div class="card-deck mt-5 mb-5">
+
         <div class="card">
             <img class="card-img-top border-bottom-1" src="img/volleyball.png" alt="Volley ball">
             <div class="card-body">
@@ -29,6 +31,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/basketball.png" alt="Basket-ball">
             <div class="card-body">
@@ -46,6 +49,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/cinema.png" alt="Cinema">
             <div class="card-body">
@@ -63,6 +67,7 @@
 
             </div>
         </div>
+
         <div class="card">
             <img class="card-img-top" src="img/petanque.png" alt="Pétanque">
             <div class="card-body">
@@ -78,6 +83,7 @@
                 </small>
             </div>
         </div>
+
     </div>
 </div>
 @endsection

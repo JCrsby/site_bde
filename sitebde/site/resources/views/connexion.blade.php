@@ -4,23 +4,16 @@
 @section('contenu')
 
 <body>
-<div id="container">
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <h5 id="connection" align="center">Connexion</h5>
-    <form method="POST" action="" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
-        <div class="form-group mt-3">
-            <label for="email" class="uname" data-icon="u"> Adresse mail : </label>
-            <input id="email" name="email" class="form-control" required="required" type="text"
-                   placeholder="cesiLyon@viacesi.fr"/>
-        </div>
-        <div class="form-group">
-            <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
-            <input id="password" name="motDePasse" class="form-control" required="required" type="password"
-                   placeholder="CesiMDP123"/>
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#" ><img src="img/logobde.png"> </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" idp="navbarNavAltMarkup">
+        <div class="navbar-nav">
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0 active" href="#" >Accueil</a>
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="#">Boutique</a>
         </div>
 
         <div class="text-center">

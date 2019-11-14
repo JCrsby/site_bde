@@ -1,5 +1,8 @@
 'use strict';
 
+
+//AUTO GENERATE FILE BY SEQUELIZE CLI
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
