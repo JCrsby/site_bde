@@ -1,3 +1,4 @@
+<?php setcookie('pseudo', 'M@teo21', time() + 365*24*3600, null, null, false, true); ?>
 <!DOCTYPE HTML>
 <html lang="fr">
 
@@ -12,7 +13,8 @@
     </head>
 
     <body>
-            <div class="container">
+
+    <div class="container">
                 <h1>Ajax Request</h1>
                 <form>
                     <div class="form-group">
@@ -35,43 +37,18 @@
                             Submit
                         </button>
                     </div>
+                    <?php echo $_COOKIE['pseudo']; ?>
                 </form>
             </div>
             <div id="placeholder">
 
             </div>
+
+            <div><h2>Let AJAX change this text</h2></div>
+
+            <button>Change Content</button>
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="text/javascript">
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token]').attr('content')
-                }
-            });
 
-        $(".btn-submit").click(function(e) {
-            e.preventDefault();
-
-            //var name = $("input[name=name]").val();
-            var box = $('#result');
-            var email = $("input[name=email]").val();
-            var password = $("input[name=password]").val();
-
-            /* Requete ajax en methodes POST */
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:3000/api/user/login',
-                data: {/*name:name,*/ password:password, email:email},
-                success: function(data){
-                    console.log(data);
-                },
-                error: function(error){
-                    console.log("Error:");
-                    console.log(error);
-                }
-            });
-        });
-
-    </script>
 
 </html>
