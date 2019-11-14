@@ -1,9 +1,7 @@
-/* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
-
-module.exports = function(sequelize, DataTypes) {
-    return sequelize.define('inscrire', {
+//MODEL INSCRIPTION
+module.exports = function (sequelize, DataTypes) {
+    const inscrire = sequelize.define('inscrire', {
+        //ALL TABLE'S COLUMN
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -27,4 +25,10 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: false,
         freezeTableName: true
     });
+//ASSOCIATIONS
+    inscrire.associate = (models) => {
+        models.inscrire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+    };
+
+    return inscrire
 };

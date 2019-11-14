@@ -1,10 +1,10 @@
 /* jshint indent: 1 */
-// const Sequelize = require('./index').Sequelize;
-// const sequelize = require('./index').sequelize;
-// const DataTypes = Sequelize.DataTypes;
-
+//MODEL ACTIVITY
 module.exports = function(sequelize, DataTypes) {
-return sequelize.define('activite', {
+const activite = sequelize.define('activite', {
+
+
+    // ALL TABLE'S COLUMN
         id: {
             type: DataTypes.INTEGER(11),
             allowNull: false,
@@ -33,7 +33,8 @@ return sequelize.define('activite', {
         },
         id_PERSONNE: {
             type: DataTypes.INTEGER(11),
-            allowNull: false,
+            allowNull: false
+            ,
             references: {
                 model: 'personne',
                 key: 'id'
@@ -42,7 +43,17 @@ return sequelize.define('activite', {
     }, {
         tableName: 'activite',
         timestamps: false,
-        freezeTableName: true
-
+        freezeTableName: true,
     });
+
+
+//ASSOCIATION TO OTHER TABLES
+    activite.associate = (models)=>{
+        models.activite.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+        models.activite.hasMany(models.photo, {foreignKey: 'id_ACTIVITE'});
+        models.activite.hasMany(models.voter, {foreignKey: 'id_ACTIVITE'})
+     };
+
+
+return activite;
 };

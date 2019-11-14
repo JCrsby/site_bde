@@ -1,9 +1,7 @@
-/* jshint indent: 1 */
-// const DataTypes = require('./index').Sequelize.DataTypes;
-// const sequelize = require('./index').sequelize;
-
+//MODEL ROLE
 module.exports = function(sequelize, DataTypes) {
-	return sequelize.define('role', {
+	const role = sequelize.define('role', {
+		//ALL TABLE'S COLUMN
 		id: {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
@@ -19,4 +17,10 @@ module.exports = function(sequelize, DataTypes) {
 		timestamps: false,
 		freezeTableName: true
 	});
+
+	//ASSOCIATIONS
+	role.associate = (models) => {
+		models.role.hasMany(models.Personne, {foreignKey: 'id_ROLE'})
+	};
+	return role;
 };
