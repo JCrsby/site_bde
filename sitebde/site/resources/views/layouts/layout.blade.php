@@ -47,12 +47,15 @@
 
                 <div class="cookiesPopup">
 
-                        En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation.
-                      <button class="btn btn-primary"> <a href="/politique" target="_blank">&nbsp Plus d'informations</a> </button>
-                      <form action={{route('cookiesPopup')}} method="post">  
-                         {{csrf_field()}}        
-                      <button> <input class="cookiesPopupOK" type="submit" class="submitcookie" value="Très Bien"/></form></button>
-                        <a class="cookiesPopupOK" href="https://www.google.fr">Non Merci (retour a Google)</a>
+                     <p class="textpopup">En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation. <a href="/politique">Plus d'informations</a></p>
+                     <div class="inline">
+                     <form action={{route('cookiesPopup')}} method="post">   
+                         
+                     {{csrf_field()}}   
+                    
+                    <input id="cookiesOk" class="btn btn-outline-dark" type="submit" class="submitcookie" value="OK"/></form>
+                     <button  class="btn btn-secondary">Non, merci</button>
+                    </div>
                 </div>
                 @endif
 
