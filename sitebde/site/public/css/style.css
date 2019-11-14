@@ -218,5 +218,25 @@ form {
 
 .cookiesPopup{
 
-    border: solid 1px orange;
+       background-color:#f2f2f2;
+
 }
+
+#cookiesOk{
+
+    margin-left: 10px;
+    margin-right: 10px;;
+
+}
+.textpopup{
+
+    margin-left: 10px;
+}
+
+.cookiesPopup{
+
+    padding-bottom: 10px;;
+
+}
+
+
