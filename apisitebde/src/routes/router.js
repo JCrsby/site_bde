@@ -4,7 +4,6 @@ const userController = require('../Controller/userController');
 const eventController = require('../Controller/eventController');
 const productController = require('../Controller/productController');
 
-
 //ROUTER
 const router = express.Router();
 

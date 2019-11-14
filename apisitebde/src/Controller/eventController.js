@@ -2,7 +2,6 @@
 
 // THIS IS THE EVENT CONTROLLER
 
-
 //IMPORTS
 const event     =   require('../models').activite;
 const personne  =   require('../models').Personne;
@@ -71,6 +70,4 @@ module.exports = {
             }
         }
     }
-
-
 };
