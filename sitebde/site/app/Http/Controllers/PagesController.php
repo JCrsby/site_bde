@@ -12,6 +12,12 @@ class PagesController extends Controller
     	return view('index');
     }
 
+
+    public function cookiesPopup(){
+        Session::put('cookiesPopup',1);
+        return redirect('/');
+    }
+
      public function boutique(){
 
     	return view('boutique');

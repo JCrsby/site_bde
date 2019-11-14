@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great
 
 */
+Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 
 Route::get('/index', 'PagesController@index');
 

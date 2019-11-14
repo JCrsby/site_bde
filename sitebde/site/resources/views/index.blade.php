@@ -6,6 +6,8 @@
 <img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Responsive image">
 <div class="container">
 
+
+
     <br>
     <h4 class="evenements" align="center">Les événements</h4>
 

@@ -18,7 +18,6 @@
 <body>
 <header>
 
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
         <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,6 +41,18 @@
    @yield ('contenu')
 
 
+   @if (Session::get('cookiesPopup',0) != 1)
+
+                <div class="cookiesPopup">
+
+                        En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation.
+                      <button class="btn btn-primary"> <a href="/politique" target="_blank">&nbsp Plus d'informations</a> </button>
+                      <form action={{route('cookiesPopup')}} method="post">  
+                         {{csrf_field()}}        
+                      <button> <input class="cookiesPopupOK" type="submit" class="submitcookie" value="Très Bien"/></form></button>
+                        <a class="cookiesPopupOK" href="https://www.google.fr">Non Merci (retour a Google)</a>
+                </div>
+                @endif
 
 
    <footer class="page-footer font-small">
