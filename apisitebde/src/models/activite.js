@@ -27,6 +27,10 @@ const activite = sequelize.define('activite', {
             type: DataTypes.DECIMAL,
             allowNull: false
         },
+        Image: {
+            type: DataTypes.CHAR(250),
+            allowNull: false
+        },
         Validee: {
             type: DataTypes.INTEGER(1),
             allowNull: false

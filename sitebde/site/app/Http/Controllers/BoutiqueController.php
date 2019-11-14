@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
 
@@ -21,11 +22,14 @@ class boutiqueController extends Controller
             'timeout' => 2.0
         ]);
 
-        $response = $client->request('POST', '/api/product/all');
+        try {
+            $response = $client->request('POST', '/api/product/all');
+        } catch (GuzzleException $e) {
+        }
 
         $products = json_decode($response->getBody()->getContents())->value;
 
-        dd($products);
+        //dd($products);
 
         //echo $productes.name;
         //CALL VIEW BOUTIQUE

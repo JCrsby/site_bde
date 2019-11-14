@@ -33,17 +33,18 @@ module.exports = {
         let UserRoleId = jwt.constrolTokenIdRole(authentication).idRole;
         let Name = req.body.Name;
         let Price = req.body.price;
+        let image = req.body.image;
         let bio = req.body.bio;
         let date = req.body.date;
         console.log(`name : ${Name}, price : ${Price}, bio : ${bio}, date : ${date}`);
 
 
-        if (Name === null || bio === null || Price === null || date === null) {
-            res.json(JSON.stringify({"name":"error", "value":"empty body param"}));
+        if (Name === null || bio === null || Price === null || date === null || image === null) {
+            res.json({"name":"error", "value":"empty body param"});
 
         }else {
             if (UserId < 0 && UserRoleId < 0) {
-                res.json(JSON.stringify({"name": "error", "value": "invalid token"}));
+                res.json({"name": "error", "value": "invalid token"});
             } else {
                 event.findOrCreate({
                     where: {Nom: Name,
@@ -54,19 +55,20 @@ module.exports = {
                         Description: bio,
                         Date: date,
                         Prix: Price,
+                        Image: image,
                         Validee: 0,
                         id_PERSONNE: UserId
                     }
                 }).then((sqlresponse) => {
                         let string = sqlresponse.toString();
                         if (string.includes('true')) {
-                            res.json(JSON.stringify({"name" : "valid", "value": "event created"}));
+                            res.json({"name" : "valid", "value": "event created"});
                         } else {
-                            res.json(JSON.stringify({"name": "error", "value": "already exist"}));
+                            res.json({"name": "error", "value": "already exist"});
                         }
 
                     }
-                ).catch(err => {res.json(JSON.stringify({"name":"error", "value": err}))});
+                ).catch(err => {res.json({"name":"error", "value": err})});
             }
         }
     }

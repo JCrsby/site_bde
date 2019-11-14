@@ -59,7 +59,7 @@ module.exports = {
         let password = req.body.password;
 
         if (mail === null || username === null || password === null) {
-            res.status(400).json(JSON.stringify({"name": "error", "value": "empty param"}));
+            res.status(400).json({"name": "error", "value": "empty param"});
         } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],

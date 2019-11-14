@@ -49,10 +49,10 @@
 
                      <p class="textpopup">En navigant sur ce site, vous acceptez l'utilisation des cookies de navigation et les conditions générales d'utilisation. <a href="/politique">Plus d'informations</a></p>
                      <div class="inline">
-                     <form action={{route('cookiesPopup')}} method="post">   
-                         
-                     {{csrf_field()}}   
-                    
+                     <form action={{route('cookiesPopup')}} method="post">
+
+                     {{csrf_field()}}
+
                     <input id="cookiesOk" class="btn btn-outline-dark" type="submit" class="submitcookie" value="OK"/></form>
                      <button  class="btn btn-secondary">Non, merci</button>
                     </div>
