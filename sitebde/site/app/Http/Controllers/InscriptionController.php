@@ -40,7 +40,7 @@ class InscriptionController extends Controller
                 //TODO : show it like a mistake on the web ste
                 echo('erreur interne');
             } else if ($apiresponse == 'user created') {
-                return view('connexion');
+                return redirect('/connexion');
             } else if ($apiresponse == 'already exist') {
                 echo('already exist');
             } else {
