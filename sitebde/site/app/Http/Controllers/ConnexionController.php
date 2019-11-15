@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use mysql_xdevapi\Exception;
 
 class ConnexionController extends Controller
 {
@@ -17,6 +18,18 @@ class ConnexionController extends Controller
     {
         return view('connexion');
     }
+
+
+    public function deconnxion(){
+        try{
+            setcookie('token', '');
+        }catch (Exception $exception){
+            return view('internError');
+        }
+        return redirect('/index');
+    }
+
+
 
     public function formConnexion()
     {

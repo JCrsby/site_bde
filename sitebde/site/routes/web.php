@@ -57,6 +57,10 @@ Auth::routes();
 Route::post('/inscription', 'InscriptionController@inscription');
 Route::get('/inscription','InscriptionController@view');
 
+//DISCONNECTION
+Route::get('/disconect', 'ConnexionController@deconnxion');
+
+
 
 Route::get('/test', 'NavController@getUser');
 
