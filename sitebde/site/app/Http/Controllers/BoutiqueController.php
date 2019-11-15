@@ -24,15 +24,16 @@ class BoutiqueController extends Controller
 
         try {
             $response = $client->request('POST', '/api/product/all');
+            $products = json_decode($response->getBody()->getContents())->value;
+            return view('boutique', compact('products'));
         } catch (GuzzleException $e) {
+            return view('internError');
         }
 
-        $products = json_decode($response->getBody()->getContents())->value;
 
         //dd($products);
 
         //echo $productes.name;
         //CALL VIEW BOUTIQUE
-        return view('boutique', compact('products'));
     }
 }

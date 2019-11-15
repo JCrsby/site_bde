@@ -49,7 +49,7 @@ class InscriptionController extends Controller
                 echo ('unknown error');
             }
         } catch (GuzzleException $e) {
-            echo ('SERVER EN MAINTENANCE VEUILLEZ NOUS EXCUSER POUR CE DESAGRMENT');
+            return view('internError');
         }
 
 

@@ -24,31 +24,31 @@
             <label>Campus : </label>
 
             <select class="custom-select" name="campus" required>
-                <option value="1">Aix-en-Provence</option>
-                <option value="2">Angoulême</option>
-                <option value="3">Arras</option>
-                <option value="4">Brest</option>
-                <option value="5">Bordeaux</option>
-                <option value="6">Caen</option>
-                <option value="7">Châteauroux</option>
-                <option value="8">Dijon</option>
-                <option value="9">Grenoble</option>
-                <option value="10">La Rochelle</option>
-                <option value="11">Le Mans</option>
-                <option value="12">Lille</option>
-                <option value="13">Lyon</option>
-                <option value="14">Montpellier</option>
-                <option value="15">Nancy</option>
-                <option value="16">Nantes</option>
-                <option value="17">Nice</option>
-                <option value="17">Orléans</option>
-                <option value="19">Pau</option>
-                <option value="20">Paris Nanterrre</option>
-                <option value="21">Reims</option>
-                <option value="22">Rouen</option>
-                <option value="23">Saint-Nazaire</option>
-                <option value="24">Strasbourg</option>
-                <option value="25">Toulouse</option>
+                <option value="Aix-en-Provence">Aix-en-Provence</option>
+                <option value="Angoulême">Angoulême</option>
+                <option value="Arras">Arras</option>
+                <option value="Brest">Brest</option>
+                <option value="Bordeaux">Bordeaux</option>
+                <option value="Caen">Caen</option>
+                <option value="Châteauroux">Châteauroux</option>
+                <option value="Dijon">Dijon</option>
+                <option value="Grenoble">Grenoble</option>
+                <option value="La Rochelle">La Rochelle</option>
+                <option value="Le Mans">Le Mans</option>
+                <option value="Lille">Lille</option>
+                <option value="Lyon">Lyon</option>
+                <option value="Montpellier">Montpellier</option>
+                <option value="Nancy">Nancy</option>
+                <option value="Nantes">Nantes</option>
+                <option value="Nice">Nice</option>
+                <option value="Orléans">Orléans</option>
+                <option value="Pau">Pau</option>
+                <option value="Paris Nanterrre">Paris Nanterrre</option>
+                <option value="Reims">Reims</option>
+                <option value="Rouen">Rouen</option>
+                <option value="Saint-Nazaire">Saint-Nazaire</option>
+                <option value="Strasbourg">Strasbourg</option>
+                <option value="Toulouse">Toulouse</option>
 
             </select>
         </div>
