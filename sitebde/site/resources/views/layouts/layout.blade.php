@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Accueil BDE</title>
+    <title>BDE CESI Lyon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
@@ -29,7 +29,7 @@
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/cart">Panier</a>
+                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/panier">Panier</a>
             </div>
 
         </div>
