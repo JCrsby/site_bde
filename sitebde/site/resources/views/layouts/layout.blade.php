@@ -47,8 +47,8 @@
                 </div>
             </div>
             <div class="navbar-nav">
-{{--                <a class="navbar-item  mr-3 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup"--}}
-{{--                   href="/cart"><i class="fas fa-shopping-cart"></i></a>--}}
+                {{--                <a class="navbar-item  mr-3 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup"--}}
+                {{--                   href="/cart"><i class="fas fa-shopping-cart"></i></a>--}}
                 <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup"
                    href="/connexion">Connexion</a>
             </div>
@@ -79,7 +79,8 @@
                 <a class="navbar-item  mr-3 collapse navbar-collapse " id="navbarNavAltMarkup"
                    href="/cart"><i class="fas fa-shopping-cart"></i></a>
                 <div class="dropdown ">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{App\Http\Controllers\NavController::getUser()}}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
