@@ -29,7 +29,7 @@
                                     <button type="submit" name="inscriptionevent" class="btn btn-outline-primary">s'inscrire</button>
 
                                 </form>
-                                <button type="button" class=" btn btn-light">Plus d'infos</button>
+                                <a class="btn btn-light ml-2" href="#">Plus d'infos</a>
                             </small>
 
                         </div>
