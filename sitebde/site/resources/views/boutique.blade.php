@@ -5,15 +5,17 @@
 
 @section('contenu')
 
+<small class="text-muted"><button type="button" class="btn btn-outline-primary" id="creerProduit">Créer un produit</button>
 
 <h4 class="categorie p-5" align="center">Produits :</h4>
-
 <div class="container">
     <div class="row justify-content">
 
 
     <div class="col-md-3 col-9 chercher">
+    
                 <div class="inline">
+                
                     <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Catégories</button></small>
                     <form class="search_bar">
                         <input type="search" class="form-control" id="search" name="search" placeholder="Recherche">
