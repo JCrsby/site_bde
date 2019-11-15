@@ -51,7 +51,6 @@ class ConnexionController extends Controller
             } else {
                 echo "connected";
                 setcookie('token', $user->value->token);
-                $test = $_COOKIE['token'];
 
                 return redirect('/index');
             }
