@@ -21,7 +21,7 @@ Route::get('/evenements', 'PagesController@evenements');
 
 Route::get('/info', 'PagesController@info');
 
-Route::get('/connexion', 'PagesController@connexion');
+Route::get('/connexion', 'ConnexionController@connection');
 
 Route::get('/contact', 'PagesController@contact');
 //Route Requete ajax
@@ -39,5 +39,8 @@ Route::get('/accueil','PagesController@accueil');
 Route::get('/cart', 'PagesController@car');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/connexion','ConnexionController@formConnexion');
+
 
 Auth::routes();

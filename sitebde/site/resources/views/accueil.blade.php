@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html lang="fr">
 
@@ -31,6 +32,9 @@
             </button>
         </div>
     </form>
+    <div id="est">
+
+    </div>
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -45,22 +49,21 @@
     $(".btn-submit").click(function(e) {
         e.preventDefault();
 
+        //var name = $("input[name=name]").val();
+        var box = $('#result');
         var email = $("input[name=email]").val();
         var password = $("input[name=password]").val();
 
         /* Requete ajax en methodes POST */
-
         $.ajax({
             type: 'POST',
             url: 'http://localhost:3000/api/user/login',
-            data: {email:email, password:password},
-            success:  function(data){
+            data: {/*name:name,*/ password:password, email:email},
+            success:  (data)=>{
                 console.log(data);
-                return('#bof').html(data);
-            },
-            error: function(error){
-                console.log("Error:");
-                console.log(error);
+
+                jsonn = JSON.parse(data);
+
             }
         });
     });

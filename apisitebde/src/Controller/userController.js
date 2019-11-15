@@ -22,7 +22,7 @@ module.exports = {
             campus == null ||
             email == null ||
             password == null) {
-            return res.json(JSON.stringify({name: "error", value: "empty param"}))
+            return res.json({name: "error", value: "empty param"})
         }
 
         personne.findOrCreate({
@@ -37,16 +37,16 @@ module.exports = {
         }).then((sqlresponse) => {
                 let string = sqlresponse.toString();
                 if (string.includes('true')) {
-                    res.json(JSON.stringify({name: "valid", value: "user created"}));
+                    res.json({name: "valid", value: "user created"});
                 } else {
-                    res.json(JSON.stringify({name: "error", value: "already exist"}));
+                    res.json({name: "error", value: "already exist"});
                 }
 
             }
         )
             .catch((err) => {
                 // let jsonErr = JSON.stringify(err);
-                res.json(JSON.stringify({name: 'error', value: err}));
+                res.json({name: 'error', value: err});
             });
 
 
@@ -55,11 +55,11 @@ module.exports = {
     //USER LOGIN METHOD
     login: (req, res) => {
         let mail = req.body.email;
-        let username = req.body.firstName;
+        //let username = req.body.firstName;
         let password = req.body.password;
 
-        if (mail === null || username === null || password === null) {
-            res.status(400).json(JSON.stringify({"name": "error", "value": "empty param"}));
+        if (mail === null || password === null) {
+            res.status(400).json({"name"0: "error", value: "empty param"});
         } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
@@ -68,15 +68,15 @@ module.exports = {
                     Mot_De_Passe: password
                 }
             }).then((userFound) => {
-                res.json(JSON.stringify({
+                res.json({
                     name: "valid",
-                    values: {
+                    value: {
                         userId: userFound.id,
                         token: jwt.createUserToken(userFound)
                     }
-                }));
+                });
             }).catch(() => {
-                return res.json(JSON.stringify({name: "error", value: "user do not exist"}));
+                return res.json({name: "error", value: "user do not exist"});
             })
         }
     },
@@ -87,19 +87,19 @@ module.exports = {
         let userId = jwt.constrolTokenIdRole(headerAuth).userId;
 
         if (userId < 0) {
-            res.status(400).json(JSON.stringify({"name": "error", "value": "invalid Token"}));
+            res.status(400).json({"name": "error", "value": "invalid Token"});
         } else {
             personne.findOne({
                     where: {id: userId},
                     attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
                 }
             ).then(response => {
-                res.json(JSON.stringify({"name": "valid", "value": response}))
+                res.json({"name": "valid", "value": response})
                 //res.json({"name": "valid", "value": response});
 
             })
                 .catch(err => {
-                    res.json(JSON.stringify({"name":"error", "value": err}))
+                    res.json({"name":"error", "value": err})
                     //res.json({"name":"error", "value": err});
 
                 })
