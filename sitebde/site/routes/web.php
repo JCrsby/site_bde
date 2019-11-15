@@ -12,7 +12,13 @@
 */
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 
+<<<<<<< HEAD
 Route::get('/index', 'EventController@index');
+=======
+Route::get('/index', 'PagesController@index');
+
+Route::get('/', 'PagesController@index');
+>>>>>>> basket
 
 Route::get('/', 'EventController@index');
 
@@ -28,6 +34,10 @@ Route::get('/contact', 'PagesController@contact');
 //Route Requete ajax
 
 
+<<<<<<< HEAD
+=======
+Route::get('/inscription','PagesController@inscription');
+>>>>>>> basket
 
 Route::get('/conditions','PagesController@conditions');
 
@@ -35,7 +45,11 @@ Route::get('/politique','PagesController@politique');
 
 Route::get('/accueil','PagesController@accueil');
 
+<<<<<<< HEAD
 Route::get('/panier', 'PanierController@panier');
+=======
+Route::get('/cart', 'PagesController@cart');
+>>>>>>> basket
 
 Route::get('/home', 'HomeController@index')->name('home');
 

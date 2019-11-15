@@ -1,9 +1,14 @@
 
 @extends ('layouts.layout')
 
+<!--Start Content -->
+
 @section('contenu')
 
+<<<<<<< HEAD
 {{--<img class="image_boutique" src="img/boutique.png" width="1919" height="797" alt="Boutique CESI">--}}
+=======
+>>>>>>> basket
 
 <h4 class="categorie p-5" align="center">Produits :</h4>
 
@@ -56,3 +61,5 @@
 <br>
 
 @endsection
+
+<!-- End Content -->
