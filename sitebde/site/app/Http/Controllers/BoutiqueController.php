@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use Illuminate\Http\Request;
 
-class boutiqueController extends Controller
+class BoutiqueController extends Controller
 {
 
 
     //METHODS CALLED FOR ROAD BOUTIQUE
-    public function boutique()
+    public function allProducts()
     {
         //GENERATE GUZZLE HHTP REQUEST
 

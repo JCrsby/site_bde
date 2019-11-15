@@ -17,12 +17,15 @@ module.exports = {
         let email = req.body.email;
         let password = req.body.password;
 
+        console.log({firstName, lastName, campus, email, password});
+        console.log(req.header);
+
         if (firstName == null ||
             lastName == null ||
             campus == null ||
             email == null ||
             password == null) {
-            return res.json(JSON.stringify({name: "error", value: "empty param"}))
+            return res.json({name: "error", value: "empty param"});
         }
 
         personne.findOrCreate({
@@ -37,9 +40,9 @@ module.exports = {
         }).then((sqlresponse) => {
                 let string = sqlresponse.toString();
                 if (string.includes('true')) {
-                    res.json(JSON.stringify({name: "valid", value: "user created"}));
+                    res.json({name: "valid", value: "user created"});
                 } else {
-                    res.json(JSON.stringify({name: "error", value: "already exist"}));
+                    res.json({name: "error", value: "already exist"});
                 }
 
             }

@@ -13,9 +13,10 @@
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 
 Route::get('/index', 'EventController@index');
+
 Route::get('/', 'EventController@index');
 
-Route::get('/boutique', 'BoutiqueController@boutique');
+Route::get('/boutique', 'BoutiqueController@allProducts');
 
 Route::get('/evenements', 'PagesController@evenements');
 
@@ -26,8 +27,6 @@ Route::get('/connexion', 'PagesController@connexion');
 Route::get('/contact', 'PagesController@contact');
 //Route Requete ajax
 
-
-Route::get('/inscription','PagesController@inscription');
 
 
 Route::get('/conditions','PagesController@conditions');
@@ -40,4 +39,11 @@ Route::get('/cart', 'PagesController@car');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Auth::routes();
+
+
+//INSCRIPTION
+Route::post('/inscription', 'InscriptionController@inscription');
+Route::get('/inscription','InscriptionController@view');
+

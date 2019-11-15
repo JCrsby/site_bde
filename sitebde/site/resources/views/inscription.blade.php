@@ -6,23 +6,24 @@
 <body>
 
 <div id="register" class="animate form">
-    <form  method="POST" action="" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
+    <form  method="POST" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
+        {{csrf_field()}}
 
         <h4 class="mt-3">Veuillez remplir ce formulaire pour votre inscription</h4>
 
         <div class="form-group">
             <label>Nom : </label>
-            <input name="name" required="required" type="text" placeholder="" class="form-control"/>
+            <input name="lastName" required="required" type="text" placeholder="boligatoir" class="form-control"/>
         </div>
 
         <div class="form-group">
             <label>Prenom : </label>
-            <input name="username" required="required" type="text" class="form-control"/>
+            <input name="firstName" required="required" type="text" class="form-control"/>
         </div>
         <div class="form-group">
             <label>Campus : </label>
 
-            <select class="custom-select" required>
+            <select class="custom-select" name="campus" required>
                 <option value="1">Aix-en-Provence</option>
                 <option value="2">Angoulême</option>
                 <option value="3">Arras</option>
@@ -51,21 +52,21 @@
 
             </select>
         </div>
-        <div class="form-group" action="/inscription" method="post">
+        <div class="form-group">
             <label>Adresse Mail : </label>
             <input name="email" required="required" type="email" class="form-control"/>
         </div>
         <div class="form-group">
             <label>Mot de passe : </label>
-            <input name="password2" required="required" type="password" placeholder="mot de passe" class="form-control"/>
+            <input name="password" required="required" type="password" placeholder="mot de passe" class="form-control"/>
         </div>
         <div class="form-group">
             <label>Confirmation Mot de passe : </label>
-            <input name="password2" required="required" type="password" placeholder="mot de passe" class="form-control"/>
+            <input  required="required" type="password" placeholder="mot de passe" class="form-control"/>
         </div>
 
         <div class="custom-control custom-checkbox">
-                <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
+                <input type="checkbox" class="custom-control-input" required id="defaultChecked2" >
                 <label class="custom-control-label" for="defaultChecked2">J'ai lu et j'accepte <a href="/politique">la politique de confidentialité</a></label>
               </div>
 
