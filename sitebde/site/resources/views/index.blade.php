@@ -24,8 +24,9 @@
                         <h5 class="card-title">{{$event->Prix}} €</h5>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted"><button type="button" class="btn btn-outline-primary">s'inscrire</button>
-                        <button type="button" class=" btn btn-light">Plus d'infos</button>
+                        <small class="text-muted">
+                            <button type="button" class="btn btn-outline-primary">S'inscrire</button>
+                            <a class="btn btn-outline-primary ml-2" href="#">Plus d'infos</a>
                         </small>
 
                     </div>
