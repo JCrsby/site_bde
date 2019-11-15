@@ -250,11 +250,5 @@ header .btn-secondary {
 }
 
 
-header .btn-secondary:active {
-    border: black;
-    background-color: black !important;
-    color: darkgray !important;
-}
-
 
 
