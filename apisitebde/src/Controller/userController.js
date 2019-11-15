@@ -25,7 +25,7 @@ module.exports = {
             campus == null ||
             email == null ||
             password == null) {
-            return res.json({name: "error", value: "empty param"});
+            return res.json({name: "error", value: "empty param"})
         }
 
         personne.findOrCreate({
@@ -49,7 +49,7 @@ module.exports = {
         )
             .catch((err) => {
                 // let jsonErr = JSON.stringify(err);
-                res.json(JSON.stringify({name: 'error', value: err}));
+                res.json({name: 'error', value: err});
             });
 
 
@@ -58,11 +58,11 @@ module.exports = {
     //USER LOGIN METHOD
     login: (req, res) => {
         let mail = req.body.email;
-        let username = req.body.firstName;
+        //let username = req.body.firstName;
         let password = req.body.password;
 
-        if (mail === null || username === null || password === null) {
-            res.status(400).json({"name": "error", "value": "empty param"});
+        if (mail === null || password === null) {
+            res.status(400).json({"name"0: "error", value: "empty param"});
         } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
@@ -71,13 +71,13 @@ module.exports = {
                     Mot_De_Passe: password
                 }
             }).then((userFound) => {
-                res.json(JSON.stringify({
+                res.json({
                     name: "valid",
-                    values: {
+                    value: {
                         userId: userFound.id,
                         token: jwt.createUserToken(userFound)
                     }
-                }));
+                });
             }).catch(() => {
                 return res.json({name: "error", value: "user do not exist"});
             })
@@ -97,12 +97,12 @@ module.exports = {
                     attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
                 }
             ).then(response => {
-                res.json({"name": "valid", "value": response});
+                res.json({"name": "valid", "value": response})
                 //res.json({"name": "valid", "value": response});
 
             })
                 .catch(err => {
-                    res.json({"name":"error", "value": err});
+                    res.json({"name":"error", "value": err})
                     //res.json({"name":"error", "value": err});
 
                 })

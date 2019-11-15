@@ -33,8 +33,10 @@
             </div>
 
         </div>
-
+        <div class="navbar-nav">
+            <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/cart">Panier</a>
         <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
+           </div>
     </nav>
 </header>
 
