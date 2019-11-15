@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<!-- Title -->
+
     <title>Accueil BDE</title>
+
+<!-- Title -->   
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Includes -->
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -16,8 +27,8 @@
 </head>
 
 <body>
+<!-- Header -->
 <header>
-
     <nav class="navbar navbar-expand-lg navbar-dark fixed">
         <a class="navbar-brand" href="/index" ><img src="img/logobde.png"> </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,19 +40,23 @@
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/boutique">Boutique</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/info">A propos</a>
                 <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/contact">Contact</a>
-                <a class="nav-item nav-link border-left-0 border-right-0  border-bottom-1 border-top-0" href="/cart">Panier</a>
             </div>
-
         </div>
-
+        <div  class="navbar-nav">
+        <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/cart"><i class="fas fa-shopping-cart"></i></a> 
         <a class="navbar-item  mr-0 collapse navbar-collapse flex-row-reverse " id="navbarNavAltMarkup" href="/connexion">Connexion</a>
+    </div>
     </nav>
 </header>
+<!-- Header -->
 
-
+<!-- Content -->
 
    @yield ('contenu')
 
+<!-- Content -->   
+
+<!-- Cookies pop-up -->
 
    @if (Session::get('cookiesPopup',0) != 1)
 
@@ -59,6 +74,9 @@
                 </div>
                 @endif
 
+<!-- Cookies pop-up -->              
+
+<!-- Footer -->
 
    <footer class="page-footer font-small">
     <br>
@@ -155,6 +173,8 @@
     <!-- Copyright -->
 
 </footer>
+
+<!-- Footer -->
 
 </body>
 </html>

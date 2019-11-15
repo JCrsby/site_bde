@@ -13,6 +13,7 @@
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 
 Route::get('/index', 'PagesController@index');
+
 Route::get('/', 'PagesController@index');
 
 Route::get('/boutique', 'PagesController@boutique');
@@ -29,14 +30,13 @@ Route::get('/contact', 'PagesController@contact');
 
 Route::get('/inscription','PagesController@inscription');
 
-
 Route::get('/conditions','PagesController@conditions');
 
 Route::get('/politique','PagesController@politique');
 
 Route::get('/accueil','PagesController@accueil');
 
-Route::get('/cart', 'PagesController@car');
+Route::get('/cart', 'PagesController@cart');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

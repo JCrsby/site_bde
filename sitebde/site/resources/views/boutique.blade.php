@@ -1,9 +1,10 @@
 
 @extends ('layouts.layout')
 
+<!--Start Content -->
+
 @section('contenu')
 
-<img class="image_boutique" src="img/boutique.png" width="1919" height="797" alt="Boutique CESI">
 
 <h4 class="categorie p-5" align="center">Nos meilleurs ventes :</h4>
 
@@ -214,3 +215,5 @@
 <br>
 
 @endsection
+
+<!-- End Content -->
