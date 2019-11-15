@@ -1,4 +1,4 @@
-<?php setcookie('token', 'M@teo21', time() + 365*24*3600, null, null, false, true); ?>
+<?php setcookie('token', '', time() + 365*24*3600, null, null, false, true); ?>
 @extends ('layouts.layout')
 
 @section('contenu')

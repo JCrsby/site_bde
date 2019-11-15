@@ -14,30 +14,33 @@
         <div class="row justify-content">
 
 
-@foreach($events as $event)
-            <div class="col-md-6 col-sm-12 col-lg-3 col-9 mb-5 align-content-sm-center">
-                <div class="card">
-                    <img class="card-img-top border-bottom-1" src="{{$event->Image}}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 class="card-title">{{$event->Nom}}</h5>
-                        <p class="card-text">{{$event->Description}}</p>
-                        <h5 class="card-title">{{$event->Prix}} €</h5>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted"><button type="button" class="btn btn-outline-primary">s'inscrire</button>
-                        <button type="button" class=" btn btn-light">Plus d'infos</button>
-                        </small>
+            @foreach($events as $event)
+                <div class="col-md-6 col-sm-12 col-lg-3 col-9 mb-5 align-content-sm-center">
+                    <div class="card">
+                        <img class="card-img-top border-bottom-1" src="{{$event->Image}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$event->Nom}}</h5>
+                            <p class="card-text">{{$event->Description}}</p>
+                            <h5 class="card-title">{{$event->Prix}} €</h5>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">
+                                <form method="POST" action="/inscriptionevent">
+                                    <button type="submit" name="inscriptionevent" class="btn btn-outline-primary">s'inscrire</button>
+
+                                </form>
+                                <button type="button" class=" btn btn-light">Plus d'infos</button>
+                            </small>
+
+                        </div>
 
                     </div>
-
                 </div>
-            </div>
-@endforeach
+            @endforeach
 
 
-
-            </div>
         </div>
+    </div>
     </div>
 @endsection
 

@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great
 
 */
+
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 
 Route::get('/index', 'EventController@index');
@@ -46,6 +47,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/connexion','ConnexionController@formConnexion');
 
+Route::post('/inscriptionevent','EventController@inscriptionEvent');
 
 
 Auth::routes();
