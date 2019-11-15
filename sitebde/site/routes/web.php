@@ -49,9 +49,11 @@ Route::post('/connexion','ConnexionController@formConnexion');
 
 Route::post('/inscriptionevent','EventController@inscriptionEvent');
 
+//Page des événements
+Route::get('/events','EventListController@events');
+
 
 Auth::routes();
-
 
 //INSCRIPTION
 Route::post('/inscription', 'InscriptionController@inscription');
