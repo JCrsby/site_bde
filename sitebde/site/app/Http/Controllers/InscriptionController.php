@@ -26,32 +26,30 @@ class InscriptionController extends Controller
         try {
             $response = $client->request('POST', '/api/user/register', [
                 'form_params' => [
-                'lastName' => request('lastName'),
-                'firstName' => request('firstName'),
-                'campus' => request('campus'),
-                'password' => request('password'),
-                'email' => request('email')
-            ]]);
+                    'lastName' => request('lastName'),
+                    'firstName' => request('firstName'),
+                    'campus' => request('campus'),
+                    'password' => request('password'),
+                    'email' => request('email')
+                ]]);
 
 //            dd(request('lastName'), request('firstName'), request('campus'), request('password'));
             $apiresponse = json_decode($response->getBody()->getContents())->value;
 
-            if($apiresponse == 'empty param'){
+            if ($apiresponse == 'empty param') {
                 //TODO : show it like a mistake on the web ste
-                echo ('erreur interne');
-            }else if ($apiresponse == 'user created') {
+                echo('erreur interne');
+            } else if ($apiresponse == 'user created') {
                 return view('connexion');
-            }else if ($apiresponse == 'already exist'){
-                echo ('already exist');
-            }
-            else{
+            } else if ($apiresponse == 'already exist') {
+                echo('already exist');
+            } else {
                 //TODO : show it like a mistake on the web ste
-                echo ('unknown error');
+                echo('unknown error');
             }
         } catch (GuzzleException $e) {
             return view('internError');
         }
-
 
 
     }
