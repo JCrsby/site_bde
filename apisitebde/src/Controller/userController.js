@@ -98,7 +98,7 @@ module.exports = {
             } else {
                 personne.findOne({
                         where: {id: userId},
-                        attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
+                        attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom', 'id_ROLE']
                     }
                 ).then(response => {
                     res.json({name: "valid", value: response})

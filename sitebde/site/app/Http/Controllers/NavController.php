@@ -30,7 +30,9 @@ class NavController extends Controller
             $user = json_decode($response->getBody()->getContents());
             $prenom = $user->value->Prenom;
             $nom = $user->value->Nom;
-            return  $prenom.' '.$nom;
+
+
+            return  $user;
 
         }catch (GuzzleException $e){
             echo('echec');

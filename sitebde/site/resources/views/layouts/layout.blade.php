@@ -81,7 +81,7 @@
                 <div class="dropdown ">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        {{App\Http\Controllers\NavController::getUser()}}
+                        {{App\Http\Controllers\NavController::getUser()->value->Prenom.' '.App\Http\Controllers\NavController::getUser()->value->Nom}}
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" methods="get" href="/disconect">déconection</a>
@@ -174,6 +174,16 @@
                     <li>
                         <a href="#!"><i class="fas fa-phone-square-alt"></i> +33 6 89 60 08 65</a>
                     </li>
+                    @if( isset($_COOKIE['token']))
+                        @if(strlen($_COOKIE['token']) >= 0)
+                            @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || 3)
+                                <h6 id="footer_color_title_contact" class="font-weight-bold mt-3 mb-1">administration</h6>
+                                <li>
+                                    <a href="#!">admin</a>
+                                </li>
+                            @endif
+                        @endif
+                    @endif
                 </ul>
 
             </div>
