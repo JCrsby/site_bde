@@ -23,7 +23,7 @@ module.exports = {
             //all eventuality (promise)
             //.then((response)=>{res.json(JSON.stringify({"name": "valid", "value": response}));})
             .then((response)=>{res.json({"name": "valid", "value": response});})
-            .catch(err=>{console.log(err); res.json(JSON.stringify({"name":"error", "value":"can not find any event"}));});
+            .catch(err=>{console.log(err); res.json({"name":"error", "value":"can not find any event"});});
     },
 
     //METHODS ADD AN EVENT

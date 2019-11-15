@@ -19,7 +19,7 @@ module.exports = {
         })
             //.then(result => {res.json(JSON.stringify({name: "valid", value: result}))})
             .then(result => {res.json({"name": "valid", "value": result})})
-            .catch(err => {res.json(JSON.stringify({"name": "error", "value": err}))});
+            .catch(err => {res.json({"name": "error", "value": err})});
 
     },
     //FIND ALL PRODUCTS ORDERED BY PRICE ASC
@@ -34,9 +34,9 @@ module.exports = {
             ]]
         })
             //RESPONSES
-            .then(result => {res.json(JSON.stringify({"name": "valid", "value": result}))})
+            .then(result => {res.json({"name": "valid", "value": result})})
             //.then(result => {res.json({"name": "valid", "value": result})})
-            .catch(err => {res.json(JSON.stringify({"name": "error", "value": err}))});
+            .catch(err => {res.json({"name": "error", "value": err})});
     },
 
     //FIND ALL PRODUCTS ORDERED BY PRICE DESC
@@ -51,9 +51,9 @@ module.exports = {
             ]]
         })
             //RESPONSES
-            .then(result => {res.json(JSON.stringify({"name": "valid", "value": result}))})
+            .then(result => {res.json({"name": "valid", "value": result})})
             //.then(result => {res.json({"name": "valid", "value": result})})
-            .catch(err => {res.json(JSON.stringify({"name": "error", "value": err}))});
+            .catch(err => {res.json({"name": "error", "value": err})});
     }
 
 

@@ -79,7 +79,7 @@ module.exports = {
                     }
                 }));
             }).catch(() => {
-                return res.json(JSON.stringify({name: "error", value: "user do not exist"}));
+                return res.json({name: "error", value: "user do not exist"});
             })
         }
     },
@@ -90,19 +90,19 @@ module.exports = {
         let userId = jwt.constrolTokenIdRole(headerAuth).userId;
 
         if (userId < 0) {
-            res.status(400).json(JSON.stringify({"name": "error", "value": "invalid Token"}));
+            res.status(400).json({"name": "error", "value": "invalid Token"});
         } else {
             personne.findOne({
                     where: {id: userId},
                     attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
                 }
             ).then(response => {
-                res.json(JSON.stringify({"name": "valid", "value": response}))
+                res.json({"name": "valid", "value": response});
                 //res.json({"name": "valid", "value": response});
 
             })
                 .catch(err => {
-                    res.json(JSON.stringify({"name":"error", "value": err}))
+                    res.json({"name":"error", "value": err});
                     //res.json({"name":"error", "value": err});
 
                 })
