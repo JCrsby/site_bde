@@ -3,7 +3,9 @@
 @section('contenu')
 
     <img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Accueil BDE">
-
+    <br>
+    <br>
+    <small class="text-muted"><button type="button" class="btn btn-outline-primary" id="creerEvent">Créer un produit</button>
     <h4 class="evenements" align="center">Les événements</h4>
 
     <br>
@@ -24,7 +26,7 @@
                         <h5 class="card-title">{{$event->Prix}} €</h5>
                     </div>
                     <div class="card-footer">
-                        <small class="text-muted"><button type="button" class="btn btn-outline-primary">s'inscrire</button>
+                        <small class="text-muted"><button type="button" class="btn btn-outline-primary">S'inscrire</button>
                         <button type="button" class=" btn btn-light">Plus d'infos</button>
                         </small>
 

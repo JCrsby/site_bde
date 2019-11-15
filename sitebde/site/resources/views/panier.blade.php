@@ -36,9 +36,8 @@
 
         <div style="display: flex; justify-content: flex-end">
             <div class="inline">
-                <p>Total:</p>
-                <p>30$</p>
-            </div>
+               <p class="text-uppercase"><b>Total:</b> 30$ </p>
+                            </div>
 
 
         </div>

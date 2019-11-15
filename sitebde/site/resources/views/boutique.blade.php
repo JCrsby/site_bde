@@ -16,7 +16,7 @@
     
                 <div class="inline">
                 
-                    <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Catégories</button></small>
+                    <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Rechercher</button></small>
                     <form class="search_bar">
                         <input type="search" class="form-control" id="search" name="search" placeholder="Recherche">
                     </form>
