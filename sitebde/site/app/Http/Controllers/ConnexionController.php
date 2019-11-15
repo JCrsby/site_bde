@@ -20,14 +20,18 @@ class ConnexionController extends Controller
 
     public function formConnexion()
     {
-        $client = new Client([
-            // Base URI is used with relative requests
-            'base_uri' => 'http://localhost:3000/',
-            // You can set any number of default request options.
-            'timeout' => 2.0,
 
-        ]);
+
         try {
+            //CREATE A CLIENT GUZZLE
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => 'http://localhost:3000/',
+                // You can set any number of default request options.
+                'timeout' => 2.0,
+
+            ]);
+            //REQUEST + REQUEST CONTENT
             $response = $client->request('POST', '/api/user/login', [
                 'form_params' => [
                     'email' => request('email'),
@@ -36,16 +40,26 @@ class ConnexionController extends Controller
                 ]
 
             ]);
-            $user = json_decode($response->getBody()->getContents())->value->token;
 
-            setcookie('token',$user);
-            $test = $_COOKIE['token'];
+            //DECODE REQUEST'S RESPONSE
+            $user = json_decode($response->getBody()->getContents());
 
-            return view('index');
+
+            //INTERPRET RESPONSE
+            if ($user->name == "error") {
+                echo "user does not exist";
+            } else {
+                echo "connected";
+                setcookie('token', $user->value->token);
+                $test = $_COOKIE['token'];
+
+                return redirect('/index');
+            }
+
+
         } catch (GuzzleException $e) {
+            return view('internError');
         }
-
-
     }
 
 }

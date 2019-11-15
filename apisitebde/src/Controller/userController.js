@@ -62,7 +62,7 @@ module.exports = {
         let password = req.body.password;
 
         if (mail === null || password === null) {
-            res.status(400).json({"name": "error", value: "empty param"});
+            res.status(400).json({name: "error", value: "empty param"});
         } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
@@ -88,24 +88,29 @@ module.exports = {
     getUserProfile: (req, res) => {
         let headerAuth = req.header('Authorization');
         let userId = jwt.constrolTokenIdRole(headerAuth).userId;
+        console.log(`valeur ${headerAuth}`);
+        if (headerAuth === null){
 
-        if (userId < 0) {
-            res.status(400).json({"name": "error", "value": "invalid Token"});
-        } else {
-            personne.findOne({
-                    where: {id: userId},
-                    attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
-                }
-            ).then(response => {
-                res.json({"name": "valid", "value": response})
-                //res.json({"name": "valid", "value": response});
+        }else {
 
-            })
-                .catch(err => {
-                    res.json({"name":"error", "value": err})
-                    //res.json({"name":"error", "value": err});
+            if (userId < 0) {
+                res.status(400).json({"name": "error", "value": "invalid Token"});
+            } else {
+                personne.findOne({
+                        where: {id: userId},
+                        attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
+                    }
+                ).then(response => {
+                    res.json({name: "valid", value: response})
+                    //res.json({"name": "valid", "value": response});
 
                 })
+                    .catch(err => {
+                        res.json({"name": "error", "value": err})
+                        //res.json({"name":"error", "value": err});
+
+                    })
+            }
         }
     },
 

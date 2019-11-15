@@ -57,3 +57,6 @@ Auth::routes();
 Route::post('/inscription', 'InscriptionController@inscription');
 Route::get('/inscription','InscriptionController@view');
 
+
+Route::get('/test', 'NavController@getUser');
+

@@ -110,7 +110,7 @@ php
 }
 
 .btn {
-    transition-duration: 1s !important;
+    transition-duration: 0.5s !important;
 }
 
 .card-body > .card-text {
@@ -243,6 +243,11 @@ form {
     border-top: 1px dotted black;
   }
 
+header .btn-secondary {
+    border: black;
+    background-color: black !important;
+    color: darkgray !important;
+}
 
 
 
