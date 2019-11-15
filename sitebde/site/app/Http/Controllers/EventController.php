@@ -11,8 +11,22 @@ class EventController extends Controller
 {
 
     public function index(){
-        return view('index', compact('events'));
 
+
+        try {
+            $client = new Client([
+                // Base URI is used with relative requests
+                'base_uri' => 'http://localhost:3000/',
+                // You can set any number of default request options.
+                'timeout' => 2.0
+            ]);
+            $response = $client->request('POST', '/api/event/all');
+            $events = json_decode($response->getBody()->getContents())->value;
+            return view('index',compact('events'));
+
+
+        } catch (GuzzleException $e) {
+        }
 }
 
     public function inscriptionEvent()
@@ -27,7 +41,7 @@ class EventController extends Controller
             try {
                 $response = $client->request('POST', '/api/event/all');
 
-                $events = json_decode($response->getBody()->getContents())->value;
+
 
             } catch (GuzzleException $e) {
             }
