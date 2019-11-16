@@ -179,7 +179,7 @@
                             @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || 3)
                                 <h6 id="footer_color_title_contact" class="font-weight-bold mt-3 mb-1">administration</h6>
                                 <li>
-                                    <a href="#!">admin</a>
+                                    <a href="/utilisateur">admin</a>
                                 </li>
                             @endif
                         @endif

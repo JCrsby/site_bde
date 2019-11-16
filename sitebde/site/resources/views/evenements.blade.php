@@ -17,13 +17,13 @@
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="Administration.html"><p class="text-dark">Utilisateur</p></a>
+                    <a class="nav-link" href="/utilisateur"><p class="text-dark">Utilisateur</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="Evenements.html"><p class="text-dark">Evenements</p></a>
+                    <a class="nav-link active" href="/evenements"><p class="text-dark">Evenements</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Produits.html"><p class="text-dark">Produits</p></a>
+                    <a class="nav-link" href="/produits"><p class="text-dark">Produits</p></a>
                 </li>
             </ul>
         </div>

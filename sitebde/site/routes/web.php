@@ -66,3 +66,9 @@ Route::get('/disconect', 'ConnexionController@deconnxion');
 
 Route::get('/test', 'NavController@getUser');
 
+Route::get('/utilisateur','PagesController@utilisateur');
+
+Route::get('/produits','PagesController@produits');
+
+Route::get('/evenements','PagesController@evenements');
+
