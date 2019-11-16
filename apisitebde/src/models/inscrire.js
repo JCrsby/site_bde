@@ -28,6 +28,8 @@ module.exports = function (sequelize, DataTypes) {
 //ASSOCIATIONS
     inscrire.associate = (models) => {
         models.inscrire.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
+        models.inscrire.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'});
+
     };
 
     return inscrire
