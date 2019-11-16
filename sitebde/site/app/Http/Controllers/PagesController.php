@@ -68,5 +68,20 @@ class PagesController extends Controller
     {
         return view('accueil');
     }
+    public function utilisateur()
+    {
+        return view('utilisateur');
+    }
+
+    public function produits(){
+
+        return view('produits');
+    }
+
+    public function events(){
+
+        return view('evenements');
+    }
+
 
 }
