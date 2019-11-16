@@ -19,6 +19,15 @@ module.exports = function (sequelize, DataTypes) {
                 model: 'personne',
                 key: 'id'
             }
+        },
+        id_ACTIVITE: {
+            type: DataTypes.INTEGER(11),
+            allowNull: false,
+            primaryKey: true,
+            references: {
+                model: 'activite',
+                key: 'id'
+            }
         }
     }, {
         tableName: 'inscrire',
