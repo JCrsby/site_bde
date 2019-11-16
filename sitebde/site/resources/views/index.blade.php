@@ -26,10 +26,10 @@
                         <div class="card-footer">
                             <small class="text-muted">
                                 <form method="POST" action="/inscriptionevent">
-                                    <button type="submit" name="inscriptionevent" class="btn btn-outline-primary">s'inscrire</button>
+                                    <button type="submit" name="inscriptionevent" class=" form-control btn btn-outline-primary">s'inscrire</button>
 
                                 </form>
-                                <a class="btn btn-light ml-2" href="#">Plus d'infos</a>
+                                <a class="form-control btn btn-light" href="#">Plus d'infos</a>
                             </small>
 
                         </div>
