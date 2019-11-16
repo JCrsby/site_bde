@@ -4,10 +4,16 @@
 <!--Start Content -->
 
 @section('contenu')
+    @if( isset($_COOKIE['token']))
+        @if(strlen($_COOKIE['token']) >= 0)
+            @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || 3)
+                <button type="button" class="btn btn-outline-primary" id="creerProduit">Créer un produit</button>
+            @endif
+        @endif
+    @endif
 
-<small class="text-muted"><button type="button" class="btn btn-outline-primary" id="creerProduit">Créer un produit</button>
 
-<h4 class="categorie p-5" align="center">Produits :</h4>
+<h4 class="categorie p-5 text-muted" align="center">Produits :</h4>
 <div class="container">
     <div class="row justify-content">
 
