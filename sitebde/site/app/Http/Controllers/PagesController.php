@@ -6,11 +6,10 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Session;
 
+use App\Http\Controllers\NavController;
+
 class PagesController extends Controller
 {
-
-
-
 
 
     public function cookiesPopup()
@@ -50,7 +49,14 @@ class PagesController extends Controller
 
     public function evenements()
     {
-        return view('evenements');
+        if (isset($_COOKIE['token'])) {
+            if (strlen($_COOKIE['token']) >= 0) {
+                if(NavController::getUser()->value->id_ROLE == 1) {
+                    return view('/evenements');
+                }return redirect('/index');
+            }return redirect('/index');
+        }
+        return redirect('/index');
     }
 
 
@@ -68,17 +74,33 @@ class PagesController extends Controller
     {
         return view('accueil');
     }
+
     public function utilisateur()
     {
-        return view('utilisateur');
+        if (isset($_COOKIE['token'])) {
+            if (strlen($_COOKIE['token']) >= 0) {
+                if(NavController::getUser()->value->id_ROLE == 1) {
+                    return view('/utilisateur');
+                }return redirect('/index');
+            }return redirect('/index');
+        }
+        return redirect('/index');
     }
 
-    public function produits(){
-
-        return view('produits');
+    public function produits()
+    {
+        if (isset($_COOKIE['token'])) {
+            if (strlen($_COOKIE['token']) >= 0) {
+                if(NavController::getUser()->value->id_ROLE == 1) {
+                    return view('/produits');
+                }return redirect('/index');
+            }return redirect('/index');
+        }
+        return redirect('/index');
     }
 
-    public function events(){
+    public function events()
+    {
 
         return view('evenements');
     }

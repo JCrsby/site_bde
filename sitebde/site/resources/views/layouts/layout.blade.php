@@ -176,7 +176,7 @@
                     </li>
                     @if( isset($_COOKIE['token']))
                         @if(strlen($_COOKIE['token']) >= 0)
-                            @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || 3)
+                            @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || App\Http\Controllers\NavController::getUser()->value->id_ROLE == 3)
                                 <h6 id="footer_color_title_contact" class="font-weight-bold mt-3 mb-1">administration</h6>
                                 <li>
                                     <a href="/utilisateur">admin</a>
