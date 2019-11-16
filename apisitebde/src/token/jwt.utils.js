@@ -12,17 +12,15 @@ module.exports = {
     //METHODS WHICH GENERATE LOGIN TOKEN
     createUserToken: userData => {
         return jwt.sign({
-            userId: userData.id,
+            userId: userData.id_PERSONNE,
             userRole: userData.id_ROLE
         }, JSON_PRIVATE_KEY)
     },
 
     //METHODS WHICH KEEP ONLY TOKEN FROM HEADER
     parseAuthorisation: authorisation => {
-        console.log(authorisation);
-        const hiest = (authorisation != null) ? authorisation.replace('Bearer ', '') : null;
-        console.log(hiest);
-        return hiest;
+        //console.log(authorisation);
+        return (authorisation != null) ? authorisation.replace('Bearer ', '') : null;
     },
 
     //METHODS WHICH CHECK TOKEN VALIDITY
@@ -39,7 +37,7 @@ module.exports = {
                     idRole = jwtToken.id_ROLE;
                 }
             } catch (e) {
-
+                console.log("token mistake")
             }
         }
         return {userId, idRole};

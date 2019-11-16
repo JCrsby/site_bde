@@ -2,27 +2,30 @@
 module.exports = function (sequelize, DataTypes) {
     const nombre = sequelize.define('nombre', {
         //ALL TABLE'S COLUMN
-        id: {
+        'id_PRODUIT': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            comment: "null",
             references: {
                 model: 'produit',
-                key: 'id'
+                key: 'id_PRODUIT'
             }
         },
-        id_COMMANDE: {
+        'id_COMMANDE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            comment: "null",
             references: {
                 model: 'commande',
-                key: 'id'
+                key: 'id_COMMANDE'
             }
         },
-        Quantite: {
+        'Quantite': {
             type: DataTypes.INTEGER(11),
-            allowNull: false
+            allowNull: false,
+            comment: "null"
         }
     }, {
         tableName: 'nombre',
@@ -31,7 +34,9 @@ module.exports = function (sequelize, DataTypes) {
     });
 	//ASSOCIATION
     nombre.associate = (models) => {
-        models.nombre.belongsTo(models.commande, {foreignKey: 'id_COMMANDE'})
+        models.nombre.belongsTo(models.commande, {foreignKey: 'id_COMMANDE'});
+        models.nombre.belongsTo(models.produit, {foreignKey: 'id_PRODUIT'});
+
     };
 
     return nombre;

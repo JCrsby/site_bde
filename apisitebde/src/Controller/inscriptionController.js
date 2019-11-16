@@ -15,7 +15,7 @@ module.exports = {
         let UserId = jwt.constrolTokenIdRole(authentication).userId;
         let idEvent = req.body.idEvent;
 
-        //check if the inscription exist then delete it or add it
+        //check if the inscription exist then delete it or add it working
         inscription.findOrCreate({
             where: {
                 id_PERSONNE: UserId,

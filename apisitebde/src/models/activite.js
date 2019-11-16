@@ -5,45 +5,48 @@ const activite = sequelize.define('activite', {
 
 
     // ALL TABLE'S COLUMN
-        id: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true
-        },
-        Nom: {
-            type: DataTypes.CHAR(255),
-            allowNull: false
-        },
-        Description: {
-            type: DataTypes.STRING(255),
-            allowNull: false
-        },
-        Date: {
-            type: DataTypes.DATEONLY,
-            allowNull: false
-        },
-        Prix: {
-            type: DataTypes.DECIMAL,
-            allowNull: false
-        },
-        Image: {
-            type: DataTypes.CHAR(250),
-            allowNull: false
-        },
-        Validee: {
-            type: DataTypes.INTEGER(1),
-            allowNull: false
-        },
-        id_PERSONNE: {
-            type: DataTypes.INTEGER(11),
-            allowNull: false
-            ,
-            references: {
-                model: 'personne',
-                key: 'id'
-            }
+    'id_ACTIVITE': {
+        type: DataTypes.INTEGER(11),
+        allowNull: false,
+        primaryKey: true,
+        primaryKey: true,
+        comment: "null",
+        autoIncrement: true
+    },
+    'Nom': {
+        type: DataTypes.CHAR(255),
+        allowNull: false,
+        comment: "null"
+    },
+    'Description': {
+        type: DataTypes.STRING(255),
+        allowNull: false,
+        comment: "null"
+    },
+    'Date': {
+        type: DataTypes.DATEONLY,
+        allowNull: false,
+        comment: "null"
+    },
+    'Prix': {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+        comment: "null"
+    },
+    'Validee': {
+        type: DataTypes.INTEGER(1),
+        allowNull: false,
+        comment: "null"
+    },
+    'id_PERSONNE': {
+        type: DataTypes.INTEGER(11),
+        allowNull: false,
+        comment: "null",
+        references: {
+            model: 'personne',
+            key: 'id_PERSONNE'
         }
+    }
     }, {
         tableName: 'activite',
         timestamps: false,

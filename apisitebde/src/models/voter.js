@@ -2,22 +2,24 @@
 module.exports = function(sequelize, DataTypes) {
     const voter =sequelize.define('voter', {
         //ALL TABLE'S COLUMN
-        id: {
+        'id_PERSONNE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            comment: "null",
             references: {
                 model: 'personne',
-                key: 'id'
+                key: 'id_PERSONNE'
             }
         },
-        id_ACTIVITE: {
+        'id_ACTIVITE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            comment: "null",
             references: {
                 model: 'activite',
-                key: 'id'
+                key: 'id_ACTIVITE'
             }
         }
     }, {

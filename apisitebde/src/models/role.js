@@ -2,15 +2,18 @@
 module.exports = function(sequelize, DataTypes) {
 	const role = sequelize.define('role', {
 		//ALL TABLE'S COLUMN
-		id: {
+		'id_ROLE': {
 			type: DataTypes.INTEGER(11),
 			allowNull: false,
 			primaryKey: true,
+			primaryKey: true,
+			comment: "null",
 			autoIncrement: true
 		},
-		Status: {
+		'Status': {
 			type: DataTypes.CHAR(255),
-			allowNull: false
+			allowNull: false,
+			comment: "null"
 		}
 	}, {
 		tableName: 'role',

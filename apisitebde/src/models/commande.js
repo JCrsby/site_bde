@@ -4,30 +4,36 @@
 
 module.exports = function (sequelize, DataTypes) {
     const commande = sequelize.define('commande', {
-        id: {
+        'id_COMMANDE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            primaryKey: true,
+            comment: "null",
             autoIncrement: true
         },
-        Liste: {
+        'Liste': {
             type: DataTypes.STRING(255),
-            allowNull: false
+            allowNull: false,
+            comment: "null"
         },
-        Date: {
+        'Date': {
             type: DataTypes.DATEONLY,
-            allowNull: false
+            allowNull: false,
+            comment: "null"
         },
-        Validee: {
+        'Validee': {
             type: DataTypes.INTEGER(1),
-            allowNull: false
+            allowNull: false,
+            comment: "null"
         },
-        id_PERSONNE: {
+        'id_PERSONNE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
+            comment: "null",
             references: {
                 model: 'personne',
-                key: 'id'
+                key: 'id_PERSONNE'
             }
         }
     }, {
@@ -37,7 +43,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     commande.associate = (models) => {
-        models.commande.belongsTo(models.Personne, {foreignKey: 'id_Personne'})
+        models.commande.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
         models.commande.hasMany(models.nombre, {foreignKey: 'id_COMMANDE'})
     };
     return commande;
