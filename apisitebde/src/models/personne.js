@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
             comment: "null"
         },
         'Mot_De_Passe': {
-            type: DataTypes.STRING(20),
+            type: DataTypes.STRING(250),
             allowNull: false,
             comment: "null"
         },

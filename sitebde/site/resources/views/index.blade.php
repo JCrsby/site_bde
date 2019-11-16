@@ -25,10 +25,35 @@
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">
-                                <form method="POST" action="/inscriptionevent">
-                                    <button type="submit" name="inscriptionevent" class=" form-control btn btn-outline-primary">s'inscrire</button>
-
-                                </form>
+                                @if (isset($_COOKIE['token']))
+                                    @if (strlen($_COOKIE['token']) >= 0)
+                                        <form method="POST" action="/inscriptionevent/{{$event->id_ACTIVITE}}">
+                                            {{csrf_field()}}
+                                            <button type="submit" name="inscriptionevent"
+                                                    class=" form-control btn btn-outline-primary">
+                                                @if($event->inscrires == null)
+                                                    s'inscrire
+                                                @else
+                                                    se désinscrire
+                                                @endif
+                                            </button>
+                                        </form>
+                                    @else
+                                        <form method="GET" action="/connexion">
+                                            {{csrf_field()}}
+                                            <button type="submit" name="inscriptionevent"
+                                                    class=" form-control btn btn-outline-primary">s'inscrire
+                                            </button>
+                                        </form>
+                                    @endif
+                                @else
+                                    <form method="GET" action="/connexion">
+                                        {{csrf_field()}}
+                                        <button type="submit" name="inscriptionevent"
+                                                class=" form-control btn btn-outline-primary">s'inscrire
+                                        </button>
+                                    </form>
+                                @endif
                                 <a class="form-control btn btn-light" href="#">Plus d'infos</a>
                             </small>
 
@@ -40,7 +65,6 @@
 
 
         </div>
-    </div>
     </div>
 @endsection
 

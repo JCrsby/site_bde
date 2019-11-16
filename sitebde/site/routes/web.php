@@ -47,8 +47,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/connexion','ConnexionController@formConnexion');
 
-Route::post('/inscriptionevent','EventController@inscriptionEvent');
-
 //Page des événements
 Route::get('/events','EventListController@events');
 
@@ -71,4 +69,6 @@ Route::get('/utilisateur','PagesController@utilisateur');
 Route::get('/produits','PagesController@produits');
 
 Route::get('/evenements','PagesController@evenements');
+
+Route::post('/inscriptionevent/{eventId}', 'EventController@inscriptionEvent');
 
