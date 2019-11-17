@@ -18,8 +18,7 @@ class NavController extends Controller
 
             ]);
             //REQUEST + REQUEST CONTENT
-            $response = $client->request('POST', '/api/user/userinfo'
-               ,
+            $response = $client->request('POST', '/api/user/userinfo',
                 ['headers' => [
                     'Authorization' => 'Bearer '.$_COOKIE['token']
                ]
@@ -31,10 +30,11 @@ class NavController extends Controller
             $prenom = $user->value->Prenom;
             $nom = $user->value->Nom;
 
-
+            //RESULT
             return  $user;
 
         }catch (GuzzleException $e){
+            //ERROR
             echo('echec');
         }
 

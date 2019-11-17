@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class InscriptionController extends Controller
 {
 
     function view()
     {
+        //return view
         return view('inscription');
     }
 
@@ -24,18 +26,21 @@ class InscriptionController extends Controller
         ]);
 
         try {
+            //POST request
             $response = $client->request('POST', '/api/user/register', [
+                // parameters
                 'form_params' => [
                     'lastName' => request('lastName'),
                     'firstName' => request('firstName'),
                     'campus' => request('campus'),
-                    'password' => request('password'),
+                    'password' => Hash::make(request('password')),
                     'email' => request('email')
                 ]]);
 
-//            dd(request('lastName'), request('firstName'), request('campus'), request('password'));
+            //DECODE REQUEST'S RESPONSE
             $apiresponse = json_decode($response->getBody()->getContents())->value;
 
+            //INTERPRET RESPONSE
             if ($apiresponse == 'empty param') {
                 //TODO : show it like a mistake on the web ste
                 echo('erreur interne');
@@ -46,8 +51,10 @@ class InscriptionController extends Controller
             } else {
                 //TODO : show it like a mistake on the web ste
                 echo('unknown error');
+
             }
         } catch (GuzzleException $e) {
+            //ERROR
             return view('internError');
         }
 

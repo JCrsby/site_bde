@@ -1,18 +1,22 @@
-
+<!-- view utilisateur -->
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
-
+    <!--
+    This page is reserved for the site administrator
+    to be able to interact on events or products and even user
+    -->
 <br>
 <br>
 <br>
 <br>
 
 <div class="container" align="center">
-
+    <!-- title -->
     <h4 class="text-uppercase" ><p>Administration</p></h4>
 
-
+    <!-- option -->
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -28,7 +32,7 @@
             </ul>
         </div>
         <div class="card-body">
-
+            <!-- Action -->
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>

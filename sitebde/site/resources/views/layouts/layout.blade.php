@@ -9,8 +9,6 @@
 
     <!-- Includes -->
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 
@@ -24,7 +22,7 @@
 </head>
 
 <body>
-<!-- Header -->
+    <!-- Header -->
 
 @if( !isset($_COOKIE['token']) || strlen($_COOKIE['token']) <= 0)
     <header>

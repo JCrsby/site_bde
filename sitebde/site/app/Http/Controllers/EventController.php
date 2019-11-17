@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
@@ -46,7 +47,7 @@ class EventController extends Controller
             }
         }
 
-
+        //INTERPRET RESPONSE
         try {
             $client = new Client([
                 // Base URI is used with relative requests
@@ -54,13 +55,18 @@ class EventController extends Controller
                 // You can set any number of default request options.
                 'timeout' => 2.0
             ]);
+            //POST request
             $response = $client->request('POST', '/api/event/all');
+            //DECODE REQUEST'S RESPONSE
             $events = json_decode($response->getBody()->getContents())->value;
             return view('index', compact('events'));
 
 
+            //return view index
+            return view('index',compact('events'));
         } catch (GuzzleException $e) {
             return view('internError');
+            //ERROR
         }
     }
 
@@ -91,6 +97,24 @@ class EventController extends Controller
 
         } catch (GuzzleException $e) {
         }
+            //INTERPRET RESPONSE
+            try {
+                //POST REQUEST AT http://localhost:3000/api/event/all
+                $response = $client->request('POST', '/api/event/all');
+            } catch (GuzzleException $e) {
+                //ERROR
+            }
+    }
 
     }
+
+
+    public function getEvents($id = 0){
+        // Fetch all records
+        $userData['data'] = Page::getEventData($id);
+
+        echo json_encode($userData);
+        exit;
+    }
+
 }

@@ -11,64 +11,63 @@
 
 */
 
-Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
-
+//BOUTIQUE
 Route::get('/index', 'EventController@index');
-
 Route::get('/', 'EventController@index');
-
-
-Route::get('/', 'EventController@index');
-
 Route::get('/boutique', 'BoutiqueController@allProducts');
 
-Route::get('/evenements', 'PagesController@evenements');
-
+//INFORMATION WEBSITE
 Route::get('/info', 'PagesController@info');
-
-Route::get('/connexion', 'ConnexionController@connection');
-
 Route::get('/contact', 'PagesController@contact');
-//Route Requete ajax
-
-
-
 Route::get('/conditions','PagesController@conditions');
-
 Route::get('/politique','PagesController@politique');
 
-Route::get('/accueil','PagesController@accueil');
-
-
+//VENTE
 Route::get('/cart', 'PanierController@view');
-//Route::get('/cart', 'PagesController@cart');
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/connexion','ConnexionController@formConnexion');
 
 //Page des événements
+//EVENEMENTS
 Route::get('/events','EventListController@events');
-
-
-Auth::routes();
+Route::post('/inscriptionevent','EventController@inscriptionEvent');
 
 //INSCRIPTION
-Route::post('/inscription', 'InscriptionController@inscription');
 Route::get('/inscription','InscriptionController@view');
+Route::post('/inscription', 'InscriptionController@inscription');
+
+//INSCRIPTION ERROR MESSAGE
+//Route::post('/inscription', function () {
+//    request()->validate([
+//        'email' => ['required', 'email'],
+//        'password' => ['required', 'confirmed', 'min:8'],
+//        'password_confirmation' => ['required'],
+//    ], [
+//        'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire :min caractères.'
+//    ]);
+//});
+
+//CONNECTION
+Route::post('/connexion','ConnexionController@formConnexion');
+Route::get('/connexion', 'ConnexionController@connection');
 
 //DISCONNECTION
 Route::get('/disconect', 'ConnexionController@deconnxion');
 
-
-
-Route::get('/test', 'NavController@getUser');
-
+//ADMINISTATOR
 Route::get('/utilisateur','PagesController@utilisateur');
-
 Route::get('/produits','PagesController@produits');
-
 Route::get('/evenements','PagesController@evenements');
 
+//COOKIE
+Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
 Route::post('/inscriptionevent/{eventId}', 'EventController@inscriptionEvent');
 
+
+Auth::routes();
+
+//TEST
+//Route::get('/cart', 'PagesController@cart');
+//Route::get('/accueil','PagesController@accueil');
+//Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/test', 'NavController@getUser');
