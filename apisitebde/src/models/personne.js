@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
             comment: "null"
         },
         'Mot_De_Passe': {
-            type: DataTypes.STRING(200),
+            type: DataTypes.STRING(250),
             allowNull: false,
             comment: "null"
         },
@@ -56,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         models.Personne.hasMany(models.commande, {foreignKey: 'id_PERSONNE'});
         models.Personne.hasMany(models.commentaire, {foreignKey: 'id_PERSONNE'});
         models.Personne.hasMany(models.inscrire, {foreignKey: 'id_PERSONNE'});
+        models.Personne.hasMany(models.photo, {foreignKey: 'id_PERSONNE'});
     };
     return Personne;
 };

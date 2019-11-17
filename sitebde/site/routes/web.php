@@ -25,6 +25,9 @@ Route::get('/politique','PagesController@politique');
 //VENTE
 Route::get('/cart', 'PanierController@view');
 
+Route::post('/connexion','ConnexionController@formConnexion');
+
+//Page des événements
 //EVENEMENTS
 Route::get('/events','EventListController@events');
 Route::post('/inscriptionevent','EventController@inscriptionEvent');
@@ -58,6 +61,11 @@ Route::get('/evenements','PagesController@evenements');
 
 //COOKIE
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
+Route::post('/inscriptionevent/{eventId}', 'EventController@inscriptionEvent');
+
+Route:: view('/oneevent/{idEvent}', 'events');
+
+Route::post('/addcomment/{idEvent}', 'EventController@test');
 
 Auth::routes();
 

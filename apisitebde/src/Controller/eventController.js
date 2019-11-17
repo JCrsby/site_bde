@@ -3,31 +3,69 @@
 // THIS IS THE EVENT CONTROLLER
 
 //IMPORTS
-const event     =   require('../models').activite;
-const personne  =   require('../models').Personne;
-const jwt       =   require('../token/jwt.utils');
+const event = require('../models').activite;
+const personne = require('../models').Personne;
+const inscription = require('../models').inscrire;
+const commentaire = require('../models').commentaire;
+const photo = require('../models').photo;
+const jwt = require('../token/jwt.utils');
 
 //ALL METHODS
 module.exports = {
 
     // METHODS SEND ALL EVENTS
-    allEvent: (req, res)=> {
+    allEvent: (req, res) => {
         //found all event (joined to "personne" table)
         event.findAll({
             include: [{
-            model: personne,
-            attributes: ['Nom', 'Prenom']
+                model: personne,
+                attributes: ['Nom', 'Prenom']
             }]
         })
 
-            //all eventuality (promise)
-            //.then((response)=>{res.json(JSON.stringify({"name": "valid", "value": response}));})
-            .then((response)=>{res.json({name: "valid", value: response});})
-            .catch(err=>{console.log(err); res.json({"name":"error", "value":"can not find any event"});});
+        //all eventuality (promise)
+        //.then((response)=>{res.json(JSON.stringify({"name": "valid", "value": response}));})
+            .then((response) => {
+                res.json({"name": "valid", "value": response});
+            })
+            .catch(err => {
+                console.log(err);
+                res.json({"name": "error", "value": "can not find any event"});
+            });
+    },
+
+    // METHODS SEND ALL EVENTS WITH INSCRIPTION
+    allEventPlusPlus: (req, res) => {
+        let authentication = req.header('Authorization');
+        let UserId = jwt.constrolTokenIdRole(authentication).userId;
+        let UserRoleId = jwt.constrolTokenIdRole(authentication).idRole;
+        //let EventId = req.body.idEvent;
+
+        if (authentication === null) {
+            res.json({name: "error", value: "empty param"})
+        } else if (UserId < 0 && UserRoleId < 0) {
+            res.json({"name": "error", "value": "invalid token"});
+        } else {
+            event.findAll({
+                include: [{
+                    model: inscription,
+                    where: {id_PERSONNE: UserId},
+                    required: false
+                }
+                ]
+            }).then(response=>{res.json({name: "valid", value: response})})
+                .catch(err=>{res.json({name: "error", value: err})});
+        }
+            //
+            //
+            // //all eventuality (promise)
+            // //.then((response)=>{res.json(JSON.stringify({"name": "valid", "value": response}));})
+            // .then((response)=>{res.json({name: "valid", value: response});})
+            // .catch(err=>{console.log(err); res.json({"name":"error", "value":"can not find any event"});});
     },
 
     //METHODS ADD AN EVENT
-    addEvent: (req, res)=> {
+    addEvent: (req, res) => {
         let authentication = req.header('Authorization');
         let UserId = jwt.constrolTokenIdRole(authentication).userId;
         let UserRoleId = jwt.constrolTokenIdRole(authentication).idRole;
@@ -40,14 +78,15 @@ module.exports = {
 
 
         if (Name === null || bio === null || Price === null || date === null || image === null) {
-            res.json({"name":"error", "value":"empty body param"});
+            res.json({"name": "error", "value": "empty body param"});
 
-        }else {
+        } else {
             if (UserId < 0 && UserRoleId < 0) {
                 res.json({"name": "error", "value": "invalid token"});
             } else {
                 event.findOrCreate({
-                    where: {Nom: Name,
+                    where: {
+                        Nom: Name,
                         Date: date
                     },
                     defaults: {
@@ -62,19 +101,84 @@ module.exports = {
                 }).then((sqlresponse) => {
                         let string = sqlresponse.toString();
                         if (string.includes('true')) {
-                            res.json({"name" : "valid", "value": "event created"});
+                            res.json({"name": "valid", "value": "event created"});
                         } else {
                             res.json({"name": "error", "value": "already exist"});
                         }
 
                     }
-                ).catch(err => {res.json({"name":"error", "value": err})});
+                ).catch(err => {
+                    res.json({"name": "error", "value": err})
+                });
             }
         }
     },
 
+    // INSCRIPTION METHOD:
+    changeInscription: (req, res) => {
+        //get information from website
+        let authentication = req.header('Authorization');
+        let UserId = jwt.constrolTokenIdRole(authentication).userId;
+        let idEvent = req.body.idEvent;
 
+        //check if the inscription exist then delete it or add it working
+        inscription.findOrCreate({
+            where: {
+                id_PERSONNE: UserId,
+                id_ACTIVITE: idEvent
+            }
+        }).then(sqlresponse => {
+            let string = sqlresponse.toString();
+            if (string.includes('true')) {
+                res.json({"name": "valid", "value": "user registered"});
+            } else {
+                inscription.destroy({
+                    where: {
+                        id_PERSONNE: UserId,
+                        id_ACTIVITE: idEvent
+                    }
+                }).then(() => {
+                    res.json({name: "valid", value: "user unregistered"})
+                })
+                    .catch(() => {
+                        res.json({name: "error", value: "can not delete inscription"})
+                    });
+            }
+        }).catch(err => {
+            res.json({name: "error", value: err})
+        });
+    },
 
+    oneEvent: (req,res)=> {
+        // let authentication = req.header('Authorization');
+        // let UserId = jwt.constrolTokenIdRole(authentication).userId;
+        let idEvent = req.body.eventId;
+        if(idEvent === null){
+            res.json({name: "error", value: "empty param"});
+        }
+        else {
+            event.findOne(
+                {
+                    where: {
+                        'id_ACTIVITE': idEvent
+                    },
+                    include: [{
+                        model: photo,
+                        required: false,
+                        include: [{
+                            model: personne
+                        }]
+                    }]
+                }
+            ).then(response => {
+                res.json({name: "valid", value: response});
+            })
+                .catch(err=>{
+                    res.json({name: "error", value: err})
+                });
+        }
+
+    }
 
 
 };
