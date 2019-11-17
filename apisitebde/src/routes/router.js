@@ -21,7 +21,6 @@ router.post('/event/all', (req, res)=>{eventController.allEvent(req, res)});
 router.post('/event/add', (req,res)=>{eventController.addEvent(req,res)});
 router.post('/event/changestate', (req, res)=>{eventController.changeInscription(req, res)});
 router.post('/event/allplusplus', (req, res)=>{eventController.allEventPlusPlus(req, res)});
-router.post('/event/changestate', (req, res)=>{inscriptionController.changeInscription(req, res)});
 router.post('/event/admin', (req, res)=>{ajaxController.allEvent(req, res)});
 router.post('/event/oneevent', (req, res)=>{eventController.oneEvent(req, res)});
 
