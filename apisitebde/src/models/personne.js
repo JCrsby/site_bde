@@ -56,6 +56,7 @@ module.exports = (sequelize, DataTypes) => {
         models.Personne.hasMany(models.commande, {foreignKey: 'id_PERSONNE'});
         models.Personne.hasMany(models.commentaire, {foreignKey: 'id_PERSONNE'});
         models.Personne.hasMany(models.inscrire, {foreignKey: 'id_PERSONNE'});
+        models.Personne.hasMany(models.photo, {foreignKey: 'id_PERSONNE'});
     };
     return Personne;
 };

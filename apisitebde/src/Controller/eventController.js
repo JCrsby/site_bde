@@ -6,6 +6,8 @@
 const event = require('../models').activite;
 const personne = require('../models').Personne;
 const inscription = require('../models').inscrire;
+const commentaire = require('../models').commentaire;
+const photo = require('../models').photo;
 const jwt = require('../token/jwt.utils');
 
 //ALL METHODS
@@ -145,6 +147,37 @@ module.exports = {
         }).catch(err => {
             res.json({name: "error", value: err})
         });
+    },
+
+    oneEvent: (req,res)=> {
+        // let authentication = req.header('Authorization');
+        // let UserId = jwt.constrolTokenIdRole(authentication).userId;
+        let idEvent = req.body.eventId;
+        if(idEvent === null){
+            res.json({name: "error", value: "empty param"});
+        }
+        else {
+            event.findOne(
+                {
+                    where: {
+                        'id_ACTIVITE': idEvent
+                    },
+                    include: [{
+                        model: photo,
+                        required: false,
+                        include: [{
+                            model: personne
+                        }]
+                    }]
+                }
+            ).then(response => {
+                res.json({name: "valid", value: response});
+            })
+                .catch(err=>{
+                    res.json({name: "error", value: err})
+                });
+        }
+
     }
 
 

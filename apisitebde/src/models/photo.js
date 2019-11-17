@@ -6,7 +6,6 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
-            primaryKey: true,
             comment: "null",
             autoIncrement: true
         },
@@ -60,7 +59,8 @@ module.exports = function(sequelize, DataTypes) {
     //ASSOCIATIONS
     photo.associate = (models)=> {
         models.photo.hasMany(models.commande, {foreignKey: 'id_PHOTO'});
-        models.photo.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'})
+        models.photo.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'});
+        models.photo.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
     };
 	return photo;
 };

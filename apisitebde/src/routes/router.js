@@ -4,6 +4,7 @@ const express = require('express');
 const userController = require('../Controller/userController');
 const eventController = require('../Controller/eventController');
 const productController = require('../Controller/productController');
+const photoController = require('../Controller/photoController');
 
 //ROUTER
 const router = express.Router();
@@ -22,12 +23,17 @@ router.post('/event/changestate', (req, res)=>{eventController.changeInscription
 router.post('/event/allplusplus', (req, res)=>{eventController.allEventPlusPlus(req, res)});
 router.post('/event/changestate', (req, res)=>{inscriptionController.changeInscription(req, res)});
 router.post('/event/admin', (req, res)=>{ajaxController.allEvent(req, res)});
+router.post('/event/oneevent', (req, res)=>{eventController.oneEvent(req, res)});
 
 //PRODUCTS ROUTES
 router.post('/product/all', (req, res)=>{productController.allProduct(req,res)});
 router.post('/product/AscPrice', (req, res)=>{productController.LowenToHigher(req, res)});
 router.post('/product/DescPrice', (req, res)=>{productController.HigerToLower(req, res)});
 router.post('/product/admin', (req, res)=>{ajaxController.allProduct(req,res)});
+
+
+//COMMENTARY ROUTES
+router.post('/commentary/addcomment', (req,res)=>{photoController.addComment(req,res)});
 
 
 //EXPERIMENTAL ROUTES
