@@ -6,7 +6,7 @@
     -->
 @section('contenu')
 
-<img class="image_etudiant" src="img/etudiant.png" width="1919" height="697" alt="Etudiant Cesi">
+<img src="img/etudiant.png" class="image_etudiant" width="1919" height="697" alt="Photo Etudiant Cesi" title="Etre etudiants CESI">
 <!-- Information -->
 <div class="container mt-2">
     <div class="row justify-content">
@@ -23,7 +23,7 @@
 <p class="text-center"><strong>Voici une petite vidéo de présentation du Cesi Lyon, pour l'occasion</strong></p>
 <!-- Information video too -->
 <div class="video-responsive">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/D3-tfUDRa1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D3-tfUDRa1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen alt="Video presnetation CESI"></iframe>
 </div>
 
 @endsection

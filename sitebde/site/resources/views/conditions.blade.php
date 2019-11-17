@@ -1,7 +1,6 @@
 <!-- view condition for users -->
 <!-- Header -->
 @extends ('layouts.layout')
-
 @section('contenu')
 
     <br>

@@ -7,7 +7,7 @@
 @section('contenu')
     <!-- Head -->
     <!-- Image top -->
-<img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Contact CESI">
+<img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Information Contact CESI">
 <br>
 <br>
 <br>

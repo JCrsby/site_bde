@@ -6,6 +6,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  Referencement -->
+    <meta name="description" content="BDE CESI Lyon est une site de vente en ligne d'article via une boutique mais aussi permet au élève de se reunir pour pouvoir se depenser dans des évènements orgniser ">
 
     <!-- Includes -->
 
@@ -27,7 +29,9 @@
 @if( !isset($_COOKIE['token']) || strlen($_COOKIE['token']) <= 0)
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed">
-            <a class="navbar-brand" href="/index"><img src="img/logobde.png"> </a>
+            <a class="navbar-brand" href="/index">
+                <img src="img/logobde.png" alt="logo chien loup CESI" title="Icone du BDE CESI Lyon" >
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

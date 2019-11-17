@@ -19,7 +19,7 @@
             @foreach($events as $event)
                 <div class="col-md-6 col-sm-12 col-lg-3 col-9 mb-5 align-content-sm-center">
                     <div class="card">
-                        <img class="card-img-top border-bottom-1" src="{{$event->Image}}" alt="Card image cap">
+                        <img src="{{$event->Image}}" class="card-img-top border-bottom-1" alt="Evenements BDE accueil" title="Page-Evenement">
                         <div class="card-body">
                             <h5 class="card-title">{{$event->Nom}}</h5>
                             <p class="card-text">{{$event->Description}}</p>
@@ -31,8 +31,7 @@
                                     @if (strlen($_COOKIE['token']) > 0)
                                         <form method="POST" action="/inscriptionevent/{{$event->id_ACTIVITE}}">
                                             {{csrf_field()}}
-                                            <button type="submit" name="inscriptionevent"
-                                                    class=" form-control btn btn-outline-primary">
+                                            <button type="submit" name="inscriptionevent" class=" form-control btn btn-outline-primary">
                                                 @if($event->inscrires == null)
                                                     s'inscrire
                                                 @else
