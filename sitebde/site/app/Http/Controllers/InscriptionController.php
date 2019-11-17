@@ -26,7 +26,17 @@ class InscriptionController extends Controller
         ]);
 
         try {
-            //POST request
+                request()->validate([
+                    'email' => ['required', 'email'],
+                    'password' => ['required', 'confirmed', 'min:8', function($attribute, $value, $fail){
+                        if(!preg_match('/.*[A-Z].*/',$value) || !preg_match('/.*[0-9].*/',$value)){ $fail('Le mot de passe doit contenir au minimum une majuscule et un chiffre'); }}],
+                    'password_confirmation' => ['required'],
+                ], [
+                    'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire minimum :min caractères.',
+
+                ]);
+
+//            //POST request
             $response = $client->request('POST', '/api/user/register', [
                 // parameters
                 'form_params' => [
@@ -43,7 +53,6 @@ class InscriptionController extends Controller
             //INTERPRET RESPONSE
             if ($apiresponse == 'empty param') {
                 //TODO : show it like a mistake on the web ste
-                echo('erreur interne');
             } else if ($apiresponse == 'user created') {
                 return redirect('/connexion');
             } else if ($apiresponse == 'already exist') {
@@ -61,5 +70,17 @@ class InscriptionController extends Controller
 
     }
 
+//    function errorInscription()
+//    {
+//        //INSCRIPTION ERROR MESSAGE
+//        request()->validate([
+//            'email' => ['required', 'email'],
+//            'password' => ['required', 'confirmed', 'min:8'],
+//            'password_confirmation' => ['required'],
+//        ], [
+//            'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire minimum :min caractères.'
+//        ]);
+//
+//    }
 
 }
