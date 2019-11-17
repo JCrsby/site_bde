@@ -1,6 +1,9 @@
-
+<!-- view boutique -->
+<!-- Header -->
 @extends ('layouts.layout')
-
+    <!--
+    This page shows us the items to sell
+    -->
 <!--Start Content -->
 
 @section('contenu')
@@ -12,16 +15,15 @@
         @endif
     @endif
 
-
 <h4 class="categorie p-5 text-muted" align="center">Produits :</h4>
 <div class="container">
     <div class="row justify-content">
 
-
+                <!-- Sort products -->
     <div class="col-md-3 col-9 chercher">
-    
+
                 <div class="inline">
-                
+
                     <small class="text-muted mt-auto mb-auto"><button type="button" class="btn btn-outline-primary">Rechercher</button></small>
                     <form class="search_bar">
                         <input type="search" class="form-control" id="search" name="search" placeholder="Recherche">
@@ -41,7 +43,7 @@
                 </div>
             </div>
 
-
+        <!-- Information -->
         @foreach($products as $product)
         <div class="col-md-3 col-9">
             <div class="card">
@@ -51,6 +53,7 @@
                     <p class="card-text">{{$product->Description}}</p>
                     <h5 class="card-title">{{$product->Prix}} €</h5>
                 </div>
+                <!-- add button -->
                 <div class="card-footer">
                     <small class="text-muted"><button type="button" class="btn btn-outline-primary">Commander</button></small>
                 </div>

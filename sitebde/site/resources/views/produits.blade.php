@@ -1,18 +1,22 @@
-
+<!-- view produits -->
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
-
+    <!--
+    This page is reserved for the site administrator
+    to be able to interact on events or products and even user
+    -->
 <br>
 <br>
 <br>
 <br>
 
 <div class="container" align="center">
-
+    <!-- title -->
     <h4 class="text-uppercase" ><p>Administration</p></h4>
 
-
+    <!-- option -->
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
@@ -27,8 +31,8 @@
                 </li>
             </ul>
         </div>
+        <!-- Action -->
         <div class="card-body">
-
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
@@ -60,19 +64,6 @@
                         <td>Content</td>
                         <td>Prix</td>
                         <td>URL</td>
-                        <!--<td><div class="input-group">
-                            <span class="input-group-btn">
-                          <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
-                              <span class="glyphicon glyphicon-minus"></span>
-                            </button>
-                            </span>
-                            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
-                            <span class="input-group-btn">
-                          <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">
-                              <span class="glyphicon glyphicon-plus"></span>
-                            </button>
-                            </span>
-                        </div></td> -->
                     </tr>
             </div>
             </tbody>

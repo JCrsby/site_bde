@@ -12,6 +12,7 @@ class InscriptionController extends Controller
 
     function view()
     {
+        //return view
         return view('inscription');
     }
 
@@ -25,7 +26,9 @@ class InscriptionController extends Controller
         ]);
 
         try {
+            //POST request
             $response = $client->request('POST', '/api/user/register', [
+                // parameters
                 'form_params' => [
                     'lastName' => request('lastName'),
                     'firstName' => request('firstName'),
@@ -34,9 +37,10 @@ class InscriptionController extends Controller
                     'email' => request('email')
                 ]]);
 
-//            dd(request('lastName'), request('firstName'), request('campus'), request('password'));
+            //DECODE REQUEST'S RESPONSE
             $apiresponse = json_decode($response->getBody()->getContents())->value;
 
+            //INTERPRET RESPONSE
             if ($apiresponse == 'empty param') {
                 //TODO : show it like a mistake on the web ste
                 echo('erreur interne');
@@ -50,6 +54,7 @@ class InscriptionController extends Controller
 
             }
         } catch (GuzzleException $e) {
+            //ERROR
             return view('internError');
         }
 

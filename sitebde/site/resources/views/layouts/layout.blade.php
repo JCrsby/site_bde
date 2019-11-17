@@ -22,7 +22,7 @@
 </head>
 
 <body>
-<!-- Header -->
+    <!-- Header -->
 
 @if( !isset($_COOKIE['token']) || strlen($_COOKIE['token']) <= 0)
     <header>

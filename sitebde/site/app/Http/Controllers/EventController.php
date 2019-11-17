@@ -13,7 +13,7 @@ class EventController extends Controller
 
     public function index(){
 
-
+        //INTERPRET RESPONSE
         try {
             $client = new Client([
                 // Base URI is used with relative requests
@@ -21,12 +21,14 @@ class EventController extends Controller
                 // You can set any number of default request options.
                 'timeout' => 2.0
             ]);
+            //POST request
             $response = $client->request('POST', '/api/event/all');
+            //DECODE REQUEST'S RESPONSE
             $events = json_decode($response->getBody()->getContents())->value;
+            //return view index
             return view('index',compact('events'));
-
-
         } catch (GuzzleException $e) {
+            //ERROR
         }
 }
 
@@ -39,21 +41,13 @@ class EventController extends Controller
                 'timeout' => 2.0
             ]);
 
+            //INTERPRET RESPONSE
             try {
+                //POST REQUEST AT http://localhost:3000/api/event/all
                 $response = $client->request('POST', '/api/event/all');
-
-
-
             } catch (GuzzleException $e) {
+                //ERROR
             }
-
-
-
-            //  dd($products);
-
-        //echo $productes.name;
-        //CALL VIEW BOUTIQUE
-
     }
 
 
