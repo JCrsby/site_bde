@@ -11,8 +11,6 @@ use App\Http\Controllers\EventController;
 
 @section('contenu')
     <!-- title -->
-    <h1 class="evenement p-4" align="center">Les événements</h1>
-
     <h1 class="evenement p-4" align="center">L'Evenement
         : {{\App\Http\Controllers\EventController::oneEvent(request('idEvent'))->Nom}}</h1>
 
