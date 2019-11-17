@@ -13,8 +13,6 @@ class PanierController extends Controller
         return view('panier');
     }
 
-    //METHODS CALLED FOR ROAD BOUTIQUE
-    //GENERATE GUZZLE HTTP REQUEST
     public function panier()
     {
 
@@ -37,5 +35,31 @@ class PanierController extends Controller
         //RESPONSE
         return view('panier', compact('cart'));
     }
+
+    public function addToBascket()
+    {
+        $client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => 'http://localhost:3000/',
+            // You can set any number of default request options.
+            'timeout' => 2.0
+        ]);
+
+        try {
+            $response = $client->request('POST', '/api/event/oneevent',
+                [
+                    'headers' => [
+                        'Authorization' => $_COOKIE['token']
+                    ]
+                ]
+            );
+
+        } catch (GuzzleException $e) {
+        }
+        $event = json_decode($response->getBody()->getContents())->value;
+
+
+    }
+
 
 }
