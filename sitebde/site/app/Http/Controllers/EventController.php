@@ -106,7 +106,7 @@ class EventController extends Controller
             }
     }
 
-    }
+
 
 
     public function getEvents($id = 0){
