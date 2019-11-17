@@ -101,13 +101,6 @@ class EventController extends Controller
 
     }
             //INTERPRET RESPONSE
-            try {
-                //POST REQUEST AT http://localhost:3000/api/event/all
-                $response = $client->request('POST', '/api/event/all');
-            } catch (GuzzleException $e) {
-                //ERROR
-            }
-    }
 
 
 
@@ -138,6 +131,8 @@ class EventController extends Controller
         } catch (GuzzleException $e) {
             return view('internError');
         }
+
+    }
     public function getEvents($id = 0){
         // Fetch all records
         $userData['data'] = Page::getEventData($id);

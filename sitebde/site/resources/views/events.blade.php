@@ -36,21 +36,6 @@ use App\Http\Controllers\EventController;
                     </p>
                 </div>
                 <!-- User -->
-                <form method="post" action="#">
-                    <div class="form-group p-1">
-                        <div class="form-group">
-                            <label for="pseudo">Pseudo</label>
-                            <input type="pseudo" class="form-control" id="pseudo" placeholder="Entrer votre Pseudo">
-                        </div>
-                        <!-- commentary text -->
-                        <div class="form-group">
-                            <label for="msg">Commentaire</label>
-                            <textarea class="form-control" id="msg" name="user_message" rows="4" placeholder="Votre commentaire"></textarea>
-                        </div>
-                        <!-- submit button -->
-                        <button type="submit" class="btn btn-outline-primary" >Submit</button>
-                    </div>
-                </form>
                 <div>
                     <div class="form-group p-1 border-bottom-2">
                         @if (isset($_COOKIE['token']))
