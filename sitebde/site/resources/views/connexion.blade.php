@@ -34,6 +34,7 @@
                     <p>{{$errors->first('password')}}</p>
                 @endif
             </div>
+            @include('flash::message')
                 <!-- submit button -->
             <div class="text-center">
                 <button type="submit" class="btn btn-outline-primary mt-2 text " id="btn-sumbit">Se connecter</button>

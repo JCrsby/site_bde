@@ -27,10 +27,12 @@ class InscriptionController extends Controller
         try {
                 request()->validate([
                     'email' => ['required', 'email'],
-                    'password' => ['required', 'confirmed', 'min:8'],
+                    'password' => ['required', 'confirmed', 'min:8', function($attribute, $value, $fail){
+                        if(!preg_match('/.*[A-Z].*/',$value) || !preg_match('/.*[0-9].*/',$value)){ $fail('Le mot de passe doit contenir au minimum une majuscule et un chiffre'); }}],
                     'password_confirmation' => ['required'],
                 ], [
-                    'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire minimum :min caractères.'
+                    'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire minimum :min caractères.',
+
                 ]);
 
 //            //POST request

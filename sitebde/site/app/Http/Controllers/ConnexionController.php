@@ -67,7 +67,8 @@ class ConnexionController extends Controller
 
             //INTERPRET RESPONSE
             if ($user->name == "error") {
-                //TODO : show it like a mistake on the web ste
+                flash("Le mot de passe ou l'adresse email est incorrecte") -> error();
+                return redirect('/connexion');
             } else {
                 //create a cookie and return "connected"
                 echo "connected";
