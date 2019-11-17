@@ -1,18 +1,21 @@
-
+<!-- Header -->
 @extends ('layouts.layout')
-
+    <!--
+    This page is reserved for the site administrator
+    to be able to interact on events or products and even user
+    -->
 @section('contenu')
 
 <br>
 <br>
 <br>
 <br>
-
+<!-- Head -->
 <div class="container" align="center">
-
+    <!-- Title -->
     <h4 class="text-uppercase" ><p>Administration</p></h4>
 
-
+    <!-- Information -->
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">

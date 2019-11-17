@@ -1,19 +1,24 @@
-
+<!-- view events -->
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
-
-<body>
+    <!--
+    This page is allows to be added to the database
+    to give and access the events
+    -->
 
 <div id="register" class="animate form">
     <form  method="POST" autocomplete="on" class="border mb-5 mt-5 mr-auto ml-auto col-4">
         {{csrf_field()}}
 
+        <!-- title -->
         <h4 class="mt-3">Veuillez remplir ce formulaire pour votre inscription</h4>
 
+            <!-- Information -->
         <div class="form-group">
             <label>Nom : </label>
-            <input name="lastName" required="required" type="text" placeholder="boligatoir" class="form-control"/>
+            <input name="lastName" required="required" type="text" placeholder="Obligatoire" class="form-control"/>
         </div>
 
         <div class="form-group">
@@ -64,12 +69,12 @@
             <label>Confirmation Mot de passe : </label>
             <input  required="required" type="password" placeholder="mot de passe" class="form-control"/>
         </div>
-
+            <!-- termes -->
         <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" required id="defaultChecked2" >
                 <label class="custom-control-label" for="defaultChecked2">J'ai lu et j'accepte <a href="/politique">la politique de confidentialité</a></label>
               </div>
-
+            <!-- register button -->
             <p class="signin button text-center">
                 <button type="submit" class="btn btn-outline-primary mt-2 text">Envoyer</button>
             </p>

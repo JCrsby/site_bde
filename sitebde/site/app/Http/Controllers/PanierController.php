@@ -14,13 +14,11 @@ class PanierController extends Controller
     }
 
     //METHODS CALLED FOR ROAD BOUTIQUE
+    //GENERATE GUZZLE HTTP REQUEST
     public function panier()
     {
 
-        //GENERATE GUZZLE HHTP REQUEST
-
-
-
+        //INTERPRET RESPONSE
         try{
             $client = new Client([
                 // Base URI is used with relative requests
@@ -28,13 +26,15 @@ class PanierController extends Controller
                 // You can set any number of default request options.
                 'timeout' => 2.0
             ]);
+            //POST REQUEST
             $response = $client->request('POST', '/api/command/addToBascket');
+            //DECODE JSON
             $cart = json_decode($response->getBody()->getContents())->value;
 
         }catch (GuzzleException $e){
-
+            //ERROR
         }
-
+        //RESPONSE
         return view('panier', compact('cart'));
     }
 

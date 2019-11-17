@@ -1,10 +1,13 @@
-
+<!-- view information CESI school-->
+<!-- Header -->
 @extends ('layouts.layout')
-
+    <!--
+    This page provides information about the school to users
+    -->
 @section('contenu')
 
 <img class="image_etudiant" src="img/etudiant.png" width="1919" height="697" alt="Etudiant Cesi">
-
+<!-- Information -->
 <div class="container mt-2">
     <div class="row justify-content">
         <div class="col-md-12 col-12">
@@ -18,7 +21,7 @@
 </div>
 
 <p class="text-center"><strong>Voici une petite vidéo de présentation du Cesi Lyon, pour l'occasion</strong></p>
-
+<!-- Information video too -->
 <div class="video-responsive">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/D3-tfUDRa1E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>

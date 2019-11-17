@@ -1,9 +1,16 @@
+<!-- view panier -->
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
 
     <br>
 
+    <!--
+     Allows to know the information of its basket,
+     and to have possibilities of removal of object
+     or payment of items of the shop or events
+     -->
 
     <div class="container" align="center">
 

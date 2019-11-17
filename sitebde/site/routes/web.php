@@ -11,64 +11,49 @@
 
 */
 
-Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
-
+//BOUTIQUE
 Route::get('/index', 'EventController@index');
-
 Route::get('/', 'EventController@index');
-
-
 Route::get('/', 'EventController@index');
-
 Route::get('/boutique', 'BoutiqueController@allProducts');
 
-Route::get('/evenements', 'PagesController@evenements');
 
+//INFORMATION WEBSITE
 Route::get('/info', 'PagesController@info');
-
-Route::get('/connexion', 'ConnexionController@connection');
-
 Route::get('/contact', 'PagesController@contact');
-//Route Requete ajax
-
-
-
 Route::get('/conditions','PagesController@conditions');
-
 Route::get('/politique','PagesController@politique');
 
-Route::get('/accueil','PagesController@accueil');
-
-
+//VENTE
 Route::get('/cart', 'PanierController@view');
-//Route::get('/cart', 'PagesController@cart');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::post('/connexion','ConnexionController@formConnexion');
-
+//EVENEMENTS
+Route::get('/events','EventListController@events');
 Route::post('/inscriptionevent','EventController@inscriptionEvent');
 
-//Page des événements
-Route::get('/events','EventListController@events');
-
-
-Auth::routes();
 
 //INSCRIPTION
 Route::post('/inscription', 'InscriptionController@inscription');
 Route::get('/inscription','InscriptionController@view');
 
+//CONNECTION
+Route::post('/connexion','ConnexionController@formConnexion');
+Route::get('/connexion', 'ConnexionController@connection');
+
 //DISCONNECTION
 Route::get('/disconect', 'ConnexionController@deconnxion');
 
-
-
-Route::get('/test', 'NavController@getUser');
-
+//ADMINISTATOR
 Route::get('/utilisateur','PagesController@utilisateur');
-
 Route::get('/produits','PagesController@produits');
-
 Route::get('/evenements','PagesController@evenements');
 
+//COOKIE
+Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');
+
+Auth::routes();
+
+//TEST
+//Route::get('/cart', 'PagesController@cart');
+//Route::get('/accueil','PagesController@accueil');
+//Route::get('/home', 'HomeController@index')->name('home');

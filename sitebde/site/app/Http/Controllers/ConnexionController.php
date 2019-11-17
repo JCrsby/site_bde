@@ -10,31 +10,33 @@ class ConnexionController extends Controller
 {
     /**
      *
-     * @throws GuzzleException
+     *  @throws GuzzleException
      *
      *
      */
+
     public function connection()
     {
+        //View connection
         return view('connexion');
     }
 
 
     public function deconnxion(){
+        //create a cookie
         try{
             setcookie('token', '');
         }catch (Exception $exception){
+            //View error
             return view('internError');
         }
+        //Return main page
         return redirect('/index');
     }
 
 
-
     public function formConnexion()
     {
-
-
         try {
             //CREATE A CLIENT GUZZLE
             $client = new Client([
@@ -44,32 +46,32 @@ class ConnexionController extends Controller
                 'timeout' => 2.0,
 
             ]);
+
             //REQUEST + REQUEST CONTENT
             $response = $client->request('POST', '/api/user/login', [
+                //PARAM
                 'form_params' => [
                     'email' => request('email'),
                     'password' => request('password')
-
                 ]
-
             ]);
 
             //DECODE REQUEST'S RESPONSE
             $user = json_decode($response->getBody()->getContents());
 
-
             //INTERPRET RESPONSE
             if ($user->name == "error") {
                 echo "user does not exist";
             } else {
+                //create a cookie and return "connected"
                 echo "connected";
                 setcookie('token', $user->value->token);
-
+                //RETURN MAIN PAGE
                 return redirect('/index');
             }
 
-
         } catch (GuzzleException $e) {
+            //View error
             return view('internError');
         }
     }

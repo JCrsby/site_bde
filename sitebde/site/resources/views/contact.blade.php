@@ -1,14 +1,18 @@
-
+<!-- View contact -->
+<!-- Header -->
 @extends ('layouts.layout')
-
+    <!--
+    This page provides the site contacts
+    -->
 @section('contenu')
-
+    <!-- Head -->
+    <!-- Image top -->
 <img class="image_contact" src="img/contact.png" width="1920" height="700" alt="Contact CESI">
 <br>
 <br>
 <br>
 <br>
-
+    <!-- Information in card-->
 <div class="container" align="center">
     <div class="row justify-content">
 

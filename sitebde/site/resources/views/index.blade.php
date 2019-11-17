@@ -1,9 +1,11 @@
+<!-- view main -->
+<!-- Header -->
 @extends ('layouts.layout')
 
 @section('contenu')
-
+    <!-- Body -->
     <img src="{{asset('img/etudiant_accueil.png')}}" class="img-fluid" alt="Accueil BDE">
-
+    <!-- title -->
     <h4 class="evenements" align="center">Les événements</h4>
 
     <br>
@@ -13,7 +15,7 @@
     <div class="container">
         <div class="row justify-content">
 
-
+            <!-- retrieve and display event information -->
             @foreach($events as $event)
                 <div class="col-md-6 col-sm-12 col-lg-3 col-9 mb-5 align-content-sm-center">
                     <div class="card">

@@ -24,21 +24,13 @@ class PagesController extends Controller
         return view('info');
     }
 
-//    public function boutique()
-//    {
-//
-//        return view('boutique');
-//    }
-
     public function connexion()
     {
-
         return view('connexion');
     }
 
     public function contact()
     {
-
         return view('contact');
     }
 
@@ -47,6 +39,7 @@ class PagesController extends Controller
         return view('inscription');
     }
 
+    //CONTROLLER COOKIE
     public function evenements()
     {
         if (isset($_COOKIE['token'])) {
@@ -75,6 +68,7 @@ class PagesController extends Controller
         return view('accueil');
     }
 
+    //CONTROLLER COOKIE
     public function utilisateur()
     {
         if (isset($_COOKIE['token'])) {
@@ -87,6 +81,7 @@ class PagesController extends Controller
         return redirect('/index');
     }
 
+    //CONTROLLER COOKIE
     public function produits()
     {
         if (isset($_COOKIE['token'])) {
@@ -101,7 +96,6 @@ class PagesController extends Controller
 
     public function events()
     {
-
         return view('evenements');
     }
 
