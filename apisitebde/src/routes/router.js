@@ -30,6 +30,7 @@ router.post('/product/all',         (req, res)=>{productController.allProduct(re
 router.post('/product/admin',       (req, res)=>{ajaxController.allProduct(req,res)});
 router.post('/product/AscPrice',    (req, res)=>{productController.LowenToHigher(req, res)});
 router.post('/product/DescPrice',   (req, res)=>{productController.HigerToLower(req, res)});
+router.post('/product/add',         (req,res)=>{productController.addProduct(req, res)});
 
 
 //COMMENTARY ROUTES

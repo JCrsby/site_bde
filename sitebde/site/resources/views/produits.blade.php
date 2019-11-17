@@ -74,7 +74,7 @@
                 $.ajax({
                     url: 'http://localhost:3000/api/product/add',
                     type: 'post',
-                    success: function (response) {
+                    success:  response => {
                         var form = "<tr>" +
                             "<td>" + "</td>" +
                             "<td>" + "<input  name=\"name\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +

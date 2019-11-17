@@ -54,6 +54,34 @@ module.exports = {
             .then(result => {res.json({"name": "valid", "value": result})})
             //.then(result => {res.json({"name": "valid", "value": result})})
             .catch(err => {res.json({"name": "error", "value": err})});
+    },
+
+    addProduct: (req, res)=>{
+        let Name = req.body.name;
+        let bio = req.body.description;
+        let price = req.body.price;
+        let img = req.body.img;
+        let idCategorie = req.body.categories;
+
+        console.log(`name : ${Name}, bio : ${bio}, prix: ${price}, img: ${img}, cat: ${idCategorie}`);
+        if (Name == null ||
+            bio == null ||
+            price == null ||
+            img == null ||
+            idCategorie == null) {
+            return res.json({name: "error", value: "empty param"})
+        }else {
+            product.create({
+                Nom: Name,
+                Description: bio,
+                Prix: price,
+                Image: img,
+                id_CATEGORIE: idCategorie
+            })
+                .then(response => {res.json({name: "valid", value: response})})
+                .catch(err => {res.json({name: "err", value: err})});
+        }
+
     }
 
 
