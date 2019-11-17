@@ -28,6 +28,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/produits"><p class="text-dark">Produits</p></a>
                 </li>
+
             </ul>
         </div>
         <div class="card-body">
@@ -104,6 +105,7 @@
     $(document).ready(function(){
 
         // Fetch all records
+
 
             fetchRecords(0);
 
