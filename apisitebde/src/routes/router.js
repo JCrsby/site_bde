@@ -1,4 +1,5 @@
 // INCLUDE
+const ajaxController = require( '../Controller/ajaxController');
 const express = require('express');
 const userController = require('../Controller/userController');
 const eventController = require('../Controller/eventController');
@@ -19,11 +20,13 @@ router.post('/user/userinfo', (req,res) => {userController.getUserProfile(req, r
 router.post('/event/all', (req, res)=>{eventController.allEvent(req, res)});
 router.post('/event/add', (req,res)=>{eventController.addEvent(req,res)});
 router.post('/event/changestate', (req, res)=>{inscriptionController.changeInscription(req, res)});
+router.post('/event/admin', (req, res)=>{ajaxController.allEvent(req, res)});
 
 //PRODUCTS ROUTES
 router.post('/product/all', (req, res)=>{productController.allProduct(req,res)});
 router.post('/product/AscPrice', (req, res)=>{productController.LowenToHigher(req, res)});
 router.post('/product/DescPrice', (req, res)=>{productController.HigerToLower(req, res)});
+router.post('/product/admin', (req, res)=>{ajaxController.allProduct(req,res)});
 
 
 //EXPERIMENTAL ROUTES

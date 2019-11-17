@@ -118,7 +118,7 @@
 
     function fetchRecords(id){
         $.ajax({
-            url: 'http://localhost:3000/api/event/all',
+            url: 'http://localhost:3000/api/event/admin',
             type: 'post',
             dataType: 'JSON',
             success: function(response){
