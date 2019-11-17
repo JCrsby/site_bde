@@ -36,7 +36,7 @@ use App\Http\Controllers\EventController;
                                     {{csrf_field()}}
                                     <label for="msg">Commenter</label>
                                     <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
-                                              placeholder="Votre commentaire"></textarea>
+                                              placeholder="Votre commentaire (255 charactere max)"></textarea>
                                     <button type="submit" class="btn btn-outline-primary form-control">
                                         commenter fuck
                                     </button>
@@ -46,7 +46,7 @@ use App\Http\Controllers\EventController;
                                     {{csrf_field()}}
                                     <label for="msg">Commenter</label>
                                     <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
-                                              placeholder="Votre commentaire"></textarea>
+                                              placeholder="Votre commentaire (255 charactere max)"></textarea>
                                     <button type="submit" class="btn btn-outline-primary form-control">
                                         commenter test
                                     </button>
@@ -57,7 +57,7 @@ use App\Http\Controllers\EventController;
                                 {{csrf_field()}}
                                 <label for="msg">Commenter</label>
                                 <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
-                                          placeholder="Votre commentaire"></textarea>
+                                          placeholder="Votre commentaire (255 charactere max)"></textarea>
                                 <button type="submit" class="btn btn-outline-primary form-control">
                                     commenter march
                                 </button>
