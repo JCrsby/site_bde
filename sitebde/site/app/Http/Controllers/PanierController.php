@@ -46,10 +46,13 @@ class PanierController extends Controller
         ]);
 
         try {
-            $response = $client->request('POST', '/api/event/oneevent',
+            $response = $client->request('POST', '/api/product/addtobascket',
                 [
                     'headers' => [
                         'Authorization' => $_COOKIE['token']
+                    ],
+                    'form_params' => [
+                        'idProduct' => request('idProduct')
                     ]
                 ]
             );
