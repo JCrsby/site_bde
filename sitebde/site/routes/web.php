@@ -72,3 +72,6 @@ Route::get('/evenements','PagesController@evenements');
 
 Route::post('/inscriptionevent/{eventId}', 'EventController@inscriptionEvent');
 
+Route:: view('/oneevent/{idEvent}', 'events');
+
+Route::post('/addcomment/{idEvent}', 'EventController@test');

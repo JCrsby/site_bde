@@ -21,12 +21,12 @@
                         <div class="card-body">
                             <h5 class="card-title">{{$event->Nom}}</h5>
                             <p class="card-text">{{$event->Description}}</p>
-                            <h5 class="card-title">{{$event->Prix}} €</h5>
+                            <h5 class="card-title">{{number_format($event->Prix, 2)}} €</h5>
                         </div>
                         <div class="card-footer">
                             <small class="text-muted">
                                 @if (isset($_COOKIE['token']))
-                                    @if (strlen($_COOKIE['token']) >= 0)
+                                    @if (strlen($_COOKIE['token']) > 0)
                                         <form method="POST" action="/inscriptionevent/{{$event->id_ACTIVITE}}">
                                             {{csrf_field()}}
                                             <button type="submit" name="inscriptionevent"
@@ -47,14 +47,14 @@
                                         </form>
                                     @endif
                                 @else
-                                    <form method="GET" action="/connexion">
+                                    <form method="get" action="/connexion">
                                         {{csrf_field()}}
                                         <button type="submit" name="inscriptionevent"
                                                 class=" form-control btn btn-outline-primary">s'inscrire
                                         </button>
                                     </form>
                                 @endif
-                                <a class="form-control btn btn-light" href="#">Plus d'infos</a>
+                                <a class="form-control btn btn-light" href="/oneevent/{{$event->id_ACTIVITE}}">Plus d'infos</a>
                             </small>
 
                         </div>
@@ -67,22 +67,3 @@
         </div>
     </div>
 @endsection
-
-
-
-
-{{--<div class="card col-lg-3 nopadding">--}}
-{{--    <img class="card-img-top" src="img/petanque.png" alt="Pétanque">--}}
-{{--    <div class="card-body">--}}
-{{--        <h5 class="card-title">Pétanque 30/12/2019</h5>--}}
-{{--        <p class="card-text">Un Match de Pétanque entre les écoles CESI et Emlyon ! </p>--}}
-{{--    </div>--}}
-{{--    <div class="card-footer">--}}
-{{--        <small class="text-muted">--}}
-{{--            <button type="button" class="btn btn-outline-primary">S'inscrire</button>--}}
-{{--        </small>--}}
-{{--        <small class="text-muted">--}}
-{{--            <button type="button" class="btn btn-light">Plus d'infos</button>--}}
-{{--        </small>--}}
-{{--    </div>--}}
-{{--</div>--}}
