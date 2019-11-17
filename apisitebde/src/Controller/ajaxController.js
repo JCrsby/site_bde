@@ -34,6 +34,14 @@ module.exports = {
             });
     },
 
+    allUser: (req, res) => {
+        personne.findAll()
+            .then(response => (res.json(JSON.stringify({name: "valid", value: response}))))
+            .then(err => {res.json(JSON.stringify({name: "error", value: err}))});
+    },
+
+
+
     allProduct: (req, res) => {
         //FIND ALL PRODUCT
         product.findAll({
