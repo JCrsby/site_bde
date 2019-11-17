@@ -17,7 +17,6 @@ Route::get('/', 'EventController@index');
 Route::get('/', 'EventController@index');
 Route::get('/boutique', 'BoutiqueController@allProducts');
 
-
 //INFORMATION WEBSITE
 Route::get('/info', 'PagesController@info');
 Route::get('/contact', 'PagesController@contact');
@@ -31,10 +30,20 @@ Route::get('/cart', 'PanierController@view');
 Route::get('/events','EventListController@events');
 Route::post('/inscriptionevent','EventController@inscriptionEvent');
 
-
 //INSCRIPTION
-Route::post('/inscription', 'InscriptionController@inscription');
 Route::get('/inscription','InscriptionController@view');
+Route::post('/inscription', 'InscriptionController@inscription');
+
+//INSCRIPTION ERROR MESSAGE
+Route::post('/inscription', function () {
+    request()->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required', 'confirmed', 'min:8'],
+        'password_confirmation' => ['required'],
+    ], [
+        'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire :min caractères.'
+    ]);
+});
 
 //CONNECTION
 Route::post('/connexion','ConnexionController@formConnexion');
