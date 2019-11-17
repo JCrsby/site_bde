@@ -34,91 +34,24 @@
             <div class="card-body">
                 <!-- Action -->
                 <div class="table-responsive">
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="userTable">
                         <thead>
                         <tr>
-                            <th>Action</th>
+
                             <th>ID</th>
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Email</th>
                             <th>Role</th>
                             <th>Campus</th>
+                            <th>ID Roles</th>
 
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
                             <td>
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                    </button>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Changer ID </a></li>
-                                        <li><a href="#">Changer le nom </a></li>
-                                        <li><a href="#">Changer le prénom </a></li>
-                                        <li><a href="#">Changer le mail </a></li>
-                                        <li><a href="#">Supprimer</a></li>
-                                    </ul>
-                                </div>
-                            </td>
-                            <td>@user</td>
-                            <td>Way</td>
-                            <td>Paul</td>
-                            <td>paul.way@viacesi.fr</td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Changer le role
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#">Utilisateur</a>
-                                        <a class="dropdown-item" href="#">Membre BDE</a>
-                                        <a class="dropdown-item" href="#">Salarié CESI</a>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="dropdown">
-                                    <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                        Changer le campus
-                                    </button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 
-                                        <a class="dropdown-item" href="#">Aix-en-Provence</a>
-                                        <a class="dropdown-item" href="#">Angoulême</a>
-                                        <a class="dropdown-item" href="#">Arras</a>
-                                        <a class="dropdown-item" href="#">Brest</a>
-                                        <a class="dropdown-item" href="#">Bordeaux</a>
-                                        <a class="dropdown-item" href="#">Caen</a>
-                                        <a class="dropdown-item" href="#">Châteauroux</a>
-                                        <a class="dropdown-item" href="#">Dijon</a>
-                                        <a class="dropdown-item" href="#">Grenoble</a>
-                                        <a class="dropdown-item" href="#">La Rochelle</a>
-                                        <a class="dropdown-item" href="#">Le Mans</a>
-                                        <a class="dropdown-item" href="#">Lille</a>
-                                        <a class="dropdown-item" href="#">Lyon</a>
-                                        <a class="dropdown-item" href="#">Montpellier</a>
-                                        <a class="dropdown-item" href="#">Nancy</a>
-                                        <a class="dropdown-item" href="#">Nantes</a>
-                                        <a class="dropdown-item" href="#">Nice</a>
-                                        <a class="dropdown-item" href="#">Orléans</a>
-                                        <a class="dropdown-item" href="#">Pau</a>
-                                        <a class="dropdown-item" href="#">Paris Nanterrre</a>
-                                        <a class="dropdown-item" href="#">Reims</a>
-                                        <a class="dropdown-item" href="#">Rouen</a>
-                                        <a class="dropdown-item" href="#">Saint-Nazaire</a>
-                                        <a class="dropdown-item" href="#">Strasbourg</a>
-                                        <a class="dropdown-item" href="#">Toulouse</a>
-
-                                    </div>
-                                </div>
                             </td>
                         </tr>
                         </tbody>
@@ -136,6 +69,89 @@
     <br>
     <br>
 
+    <script type='text/javascript'>
+        $(document).ready(function () {
+            // $('#but_fetchall').click(function () {
+            //     $.ajax({
+            //         url: 'http://localhost:3000/api/product/add',
+            //         type: 'post',
+            //         success: function (response) {
+            //             var form = "<tr>" +
+            //                 "<td>" + "</td>" +
+            //                 "<td>" + "<input  name=\"name\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
+            //                 "<td>" + "<input  name=\"description\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
+            //                 "<td>" + "<input  name=\"price\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
+            //                 "<td>" + "<input  name=\"img\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
+            //                 "<td>" + "<select class=\"custom-select\" name=\"categories\" required>\n" +
+            //                 "                <option value=\"1\">Vêtements</option>\n" +
+            //                 "                <option value=\"2\">Goodies</option>" + "</select>" + "</td>" +
+            //                 "<td> " + "<button type=\"submit\" class=\"btn btn-outline-primary mt-2 text\">Envoyer</button>" + "<td>" +
+            //                 "</tr>" ;
+            //             $("#userTable tbody").append(form);
+            //         }});
+            //
+            // });
+            // Fetch all records
 
+            fetchRecords(0);
+
+        });
+
+        function fetchRecords(id) {
+            $.ajax({
+                url: 'http://localhost:3000/api/user/all/admin',
+                type: 'post',
+                dataType: 'JSON',
+                success: function (response) {
+                    var string = JSON.parse(response);
+                    console.log(string.value);
+
+
+                    var len = 1;
+                    $('#userTable tbody').empty(); // Empty <tbody>
+                    if (string.value != null) {
+
+
+                    }
+                    console.log(len);
+
+
+                    for (var i = 0; i < len; i++) {
+                        var id = string.value[i].id_PERSONNE;
+                        var name = string.value[i].Nom;
+                        var firstname = string.value[i].Prenom;
+                        var campus = string.value[i].Campus;
+                        var email = string.value[i].Adresse_Mail;
+                        var password = string.value[i].Mot_De_Passe;
+                        var idrole = string.value[i].id_ROLE;
+
+                        var tr_str = "<tr>" +
+                            "<td align='center'>" + id + "</td>" +
+                            "<td align='center'>" + name + "</td>" +
+                            "<td align='center'>" + firstname + "</td>" +
+                            "<td align='center'>" + campus + "</td>" +
+                            "<td align='center'>" + email + "</td>" +
+                            "<td align='center'>" + password + "</td>" +
+                            "<td align='center'>" + idrole + "</td>" +
+                            "</tr>";
+
+                        $("#userTable tbody").append(tr_str);
+
+                    }
+                    if (response['data'] != null) {
+                        var tr_str = "<tr>" +
+                            "<td align='center'>1</td>" +
+                            "<td align='center'>" + response['data'].username + "</td>" +
+                            "<td align='center'>" + response['data'].name + "</td>" +
+                            "<td align='center'>" + response['data'].email + "</td>" +
+                            "</tr>";
+
+                        $("#userTable tbody").append(tr_str);
+                    }
+
+                }
+            });
+        }
+    </script>
 
 @endsection
