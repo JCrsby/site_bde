@@ -17,8 +17,8 @@ module.exports = {
         let email = req.body.email;
         let password = req.body.password;
 
-        console.log({firstName, lastName, campus, email, password});
-        console.log(req.header);
+        //console.log({firstName, lastName, campus, email, password});
+        //console.log(req.header);
 
         if (firstName == null ||
             lastName == null ||
@@ -62,7 +62,7 @@ module.exports = {
         let password = req.body.password;
 
         if (mail === null || password === null) {
-            res.status(400).json({"name": "error", value: "empty param"});
+            res.status(400).json({name: "error", value: "empty param"});
         } else {
             personne.findOne({
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
@@ -71,10 +71,11 @@ module.exports = {
                     Mot_De_Passe: password
                 }
             }).then((userFound) => {
+                //console.log(userFound);
                 res.json({
                     name: "valid",
                     value: {
-                        userId: userFound.id,
+                        userId: userFound.id_PERSONNE,
                         token: jwt.createUserToken(userFound)
                     }
                 });
@@ -88,24 +89,30 @@ module.exports = {
     getUserProfile: (req, res) => {
         let headerAuth = req.header('Authorization');
         let userId = jwt.constrolTokenIdRole(headerAuth).userId;
+        //console.log(`valeur ${userId}`);
+        if (headerAuth === null){
 
-        if (userId < 0) {
-            res.status(400).json({"name": "error", "value": "invalid Token"});
-        } else {
-            personne.findOne({
-                    where: {id: userId},
-                    attributes: ['id', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom']
-                }
-            ).then(response => {
-                res.json({"name": "valid", "value": response})
-                //res.json({"name": "valid", "value": response});
+        }else {
 
-            })
-                .catch(err => {
-                    res.json({"name":"error", "value": err})
-                    //res.json({"name":"error", "value": err});
+            if (userId < 0) {
+                res.status(400).json({"name": "error", "value": "invalid Token"});
+            } else {
+                personne.findOne({
+                        where: {id_PERSONNE: userId},
+                        attributes: ['id_PERSONNE', 'Adresse_Mail', 'Campus', 'Nom', 'Prenom', 'id_ROLE']
+                    }
+                ).then(response => {
+                    //console.log("is working");
+                    res.json({name: "valid", value: response})
+                    //res.json({"name": "valid", "value": response});
 
                 })
+                    .catch(err => {
+                        res.json({"name": "error", "value": "can not send request"})
+                        //res.json({"name":"error", "value": err});
+
+                    })
+            }
         }
     },
 

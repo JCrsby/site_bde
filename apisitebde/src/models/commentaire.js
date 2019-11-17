@@ -5,30 +5,35 @@ module.exports = function (sequelize, DataTypes) {
 
 
         //ALL TABLE'S COLUMN
-        id: {
+        'id_COMMENTAIRE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
             primaryKey: true,
+            primaryKey: true,
+            comment: "null",
             autoIncrement: true
         },
-        Contenu: {
+        'Contenu': {
             type: DataTypes.STRING(255),
-            allowNull: false
+            allowNull: false,
+            comment: "null"
         },
-        id_PERSONNE: {
+        'id_PERSONNE': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
+            comment: "null",
             references: {
                 model: 'personne',
-                key: 'id'
+                key: 'id_PERSONNE'
             }
         },
-        id_PHOTO: {
+        'id_PHOTO': {
             type: DataTypes.INTEGER(11),
             allowNull: false,
+            comment: "null",
             references: {
                 model: 'photo',
-                key: 'id'
+                key: 'id_PHOTO'
             }
         }
     }, {

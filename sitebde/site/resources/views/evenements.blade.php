@@ -1,29 +1,32 @@
-
+<!-- Header -->
 @extends ('layouts.layout')
-
+    <!--
+    This page is reserved for the site administrator
+    to be able to interact on events or products and even user
+    -->
 @section('contenu')
 
 <br>
 <br>
 <br>
 <br>
-
+<!-- Head -->
 <div class="container" align="center">
-
+    <!-- Title -->
     <h4 class="text-uppercase" ><p>Administration</p></h4>
 
-
+    <!-- Information -->
     <div class="card text-center">
         <div class="card-header">
             <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                    <a class="nav-link" href="Administration.html"><p class="text-dark">Utilisateur</p></a>
+                    <a class="nav-link" href="/utilisateur"><p class="text-dark">Utilisateur</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="Evenements.html"><p class="text-dark">Evenements</p></a>
+                    <a class="nav-link active" href="/evenements"><p class="text-dark">Evenements</p></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Produits.html"><p class="text-dark">Produits</p></a>
+                    <a class="nav-link" href="/produits"><p class="text-dark">Produits</p></a>
                 </li>
             </ul>
         </div>

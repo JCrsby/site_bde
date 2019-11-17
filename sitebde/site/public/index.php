@@ -50,11 +50,11 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
+//DEFINE
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
-
+//SEND REQUEST
 $response->send();
-
+//RESULT
 $kernel->terminate($request, $response);

@@ -1,13 +1,24 @@
+/*
+    Target any <a> element when
+    this one is overflown
+ */
 a#yellow:hover {
     color: #F4AB25;
-
-
 }
 
+/*
+    Target any <nav> element when
+    Allows to use the properties right, left, top and bottom
+ */
 nav {
     position: absolute;
 }
 
+/*
+    Target a class border-bottom
+    this one is overflown
+    Border and color
+ */
 header .border-bottom-1:hover {
     border-bottom: 1px solid !important;
     border-bottom-color: #F4AB25 !important;
@@ -18,11 +29,8 @@ header .border-bottom-1 {
     border-bottom-color: #000000 !important;
 }
 
-
 #yellow {
     color: #F4AB25;
-
-
 }
 
 .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
@@ -37,27 +45,28 @@ header .border-bottom-1 {
     border: 1px solid #000000 !important;
 }
 
+/*
+    Footer design
+ */
+
 footer a:hover {
     color: white !important;
     text-decoration: none !important;
 }
-
+.page-footer {
+    background-color: black;
+}
 a {
     color: darkgrey !important;
 }
-
-.evenements {
-    color: #000000;
-}
-
-
-.page-footer {
-    background-color: black;
-
-}
-
 .footer-copyright {
     color: white;
+}
+/*
+    Evenements class color
+ */
+.evenements {
+    color: #000000;
 }
 
 h5 {
@@ -78,6 +87,10 @@ ul > li > a > .list-unstyled {
 footer > .container {
     background-color: #000000;
 }
+
+    /*
+        design card boutique
+     */
 
 php
 .card:hover {
@@ -110,7 +123,7 @@ php
 }
 
 .btn {
-    transition-duration: 1s !important;
+    transition-duration: 0.5s !important;
 }
 
 .card-body > .card-text {
@@ -118,7 +131,9 @@ php
 
 }
 
-
+    /*
+         design register
+     */
 form {
     background-color: #FCFCFC;
 }
@@ -126,13 +141,17 @@ form {
 .to_register {
     font-size: 15px;
 }
-
+    /*
+        Design a image boutique
+     */
 .image_boutique {
     max-width: 100%;
     height: auto;
 }
 
-
+    /*
+        design reserch
+     */
 #search {
     padding: 5px;
     border: 1.5px solid orange;
@@ -166,7 +185,9 @@ form {
     background-color: #F4AB25 !important;
     box-shadow: 0px 0px 0px 0px #F4AB25 !important;
 }
-
+    /*
+        Responsive
+     */
 .video-responsive {
     overflow: hidden;
     padding-bottom: 50%;
@@ -181,82 +202,72 @@ form {
     width: 100%;
     position: absolute;
 }
-
+    /*
+        size
+     */
 .image_contact {
     max-width: 100%;
     height: auto;
 }
-
+    /*Color*/
 .contact_color {
     color: #F4AB25;
 }
-
+    /*Color*/
 .contact_tittle {
     color: #000000;
 }
-
+    /*Color*/
 #connection {
     color: #000000;
 }
-
+    /*Color*/
 #footer_color_title_mentions {
     color: white;
 }
-
+    /*Color*/
 #footer_color_title_contact {
     color: white;
 }
-
+    /*Color*/
 #footer_color_title_reseaux {
     color: white;
 }
-
+    /*Color*/
 .select {
-
     color: orange;
 }
-
+    /*Back color*/
 .cookiesPopup{
-
        background-color:#f2f2f2;
-
 }
-
+    /*position margin*/
 #cookiesOk{
-
     margin-left: 10px;
     margin-right: 10px;;
 
 }
 .textpopup{
-
     margin-left: 10px;
 }
-
+    /*
+        adjusts the height of the padding box
+     */
 .cookiesPopup{
-
     padding-bottom: 10px;;
-
 }
-
+    /*
+        the border
+    */
 .hr_panier {
     border-top: 1px dotted black;
   }
 
-
-  #creerProduit  {
-
-    margin-top:10px;
-    margin-left: 10px;
-  }
-
-  #creerEvent{
-      
-    margin-top:10px;
-    margin-left: 10px;
-
-  }
-
+header .btn-secondary {
+    border: black;
+    background-color: black !important;
+    color: darkgray !important;
+}
 
 
 
