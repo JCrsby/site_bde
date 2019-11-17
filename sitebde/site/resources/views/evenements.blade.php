@@ -146,7 +146,7 @@
                         var idpers = string.value[i].id_PERSONNE;
 
                         var tr_str = "<tr>" +
-                            "<td align='center'>" + (i+1) + "</td>" +
+                            "<td align='center'>" + id + "</td>" +
                             "<td align='center'>" + username + "</td>" +
                             "<td align='center'>" + name + "</td>" +
                             "<td align='center'>" + email + "</td>" +

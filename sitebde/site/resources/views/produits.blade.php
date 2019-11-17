@@ -34,37 +34,21 @@
         <!-- Action -->
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="userTable">
                     <thead>
                     <tr>
-                        <th>Action</th>
+
                         <th>ID</th>
                         <th>Nom</th>
                         <th>Bio</th>
                         <th>Prix</th>
-                        <th>URL</th>
+                        <th>Image</th>
+                        <th>id Catégories</th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><div class="btn-group">
-                                <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
-                                    <span class="caret"></span>
-                                    <span class="sr-only">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Changer ID </a></li>
-                                    <li><a href="#">Changer le nom </a></li>
-                                    <li><a href="#">Changer le bio</a></li>
-                                    <li><a href="#">Supprimer</a></li>
-                                </ul>
-                            </div></td>
-                        <td>P1</td>
-                        <td>Casquette</td>
-                        <td>Content</td>
-                        <td>Prix</td>
-                        <td>URL</td>
-                    </tr>
+
             </div>
             </tbody>
 
@@ -83,6 +67,74 @@
 <br>
 <br>
 
+    <script type='text/javascript'>
+        $(document).ready(function(){
 
+            // Fetch all records
+
+            fetchRecords(0);
+
+
+
+            fetchRecords(userid);
+
+
+
+
+        });
+
+        function fetchRecords(id){
+            $.ajax({
+                url: 'http://localhost:3000/api/product/admin',
+                type: 'post',
+                dataType: 'JSON',
+                success: function(response){
+                    var string = JSON.parse(response);
+                    console.log(string.value);
+
+
+                    var len = 1;
+                    $('#userTable tbody').empty(); // Empty <tbody>
+                    if(string.value != null){
+
+
+                    }
+                    console.log(len);
+
+
+                    for(var i=0; i<len; i++){
+                        var id = string.value[i].id_PRODUIT;
+                        var name = string.value[i].Nom;
+                        var description = string.value[i].Description;
+                        var prix = string.value[i].Prix;
+                        var img = string.value[i].Image;
+                        var idcat = string.value[i].id_CATEGORIE;
+
+                        var tr_str = "<tr>" +
+                            "<td align='center'>" + id + "</td>" +
+                            "<td align='center'>" + name + "</td>" +
+                            "<td align='center'>" + description + "</td>" +
+                            "<td align='center'>" + prix + "</td>" +
+                            "<td align='center'>" + img + "</td>" +
+                            "<td align='center'>" + idcat + "</td>" +
+                            "</tr>";
+
+                        $("#userTable tbody").append(tr_str);
+
+                    } if(response['data'] != null){
+                        var tr_str = "<tr>" +
+                            "<td align='center'>1</td>" +
+                            "<td align='center'>" + response['data'].username + "</td>" +
+                            "<td align='center'>" + response['data'].name + "</td>" +
+                            "<td align='center'>" + response['data'].email + "</td>" +
+                            "</tr>";
+
+                        $("#userTable tbody").append(tr_str);
+                    }
+
+                }
+            });
+        }
+    </script>
 
 @endsection
