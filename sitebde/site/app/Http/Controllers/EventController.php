@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use GuzzleHttp\Exception\GuzzleException;
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
@@ -54,4 +55,15 @@ class EventController extends Controller
         //CALL VIEW BOUTIQUE
 
     }
+
+
+
+    public function getEvents($id = 0){
+        // Fetch all records
+        $userData['data'] = Page::getEventData($id);
+
+        echo json_encode($userData);
+        exit;
+    }
+
 }

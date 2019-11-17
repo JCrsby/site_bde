@@ -30,16 +30,19 @@
         <div class="card-body">
 
             <div class="table-responsive">
-                <table class="table table-bordered">
+                <table class="table table-bordered" id='userTable'>
                     <thead>
                     <tr>
-                        <th>Action</th>
                         <th>ID</th>
                         <th>Nom</th>
                         <th>Bio</th>
                         <th>Date</th>
+                        <th>Image</th>
                         <th>Prix</th>
-                        <th>URL</th>
+                        <th>Validee</th>
+                        <th>Id Personne</th>
+                        <th>Action</th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -56,12 +59,7 @@
                                     <li><a href="#">Supprimer</a></li>
                                 </ul>
                             </div></td>
-                        <td>E01</td>
-                        <td>Meet&Greet</td>
-                        <td>Content</td>
-                        <td>Date</td>
-                        <td></td>
-                        <td>URL</td>
+
                         <!--<td><div class="input-group">
                             <span class="input-group-btn">
                           <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">
@@ -94,5 +92,100 @@
 <br>
 <br>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Script -->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> --> <!-- jQuery CDN -->
+
+
+<script type='text/javascript'>
+    $(document).ready(function(){
+
+        // Fetch all records
+
+            fetchRecords(0);
+
+
+
+                fetchRecords(userid);
+
+
+
+
+    });
+
+    function fetchRecords(id){
+        $.ajax({
+            url: 'http://localhost:3000/api/event/all',
+            type: 'post',
+            dataType: 'JSON',
+            success: function(response){
+                var string = JSON.parse(response);
+                console.log(string.value);
+
+
+                var len = 1;
+                $('#userTable tbody').empty(); // Empty <tbody>
+                if(string.value != null){
+
+
+                }
+                console.log(len);
+
+
+                    for(var i=0; i<len; i++){
+                        var id = string.value[i].id_ACTIVITE;
+                        var username = string.value[i].Nom;
+                        var name = string.value[i].Description;
+                        var email = string.value[i].Date;
+                        var img = string.value[i].Image;
+                        var prix = string.value[i].Prix;
+                        var valide = string.value[i].Validee;
+                        var idpers = string.value[i].id_PERSONNE;
+
+                        var tr_str = "<tr>" +
+                            "<td align='center'>" + (i+1) + "</td>" +
+                            "<td align='center'>" + username + "</td>" +
+                            "<td align='center'>" + name + "</td>" +
+                            "<td align='center'>" + email + "</td>" +
+                            "<td align='center'>" + img + "</td>" +
+                            "<td align='center'>" + prix + "</td>" +
+                            "<td align='center'>" + valide + "</td>" +
+                            "<td align='center'>" + idpers + "</td>" +
+                            "</tr>";
+
+                        $("#userTable tbody").append(tr_str);
+
+                } if(response['data'] != null){
+                    var tr_str = "<tr>" +
+                        "<td align='center'>1</td>" +
+                        "<td align='center'>" + response['data'].username + "</td>" +
+                        "<td align='center'>" + response['data'].name + "</td>" +
+                        "<td align='center'>" + response['data'].email + "</td>" +
+                        "</tr>";
+
+                    $("#userTable tbody").append(tr_str);
+                }
+
+            }
+        });
+    }
+</script>
+{{--</body>--}}
+{{--<script>--}}
+
+        {{--$.ajax({--}}
+            {{--url : 'http://localhost:3000/api/event/all', // La ressource ciblée--}}
+            {{--type : 'POST', // Le type de la requête HTTP.--}}
+            {{--dataType : JSON,--}}
+             {{--function(response){--}}
+
+                 {{--var json1 = JSON.parse(data);--}}
+                {{--consol.log(response);--}}
+                {{--// $("#recup_users").html(data);--}}
+            {{--}--}}
+        {{--});--}}
+
+
+{{--</script>--}}
 
 @endsection

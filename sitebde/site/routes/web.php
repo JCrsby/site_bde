@@ -32,12 +32,11 @@ Route::get('/contact', 'PagesController@contact');
 //Route Requete ajax
 
 
+Route::get('/conditions', 'PagesController@conditions');
 
-Route::get('/conditions','PagesController@conditions');
+Route::get('/politique', 'PagesController@politique');
 
-Route::get('/politique','PagesController@politique');
-
-Route::get('/accueil','PagesController@accueil');
+Route::get('/accueil', 'PagesController@accueil');
 
 
 Route::get('/cart', 'PanierController@view');
@@ -45,30 +44,30 @@ Route::get('/cart', 'PanierController@view');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/connexion','ConnexionController@formConnexion');
+Route::post('/connexion', 'ConnexionController@formConnexion');
 
-Route::post('/inscriptionevent','EventController@inscriptionEvent');
+Route::post('/inscriptionevent', 'EventController@inscriptionEvent');
 
 //Page des événements
-Route::get('/events','EventListController@events');
+Route::get('/events', 'EventListController@events');
 
 
 Auth::routes();
 
 //INSCRIPTION
 Route::post('/inscription', 'InscriptionController@inscription');
-Route::get('/inscription','InscriptionController@view');
+Route::get('/inscription', 'InscriptionController@view');
 
 //DISCONNECTION
 Route::get('/disconect', 'ConnexionController@deconnxion');
 
 
-
 Route::get('/test', 'NavController@getUser');
 
-Route::get('/utilisateur','PagesController@utilisateur');
+Route::get('/utilisateur', 'PagesController@utilisateur');
 
-Route::get('/produits','PagesController@produits');
+Route::get('/produits', 'PagesController@produits');
 
-Route::get('/evenements','PagesController@evenements');
+Route::get('/evenements', 'PagesController@evenements');
+Route::get('/allevents', 'EventController@getEvent');
 

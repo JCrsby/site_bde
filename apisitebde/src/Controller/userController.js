@@ -16,7 +16,7 @@ module.exports = {
         let campus = req.body.campus;
         let email = req.body.email;
         let password = req.body.password;
-
+        console.log(password);
         //console.log({firstName, lastName, campus, email, password});
         //console.log(req.header);
 
@@ -49,7 +49,9 @@ module.exports = {
         )
             .catch((err) => {
                 // let jsonErr = JSON.stringify(err);
+                console.log(err);
                 res.json({name: 'error', value: err});
+
             });
 
 

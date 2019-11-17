@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class InscriptionController extends Controller
 {
@@ -29,7 +30,7 @@ class InscriptionController extends Controller
                     'lastName' => request('lastName'),
                     'firstName' => request('firstName'),
                     'campus' => request('campus'),
-                    'password' => request('password'),
+                    'password' => Hash::make(request('password')),
                     'email' => request('email')
                 ]]);
 
@@ -46,6 +47,7 @@ class InscriptionController extends Controller
             } else {
                 //TODO : show it like a mistake on the web ste
                 echo('unknown error');
+
             }
         } catch (GuzzleException $e) {
             return view('internError');
