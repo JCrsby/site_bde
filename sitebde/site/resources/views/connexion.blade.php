@@ -20,17 +20,23 @@
             <!-- Information -->
             <div class="form-group mt-3">
                 <label for="email" class="uname" data-icon="u"> Adresse mail : </label>
-                <input id="email" name="email" class="form-control" required="required" type="text"
+                <input id="email" name="email" class="form-control" required="required" value="{{old('email')}}" type="text"
                        placeholder="cesiLyon@viacesi.fr"/>
+                @if($errors->has('email'))
+                    <p>{{$errors->first('email')}}</p>
+                @endif
             </div>
             <div class="form-group">
                 <label for="password" class="youpasswd" data-icon="p"> Mot de passe : </label>
                 <input id="password" name="password" class="form-control" required="required" type="password"
                        placeholder="CesiMDP123"/>
+                @if($errors->has('password'))
+                    <p>{{$errors->first('password')}}</p>
+                @endif
             </div>
                 <!-- submit button -->
             <div class="text-center">
-                <button type="submit" class="btn btn-outline-primary mt-2 text " id="btn-sumbit">Submit</button>
+                <button type="submit" class="btn btn-outline-primary mt-2 text " id="btn-sumbit">Se connecter</button>
             </div>
                 <!-- Refresh password -->
             <p class="change_link text-center mb-0 mt-3">

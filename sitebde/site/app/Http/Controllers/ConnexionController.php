@@ -47,13 +47,19 @@ class ConnexionController extends Controller
 
             ]);
 
+            request()->validate([
+                'email' => ['required', 'email'],
+                'password' => ['required'],
+            ]);
+
             //REQUEST + REQUEST CONTENT
             $response = $client->request('POST', '/api/user/login', [
                 //PARAM
                 'form_params' => [
                     'email' => request('email'),
                     'password' => request('password')
-                ]
+                ],
+
             ]);
 
             //DECODE REQUEST'S RESPONSE
@@ -61,7 +67,7 @@ class ConnexionController extends Controller
 
             //INTERPRET RESPONSE
             if ($user->name == "error") {
-                echo "user does not exist";
+                //TODO : show it like a mistake on the web ste
             } else {
                 //create a cookie and return "connected"
                 echo "connected";
@@ -76,4 +82,11 @@ class ConnexionController extends Controller
         }
     }
 
+//    function errorConnexion()
+//    {
+//        request()->validate([
+//            'email' => ['required', 'email'],
+//            'password' => ['required'],
+//        ]);
+//    }
 }
