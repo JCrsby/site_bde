@@ -36,10 +36,13 @@ router.post('/product/DescPrice',   (req, res)=>{productController.HigerToLower(
 //COMMENTARY ROUTES
 router.post('/commentary/addcomment', (req, res)=>{photoController.addComment(req,res)});
 
+//BASKET ROUTES
+router.post('/basket/add', (req, res)=>{bascketController.addToBascket(req, res)});
+router.post('/basket/all', (req,res)=>{bascketController.allBasket(req, res)});
+router.delete('/basket/delete', (req, res)=>{bascketController.deleteBasket(req, res)});
 
 //EXPERIMENTAL ROUTES
 router.post('/user/add', (req, res)=>{userController.addUser(req, res)});
-router.post('/commande/one', (req, res)=> { bascketController.findoraddcommmande(req, res)});
 
 
 

@@ -24,8 +24,9 @@ Route::get('/politique','PagesController@politique');
 
 //VENTE
 Route::get('/cart', 'PanierController@view');
-Route::post('/addtobascket/{idProduct}', 'PannierController@addToBascket');
+Route::post('/addtobascket/{idProduct}', 'PanierController@addToBascket');
 Route::post('/connexion','ConnexionController@formConnexion');
+Route::post('/deleteBasket','PanierController@deletePanier');
 
 //Page des événements
 //EVENEMENTS

@@ -7,13 +7,7 @@
 <!--Start Content -->
 
 @section('contenu')
-    @if( isset($_COOKIE['token']))
-        @if(strlen($_COOKIE['token']) >= 0)
-            @if(App\Http\Controllers\NavController::getUser()->value->id_ROLE == 1 || App\Http\Controllers\NavController::getUser()->value->id_ROLE == 3)
-                <button type="button" class="btn btn-outline-primary" id="creerProduit">Créer un produit</button>
-            @endif
-        @endif
-    @endif
+
 
     <h4 class="categorie p-5 text-muted" align="center">Produits :</h4>
     <div class="container">
@@ -60,6 +54,7 @@
                         @if (isset($_COOKIE['token']))
                             @if (strlen($_COOKIE['token']) > 0)
                                 <form class="card-footer" action="/addtobascket/{{$product->id_PRODUIT}}" method="POST">
+                                    {{csrf_field()}}
                                     <small class="text-muted" >
                                         <button type="submit" class="btn btn-outline-primary form-control">ajouter au
                                             panier<i class="ml-1 fas fa-cart-arrow-down"></i></button>
@@ -67,6 +62,7 @@
                                 </form>
                             @else
                                 <form class="card-footer" action="/connexion" method="GET">
+                                    {{csrf_field()}}
                                     <small class="text-muted">
                                         <button type="submit" class="btn btn-outline-primary form-control">ajouter au
                                             panier<i class="ml-1 fas fa-cart-arrow-down"></i></button>
@@ -75,6 +71,7 @@
                             @endif
                         @else
                             <form class="card-footer"  action="/connexion" method="GET">
+                                {{csrf_field()}}
                                 <small class="text-muted">
                                     <button type="submit" class="btn btn-outline-primary form-control">ajouter
                                         au panier<i class="ml-1 fas fa-cart-arrow-down"></i></button>
