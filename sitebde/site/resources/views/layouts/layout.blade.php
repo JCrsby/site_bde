@@ -30,7 +30,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed">
             <a class="navbar-brand" href="/index">
-                <img src="img/logobde.png" alt="logo chien loup CESI" title="Icone du BDE CESI Lyon" >
+                <img src="http://loclahost:8000/public/img/logobde.png" alt="logo chien loup CESI" title="Icone du BDE CESI Lyon" >
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,7 +59,7 @@
 @else
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed">
-            <a class="navbar-brand" href="/index"><img src="img/logobde.png"> </a>
+            <a class="navbar-brand" href="/index"><img src="img/logobde.png" alt="logo loup bde lyon"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

@@ -68,7 +68,7 @@ class PanierController extends Controller
         ]);
 
         try {
-            $response = $client->request('POST', '/api//basket/add',
+            $response = $client->request('POST', '/api/basket/add',
                 [
                     'headers' => [
                         'Authorization' => $_COOKIE['token']
@@ -80,12 +80,15 @@ class PanierController extends Controller
             );
 
         } catch (GuzzleException $e) {
+            return view('internError');
+
         }
 
         $event = json_decode($response->getBody()->getContents());
 
         if ($event->name === "error") {
-            dd($event->value);
+            return view('internError');
+//            dd($event->value);
         } else {
             return redirect('/boutique');
         }
