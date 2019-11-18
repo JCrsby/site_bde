@@ -2,6 +2,7 @@
 const personne = require('../models').Personne;
 const role = require('../models').role;
 const jwt = require('../token/jwt.utils');
+const bcrypt = require('bcrypt');
 
 
 const DEFAULT_ID = 1;
@@ -28,13 +29,14 @@ module.exports = {
             return res.json({name: "error", value: "empty param"})
         }
 
-        personne.findOrCreate({
+
+        bcrypt.hash(password, 5, (err, bcrytedPassword)=> {personne.findOrCreate({
             where: {Adresse_Mail: email},
             defaults: {
                 Nom: lastName,
                 Prenom: firstName,
                 Campus: campus,
-                Mot_De_Passe: password,
+                Mot_De_Passe: bcrytedPassword,
                 id_ROLE: DEFAULT_ID
             }
         }).then((sqlresponse) => {
@@ -52,7 +54,8 @@ module.exports = {
                 console.log(err);
                 res.json({name: 'error', value: err});
 
-            });
+            });});
+
 
 
     },
@@ -70,17 +73,25 @@ module.exports = {
                 //attributes: ['Adresse_Mail', 'Mot_De_Passe'],
                 where: {
                     Adresse_Mail: mail,
-                    Mot_De_Passe: password
                 }
             }).then((userFound) => {
-                //console.log(userFound);
-                res.json({
-                    name: "valid",
-                    value: {
-                        userId: userFound.id_PERSONNE,
-                        token: jwt.createUserToken(userFound)
+
+                bcrypt.compare(password, userFound.Mot_De_Passe, (errBcrypt, resBecrypt)=>{
+                    if(resBecrypt){
+                        res.json({
+                            name: "valid",
+                            value: {
+                                userId: userFound.id_PERSONNE,
+                                token: jwt.createUserToken(userFound)
+                            }
+                        });
+                    } else {
+                         res.json({name: "error", value: "user do not exist"});
                     }
+
                 });
+
+
             }).catch(() => {
                 return res.json({name: "error", value: "user do not exist"});
             })

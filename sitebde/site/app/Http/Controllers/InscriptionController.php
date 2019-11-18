@@ -43,7 +43,7 @@ class InscriptionController extends Controller
                     'lastName' => request('lastName'),
                     'firstName' => request('firstName'),
                     'campus' => request('campus'),
-                    'password' => Hash::make(request('password')),
+                    'password' =>request('password'),
                     'email' => request('email')
                 ]]);
 
