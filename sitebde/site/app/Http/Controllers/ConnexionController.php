@@ -84,11 +84,4 @@ class ConnexionController extends Controller
         }
     }
 
-//    function errorConnexion()
-//    {
-//        request()->validate([
-//            'email' => ['required', 'email'],
-//            'password' => ['required'],
-//        ]);
-//    }
 }

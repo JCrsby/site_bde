@@ -60,7 +60,6 @@ class InscriptionController extends Controller
             } else {
                 //TODO : show it like a mistake on the web ste
                 echo('unknown error');
-
             }
         } catch (GuzzleException $e) {
             //ERROR
@@ -69,18 +68,5 @@ class InscriptionController extends Controller
 
 
     }
-
-//    function errorInscription()
-//    {
-//        //INSCRIPTION ERROR MESSAGE
-//        request()->validate([
-//            'email' => ['required', 'email'],
-//            'password' => ['required', 'confirmed', 'min:8'],
-//            'password_confirmation' => ['required'],
-//        ], [
-//            'password.min' => 'Pour des raisons de sécurité, votre mot de passe doit faire minimum :min caractères.'
-//        ]);
-//
-//    }
 
 }
