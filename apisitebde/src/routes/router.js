@@ -31,6 +31,7 @@ router.post('/product/admin',       (req, res)=>{ajaxController.allProduct(req,r
 router.post('/product/AscPrice',    (req, res)=>{productController.LowenToHigher(req, res)});
 router.post('/product/DescPrice',   (req, res)=>{productController.HigerToLower(req, res)});
 router.post('/product/add',         (req,res)=>{productController.addProduct(req, res)});
+router.delete('/product/delete',    (req, res)=>{productController.deleteProduct(req, res)});
 
 
 //COMMENTARY ROUTES

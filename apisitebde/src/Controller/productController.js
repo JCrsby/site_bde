@@ -82,6 +82,21 @@ module.exports = {
                 .catch(err => {res.json({name: "err", value: err})});
         }
 
+    },
+
+    deleteProduct: (req, res)=>{
+        let idProduct = req.body.idProduct;
+
+
+        product.destroy({
+            cascade: true,
+            where: {
+                id_PRODUCT: idProduct
+            }
+        }).then(()=>{console.log("working")})
+            .then(()=> {console.log("lets debug")})
+
+
     }
 
 
