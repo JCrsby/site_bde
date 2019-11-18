@@ -44,7 +44,7 @@ use App\Http\Controllers\EventController;
                                     <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
                                               placeholder="Votre commentaire (255 charactere max)"></textarea>
                                     <button type="submit" class="btn btn-outline-primary form-control">
-                                        commenter fuck
+                                        Commenter
                                     </button>
                                 </form>
                             @else
@@ -54,7 +54,7 @@ use App\Http\Controllers\EventController;
                                     <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
                                               placeholder="Votre commentaire (255 charactere max)"></textarea>
                                     <button type="submit" class="btn btn-outline-primary form-control">
-                                        commenter test
+                                        Commenter
                                     </button>
                                 </form>
                             @endif

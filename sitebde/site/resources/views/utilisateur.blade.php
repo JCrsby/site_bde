@@ -42,7 +42,6 @@
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Email</th>
-                            <th>Role</th>
                             <th>Campus</th>
                             <th>ID Roles</th>
 
@@ -129,9 +128,8 @@
                             "<td align='center'>" + id + "</td>" +
                             "<td align='center'>" + name + "</td>" +
                             "<td align='center'>" + firstname + "</td>" +
-                            "<td align='center'>" + campus + "</td>" +
                             "<td align='center'>" + email + "</td>" +
-                            "<td align='center'>" + password + "</td>" +
+                            "<td align='center'>" + campus + "</td>" +
                             "<td align='center'>" + idrole + "</td>" +
                             "</tr>";
 

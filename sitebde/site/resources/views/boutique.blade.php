@@ -42,7 +42,7 @@
 
             <!-- Information -->
             @foreach($products as $product)
-                <div class="col-md-3 col-9">
+                <div class="col-md-3 col-9 mb-3">
                     <div class="card">
                         <img class="card-img-top border-bottom-1" src="{{$product->Image}}" alt="Card image cap">
                         <div class="card-body">
