@@ -107,7 +107,7 @@
                     console.log(string.value);
 
 
-                    var len = 1;
+                    var len = string.value.length;
                     $('#userTable tbody').empty(); // Empty <tbody>
                     if (string.value != null) {
 

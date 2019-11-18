@@ -42,8 +42,10 @@ Route::get('/disconect', 'ConnexionController@deconnxion');
 
 //ADMINISTATOR
 Route::get('/utilisateur','PagesController@utilisateur');
-Route::get('/produits','PagesController@produits');
+Route::get('/produits','ProduitController@produits');
 Route::get('/evenements','PagesController@evenements');
+Route::post('/produits','ProduitController@produitsAdd');
+Route::delete('/produits','ProduitController@produitsDelete');
 
 //COOKIE
 Route::post('cookiesPopup', 'PagesController@cookiesPopup')->name('cookiesPopup');

@@ -36,25 +36,28 @@
             <div class="card-body">
                 <input type='button' value='Ajouter produit' id='but_fetchall'>
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="userTable">
-                        <thead>
-                        <tr>
+                    <form method="POST">
+                        {{csrf_field()}}
+                        <table class="table table-bordered" id="userTable">
+                            <thead>
+                            <tr>
 
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Bio</th>
-                            <th>Prix</th>
-                            <th>Image</th>
-                            <th>id Catégories</th>
-                            <th>Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Bio</th>
+                                <th>Prix</th>
+                                <th>Image</th>
+                                <th>id Catégories</th>
+                                <th>Supprimer</th>
+                            </tr>
+                            </thead>
+                            <tbody>
 
 
-                        </tbody>
+                            </tbody>
 
-                    </table>
+                        </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -70,85 +73,101 @@
 
     <script type='text/javascript'>
         $(document).ready(function () {
+
             $('#but_fetchall').click(function () {
-                $.ajax({
-                    url: 'http://localhost:3000/api/product/add',
-                    type: 'post',
-                    success:  response => {
-                        var form = "<tr>" +
-                            "<td>" + "</td>" +
-                            "<td>" + "<input  name=\"name\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
-                            "<td>" + "<input  name=\"description\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
-                            "<td>" + "<input  name=\"price\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
-                            "<td>" + "<input  name=\"img\" class=\"form-control\" required=\"required\" type=\"text\"\n" + "                       placeholder=\"cesiLyon@viacesi.fr\"/>" + "</td>" +
-                            "<td>" + "<select class=\"custom-select\" name=\"categories\" required>\n" +
-                            "                <option value=\"1\">Vêtements</option>\n" +
-                            "                <option value=\"2\">Goodies</option>" + "</select>" + "</td>" +
-                            "<td> " + "<button type=\"submit\" class=\"btn btn-outline-primary mt-2 text\">Envoyer</button>" + "<td>" +
-                            "</tr>" ;
-                        $("#userTable tbody").append(form);
-                            }});
+                // $.ajax({
+                //     url: 'http://localhost:3000/api/product/add',
+                //     type: 'post',
+                //     success:  response => {
+                var form = "<tr>" +
+                    "<td>" + "</td>" +
+                    "<td>" + "<input class=\"form-control\"  name=\"name\"  type=\"text\"\n" + "</td>" +
+                    "<td>" + "<input class=\"form-control\"  name=\"description\"  required=\"required\" type=\"text\"\n" + "</td>" +
+                    "<td>" + "<input  class=\"form-control\" name=\"price\" type=\"text\"\n" + "</td>" +
+                    "<td>" + "<input  class=\"form-control\" name=\"img\"  type=\"text\"\n" + "</td>" +
+                    "<td>" + "<select  class=\"custom-select\" name=\"categories\" required>\n" +
+                    "                <option value=\"1\">Vêtements</option>\n" +
+                    "                <option value=\"2\">Goodies</option>" + "</select>" + "</td>" +
+                    "<td> " + "<button type=\"submit\" class=\"btn btn-outline-primary mt-2 text\">Envoyer" + "</button>" + "<td>" +
+                    "</tr>";
+                $("#userTable tbody").append(form);
+                // }});
 
             });
-            // Fetch all records
-
             fetchRecords(0);
-
-        });
-
-        function fetchRecords(id) {
-            $.ajax({
-                url: 'http://localhost:3000/api/product/admin',
-                type: 'post',
-                dataType: 'JSON',
-                success: function (response) {
-                    var string = JSON.parse(response);
-                    console.log(string.value);
-
-
-                    var len = 1;
-                    $('#userTable tbody').empty(); // Empty <tbody>
-                    if (string.value != null) {
+            // $.ajax({
+            //    url: 'http://localhost:3000/api/product/add',
+            //     type: 'post',
+            //     success:  response => {
+            // // Fetch all records
+            // }});
+            $('#delete').click(function () {
+                $.ajax({
+                    url: 'http://localhost:3000/api/product/delete',
+                    type: 'delete',
 
 
-                    }
-                    console.log(len);
 
 
-                    for (var i = 0; i < len; i++) {
-                        var id = string.value[i].id_PRODUIT;
-                        var name = string.value[i].Nom;
-                        var description = string.value[i].Description;
-                        var prix = string.value[i].Prix;
-                        var img = string.value[i].Image;
-                        var idcat = string.value[i].id_CATEGORIE;
 
-                        var tr_str = "<tr>" +
-                            "<td align='center'>" + id + "</td>" +
-                            "<td align='center'>" + name + "</td>" +
-                            "<td align='center'>" + description + "</td>" +
-                            "<td align='center'>" + prix + "</td>" +
-                            "<td align='center'>" + img + "</td>" +
-                            "<td align='center'>" + idcat + "</td>" +
-                            "</tr>";
+                });
 
-                        $("#userTable tbody").append(tr_str);
-
-                    }
-                    if (response['data'] != null) {
-                        var tr_str = "<tr>" +
-                            "<td align='center'>1</td>" +
-                            "<td align='center'>" + response['data'].username + "</td>" +
-                            "<td align='center'>" + response['data'].name + "</td>" +
-                            "<td align='center'>" + response['data'].email + "</td>" +
-                            "</tr>";
-
-                        $("#userTable tbody").append(tr_str);
-                    }
-
-                }
             });
-        }
+
+            function fetchRecords(id) {
+                $.ajax({
+                    url: 'http://localhost:3000/api/product/admin',
+                    type: 'post',
+                    dataType: 'JSON',
+                    success: function (response) {
+                        var string = JSON.parse(response);
+                        console.log(string.value);
+
+
+                        var len = string.value.length;
+                        $('#userTable tbody').empty(); // Empty <tbody>
+                        if (string.value != null) {
+
+
+                        }
+                        console.log(len);
+
+
+                        for (var i = 0; i < len; i++) {
+                            var id = string.value[i].id_PRODUIT;
+                            var name = string.value[i].Nom;
+                            var description = string.value[i].Description;
+                            var prix = string.value[i].Prix;
+                            var img = string.value[i].Image;
+                            var idcat = string.value[i].id_CATEGORIE;
+
+                            var tr_str = "<tr>" +
+                                "<td align='center'>" + id + "</td>" +
+                                "<td align='center'>" + name + "</td>" +
+                                "<td align='center'>" + description + "</td>" +
+                                "<td align='center'>" + prix + "</td>" +
+                                "<td align='center'>" + img + "</td>" +
+                                "<td align='center'>" + idcat + "</td>" +
+                                "<td align='center'>" + "<button type=\"submit\" id=\"#delete\" class=\"btn btn-outline-primary mt-2 text\">Supprimer</button>" + "</td>" +
+                                "</tr>";
+
+                            $("#userTable tbody").append(tr_str);
+
+                        }
+                        if (response['data'] != null) {
+                            var tr_str = "<tr>" +
+                                "<td align='center'>1</td>" +
+                                "<td align='center'>" + response['data'].username + "</td>" +
+                                "<td align='center'>" + response['data'].name + "</td>" +
+                                "<td align='center'>" + response['data'].email + "</td>" +
+                                "</tr>";
+
+                            $("#userTable tbody").append(tr_str);
+                        }
+
+                    }
+                });
+            }
     </script>
 
 @endsection
