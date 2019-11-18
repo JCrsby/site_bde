@@ -100,7 +100,7 @@
             //     type: 'post',
             //     success:  response => {
             // // Fetch all records
-            // }});
+        }); // }});
             $('#delete').click(function () {
                 $.ajax({
                     url: 'http://localhost:3000/api/product/delete',
