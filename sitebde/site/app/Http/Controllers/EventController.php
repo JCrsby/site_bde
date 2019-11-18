@@ -31,9 +31,10 @@ class EventController extends Controller
                             ]
                         ]
                     );
+                    //
                     $events = json_decode($response->getBody()->getContents())->value;
                     if ($events == "invalid token") {
-                        dd($events . ' ' . $_COOKIE['token']);
+//                        dd($events . ' ' . $_COOKIE['token']);
                         setcookie('token', '', time() + 365 * 24 * 3600, null, null, false, true);
                         return redirect('/index');
                     } else {
@@ -102,10 +103,6 @@ class EventController extends Controller
     }
             //INTERPRET RESPONSE
 
-
-
-
-
     public static function oneEvent($idEvent)
     {
         //$idEvent = request('eventId');
@@ -133,6 +130,8 @@ class EventController extends Controller
         }
 
     }
+
+
     public function getEvents($id = 0){
         // Fetch all records
         $userData['data'] = Page::getEventData($id);

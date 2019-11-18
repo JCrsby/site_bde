@@ -101,7 +101,7 @@
                 url: 'http://localhost:3000/api/user/all/admin',
                 type: 'post',
                 dataType: 'JSON',
-                success: function (response) {
+                success:  (response) => {
                     var string = JSON.parse(response);
                     console.log(string.value);
 

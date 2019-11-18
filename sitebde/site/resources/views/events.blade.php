@@ -65,7 +65,7 @@ use App\Http\Controllers\EventController;
                                 <textarea class="form-control mb-3" id="msg" name="bio" rows="4"
                                           placeholder="Votre commentaire (255 charactere max)"></textarea>
                                 <button type="submit" class="btn btn-outline-primary form-control">
-                                    commenter march
+                                    commenter
                                 </button>
                             </form>
                         @endif
