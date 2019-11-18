@@ -59,7 +59,9 @@ class PanierController extends Controller
 
         } catch (GuzzleException $e) {
         }
+
         $event = json_decode($response->getBody()->getContents())->value;
+
 
 
     }
