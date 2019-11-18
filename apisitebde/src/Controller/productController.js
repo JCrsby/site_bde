@@ -91,10 +91,10 @@ module.exports = {
         product.destroy({
             cascade: true,
             where: {
-                id_PRODUCT: idProduct
+                id_PRODUIT: idProduct
             }
         }).then(()=>{console.log("working")})
-            .then(()=> {console.log("lets debug")})
+            .catch(()=> {console.log("lets debug")})
 
 
     }
