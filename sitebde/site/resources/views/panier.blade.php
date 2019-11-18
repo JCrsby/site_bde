@@ -4,6 +4,8 @@
 
 @section('contenu')
 
+    {{Session::put('total', 0)}}
+    {{Session::put('increment', 0)}}
     <br>
 
     <!--
@@ -26,25 +28,32 @@
                 <th scope="col">Total</th>
             </tr>
             </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Casquette</td>
-                <td>1</td>
-                <td>
-                    <button type="button" class="btn btn-danger">X</button>
-                </td>
-                <td>30$</td>
-            </tr>
-            </tr>
-            </tbody>
+            @foreach($basket as $basketProduct)
+                {{Session::put('increment', Session::get('increment')+1)}}
+                <tbody>
+                <tr>
+                    <th scope="row">{{Session::get('increment')}}</th>
+                    <td>{{$basketProduct->produit->Nom}}</td>
+                    <td>{{$basketProduct->Quantite}}</td>
+                    <td>
+                        <form method="POST" action="/deleteBasket">
+                            {{csrf_field()}}
+                            <button type="submit" class="btn btn-danger" name="idProduct" value={{$basketProduct->id_PRODUIT}} >X</button>
+                        </form>
+                    </td>
+                    <td>{{$basketProduct->Quantite * $basketProduct->produit->Prix}} €</td>
+                </tr>
+                {{--                </tr>--}}
+                </tbody>
+                {{Session::put('total', Session::get('total') + ($basketProduct->Quantite * $basketProduct->produit->Prix))}}
+            @endforeach
         </table>
         <hr class="hr_panier">
 
         <div style="display: flex; justify-content: flex-end">
             <div class="inline">
-               <p class="text-uppercase"><b>Total:</b> 30$ </p>
-                            </div>
+                <p class="text-uppercase"><b>Total:</b> {{Session::get('total')}} €</p>
+            </div>
 
 
         </div>

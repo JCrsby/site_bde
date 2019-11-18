@@ -58,7 +58,7 @@ module.exports = function(sequelize, DataTypes) {
     });
     //ASSOCIATIONS
     photo.associate = (models)=> {
-        models.photo.hasMany(models.commande, {foreignKey: 'id_PHOTO'});
+        //models.photo.hasMany(models.commande, {foreignKey: 'id_PHOTO'});
         models.photo.belongsTo(models.activite, {foreignKey: 'id_ACTIVITE'});
         models.photo.belongsTo(models.Personne, {foreignKey: 'id_PERSONNE'});
     };

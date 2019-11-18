@@ -5,6 +5,7 @@ const userController = require('../Controller/userController');
 const eventController = require('../Controller/eventController');
 const productController = require('../Controller/productController');
 const photoController = require('../Controller/photoController');
+const bascketController = require('../Controller/bascketController');
 
 //ROUTER
 const router = express.Router();
@@ -37,6 +38,10 @@ router.delete('/product/delete',    (req, res)=>{productController.deleteProduct
 //COMMENTARY ROUTES
 router.post('/commentary/addcomment', (req, res)=>{photoController.addComment(req,res)});
 
+//BASKET ROUTES
+router.post('/basket/add', (req, res)=>{bascketController.addToBascket(req, res)});
+router.post('/basket/all', (req,res)=>{bascketController.allBasket(req, res)});
+router.delete('/basket/delete', (req, res)=>{bascketController.deleteBasket(req, res)});
 
 //EXPERIMENTAL ROUTES
 router.post('/user/add', (req, res)=>{userController.addUser(req, res)});
